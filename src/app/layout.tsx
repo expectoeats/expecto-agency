@@ -74,6 +74,9 @@ export const metadata: Metadata = {
     creator: "@expecto_online",
     site: "@expecto_online",
   },
+  verification: {
+    google: "6zxn93rWAxCldNrnSq0SfYdK0CFgyCv7bFQsw_GlB9I",
+  },
   robots: {
     index: true,
     follow: true,
