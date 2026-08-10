@@ -6,7 +6,7 @@ import { getFAQSchema, getServiceSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Custom CRM Software Development India | CRM for Business | Expecto | Starting ₹9,999",
-  description: "Custom CRM software development in India starting ₹9,999. CRM for coaching institutes, real estate, hospitals, salons, gyms, travel agencies. WhatsApp CRM, lead management, sales tracking. Uttar Pradesh, Delhi, Madhya Pradesh. Call +91 62024 79470.",
+  description: "Custom CRM software development in India starting ₹9,999. CRM for coaching institutes, real estate, hospitals, salons, gyms, travel agencies. WhatsApp CRM, lead management, sales tracking. Uttar Pradesh, Delhi, Madhya Pradesh. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/niche/crm-software" },
   keywords: ["crm software development india", "custom crm india", "crm for coaching institute india", "crm for real estate india", "crm for hospital india", "crm for salon india", "crm for gym india", "crm development lucknow", "crm development delhi", "crm development indore", "crm development bhopal", "crm development kanpur", "whatsapp crm india", "lead management software india", "sales crm india"],
   openGraph: {

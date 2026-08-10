@@ -6,7 +6,7 @@ import { getCitySchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Website Design in Jabalpur | CRM & Custom Website | Expecto Digital Agency | ₹1,999",
-  description: "Best website design agency in Jabalpur, Madhya Pradesh. Custom websites, CRM software, coaching websites, hospital websites, ecommerce stores starting ₹1,999. 7-day delivery. Call +91 62024 79470.",
+  description: "Best website design agency in Jabalpur, Madhya Pradesh. Custom websites, CRM software, coaching websites, hospital websites, ecommerce stores starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/cities/jabalpur" },
   keywords: ["website design jabalpur", "web development jabalpur", "digital agency jabalpur", "crm development jabalpur", "coaching website jabalpur", "hospital website jabalpur", "affordable website jabalpur madhya pradesh"],
   openGraph: {

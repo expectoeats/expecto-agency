@@ -6,7 +6,7 @@ import { getFAQSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Website Design Pricing India | Starting ₹1,999 | Transparent Pricing | Expecto",
-  description: "Transparent website design pricing in India. Basic website ₹1,999, business website ₹3,999, ecommerce ₹7,999, CRM from ₹9,999. No hidden charges. 7-day delivery. Serving UP, Delhi, MP. Call +91 62024 79470.",
+  description: "Transparent website design pricing in India. Basic website ₹1,999, business website ₹3,999, ecommerce ₹7,999, CRM from ₹9,999. No hidden charges. 7-day delivery. Serving UP, Delhi, MP. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/pricing" },
   keywords: [
     "website design price india", "website cost india", "website banane ka kharcha",

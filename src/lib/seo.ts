@@ -10,6 +10,9 @@ export const siteAddress = {
   postalCode: "277001",
 };
 
+// Ballia, UP — correct geo-coordinates
+export const balliaGeo = { latitude: 25.7581, longitude: 84.1497 };
+
 // ─── Master keyword list ─────────────────────────────────────────────────────
 export const fullKeywordList = [
   // ── Brand ──
@@ -353,6 +356,57 @@ export const fullKeywordList = [
   "custom software banwao india",
   "app banwao india",
   "online store banwao india",
+
+  // ── Ballia — hyper-local transactional ──
+  "website development in ballia",
+  "website developer ballia",
+  "web development ballia",
+  "web designer ballia",
+  "best web designer in ballia",
+  "website design ballia",
+  "website design agency ballia",
+  "website company ballia",
+  "digital agency ballia",
+  "website developer ballia uttar pradesh",
+  "portfolio website developer ballia",
+  "web design agency near me in ballia",
+  "website banwao ballia",
+  "affordable website ballia",
+  "crm development ballia",
+  "custom website ballia",
+  "ecommerce website ballia",
+  "coaching website ballia",
+  "school website ballia",
+  "hospital website ballia",
+  "restaurant website ballia",
+  "best digital agency ballia up",
+  "website design rasra",
+  "website design bairia",
+  "website design bansdih",
+  "website design ghazipur",
+  "web development ballia up",
+  "website maker ballia",
+  "website banana ballia",
+  "top website developer ballia",
+  "next.js developer ballia",
+  "react developer ballia",
+  // ── Mau — hyper-local ──
+  "website development in mau",
+  "website developer mau uttar pradesh",
+  "best web designer in mau",
+  "textile website mau up",
+  "coaching website mau",
+  "website design mau",
+  "digital agency mau up",
+  "website banwao mau",
+  // ── Ghazipur — hyper-local ──
+  "website development in ghazipur",
+  "website developer ghazipur uttar pradesh",
+  "best web designer in ghazipur",
+  "coaching website ghazipur",
+  "website design ghazipur up",
+  "digital agency ghazipur",
+  "website banwao ghazipur",
 ];
 
 // ─── JSON-LD Schemas ─────────────────────────────────────────────────────────
@@ -386,8 +440,8 @@ export function getOrganizationSchema() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 28.4595,
-      longitude: 77.0266,
+      latitude: balliaGeo.latitude,
+      longitude: balliaGeo.longitude,
     },
     areaServed: [
       { "@type": "Country", name: "India" },
@@ -495,7 +549,7 @@ export function getLocalBusinessSchema() {
       postalCode: siteAddress.postalCode,
       addressCountry: siteAddress.country,
     },
-    geo: { "@type": "GeoCoordinates", latitude: 28.4595, longitude: 77.0266 },
+    geo: { "@type": "GeoCoordinates", latitude: balliaGeo.latitude, longitude: balliaGeo.longitude },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
@@ -583,5 +637,156 @@ export function getCitySchema(city: string, state: string, lat: number, lng: num
     areaServed: { "@type": "City", name: city },
     priceRange: "₹₹",
     aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "50", bestRating: "5" },
+  };
+}
+
+
+/**
+ * WebDesignBusiness schema — Ballia-specific.
+ * Uses the precise @type that Google associates with web design services,
+ * with accurate geo-coordinates and all five service areas.
+ */
+export function getWebDesignBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": ["WebDesignBusiness", "LocalBusiness"],
+    "@id": `${siteUrl}/#webdesignbusiness`,
+    name: siteName,
+    alternateName: ["Expecto Agency", "Expecto Digital"],
+    url: siteUrl,
+    telephone: sitePhone,
+    email: siteEmail,
+    priceRange: "₹₹",
+    currenciesAccepted: "INR",
+    paymentAccepted: "Cash, UPI, Bank Transfer",
+    image: [
+      `${siteUrl}/logo.png`,
+      `${siteUrl}/opengraph-image`,
+    ],
+    logo: {
+      "@type": "ImageObject",
+      url: `${siteUrl}/logo.png`,
+      width: 512,
+      height: 512,
+    },
+    description:
+      "Expecto Digital Agency is Ballia's leading website development company. We build high-speed Next.js websites, custom admin panels, CRMs and e-commerce stores for businesses across Ballia, Rasra, Bairia, Bansdih, Ghazipur and all of Uttar Pradesh. Proven #1 Google rankings for our clients.",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Ballia",
+      addressLocality: "Ballia",
+      addressRegion: "Uttar Pradesh",
+      postalCode: "277001",
+      addressCountry: "IN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: balliaGeo.latitude,
+      longitude: balliaGeo.longitude,
+    },
+    hasMap: `https://www.google.com/maps/search/?api=1&query=${balliaGeo.latitude},${balliaGeo.longitude}`,
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      opens: "09:00",
+      closes: "21:00",
+    },
+    areaServed: [
+      { "@type": "City", name: "Ballia",  containedInPlace: { "@type": "State", name: "Uttar Pradesh" } },
+      { "@type": "City", name: "Rasra",   containedInPlace: { "@type": "State", name: "Uttar Pradesh" } },
+      { "@type": "City", name: "Bairia",  containedInPlace: { "@type": "State", name: "Uttar Pradesh" } },
+      { "@type": "City", name: "Bansdih", containedInPlace: { "@type": "State", name: "Uttar Pradesh" } },
+      { "@type": "City", name: "Ghazipur",containedInPlace: { "@type": "State", name: "Uttar Pradesh" } },
+    ],
+    knowsAbout: [
+      "Website Development", "Web Design", "Next.js Development",
+      "React Development", "CRM Development", "E-commerce Development",
+      "SEO", "Local SEO", "Admin Panel Development", "UI/UX Design",
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Website & Digital Services — Ballia",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          name: "Business Website Development",
+          description: "High-speed business websites built with Next.js, starting ₹1,999 with 7-day delivery.",
+          price: "1999",
+          priceCurrency: "INR",
+          itemOffered: {
+            "@type": "Service",
+            name: "Website Development in Ballia",
+            serviceType: "Web Development",
+            areaServed: { "@type": "City", name: "Ballia" },
+          },
+        },
+        {
+          "@type": "Offer",
+          name: "Portfolio Website Design",
+          description: "Professional portfolio websites for freelancers, photographers, designers in Ballia.",
+          itemOffered: {
+            "@type": "Service",
+            name: "Portfolio Website Developer Ballia",
+            serviceType: "Web Design",
+            areaServed: { "@type": "City", name: "Ballia" },
+          },
+        },
+        {
+          "@type": "Offer",
+          name: "Custom CRM & Admin Panel",
+          description: "Zero-code admin dashboards and CRM systems for Ballia businesses.",
+          itemOffered: {
+            "@type": "Service",
+            name: "CRM Development Ballia",
+            serviceType: "Software Development",
+            areaServed: { "@type": "City", name: "Ballia" },
+          },
+        },
+        {
+          "@type": "Offer",
+          name: "E-commerce Website",
+          description: "Full-featured online stores with payment gateway integration for Ballia merchants.",
+          itemOffered: {
+            "@type": "Service",
+            name: "E-commerce Website Ballia",
+            serviceType: "E-commerce Development",
+            areaServed: { "@type": "City", name: "Ballia" },
+          },
+        },
+      ],
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "50",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    sameAs: [
+      "https://www.instagram.com/expecto.online",
+      "https://www.linkedin.com/company/expecto-online",
+      "https://expecto.online",
+    ],
+  };
+}
+
+/**
+ * SiteLinksSearchBox schema — tells Google to show a search box
+ * directly in the search result for expecto.online
+ */
+export function getSiteLinksSearchBoxSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteUrl}/#sitelinks-searchbox`,
+    url: siteUrl,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${siteUrl}/?s={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 }

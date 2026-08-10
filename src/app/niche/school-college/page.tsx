@@ -6,7 +6,7 @@ import { getFAQSchema, getServiceSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "School & College Website Design India | Student Portal | Expecto | Starting ₹2,999",
-  description: "Professional school and college website design in India starting ₹2,999. Student portal, online admission, fee payment, notice board, gallery. Uttar Pradesh, Delhi, Madhya Pradesh. 7-day delivery. Call +91 62024 79470.",
+  description: "Professional school and college website design in India starting ₹2,999. Student portal, online admission, fee payment, notice board, gallery. Uttar Pradesh, Delhi, Madhya Pradesh. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/niche/school-college" },
   keywords: ["school website design india", "college website design india", "university website design india", "school website lucknow", "school website delhi", "school website indore", "school website bhopal", "student portal development india", "online admission website india", "educational institute website india"],
   openGraph: {

@@ -6,7 +6,7 @@ import { getCitySchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Website Design in Ahmedabad | CRM & Custom Website | Expecto Digital Agency | ₹1,999",
-  description: "Best website design agency in Ahmedabad, Gujarat. Custom websites, CRM software, ecommerce stores, startup websites starting ₹1,999. 7-day delivery. Call +91 62024 79470.",
+  description: "Best website design agency in Ahmedabad, Gujarat. Custom websites, CRM software, ecommerce stores, startup websites starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/cities/ahmedabad" },
   keywords: ["website design ahmedabad", "web development ahmedabad", "digital agency ahmedabad", "crm development ahmedabad", "ecommerce website ahmedabad", "startup website ahmedabad", "affordable website ahmedabad gujarat"],
   openGraph: {

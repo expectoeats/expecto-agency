@@ -8,7 +8,7 @@ import { Phone, MessageSquare, MapPin, ArrowRight, Clock } from "lucide-react";
 import FAQ from "@/components/FAQ";
 
 const services = ["Web Development", "App Development", "Software & SaaS", "Digital Marketing", "Brand & Design", "Video Editing", "Other"];
-const phoneNumbers = ["+91 87072 24376", "+91 62024 79470", "+91 99058 75321", "+91 75220 45719"];
+const phoneNumbers = ["+91 87072 24376"];
 
 type ContactFormValues = { name: string; email: string; phone?: string; service?: string; message: string; };
 
@@ -163,8 +163,8 @@ export default function ContactPageClient() {
                       <MapPin size={16} strokeWidth={2} className="text-[var(--text-3)]" />
                     </div>
                     <div>
-                      <span className="block font-montserrat font-medium text-sm text-[var(--text-3)]">Gurgaon HQ</span>
-                      <span className="block font-montserrat text-xs text-[var(--text-3)] opacity-60">Haryana, India</span>
+                      <span className="block font-montserrat font-medium text-sm text-[var(--text-3)]">Ballia, Uttar Pradesh</span>
+                      <span className="block font-montserrat text-xs text-[var(--text-3)] opacity-60">India — 277001</span>
                     </div>
                   </div>
                 </div>
@@ -184,7 +184,7 @@ export default function ContactPageClient() {
         <div className="container mx-auto max-w-6xl px-4 sm:px-6">
           <div className="rounded-sm overflow-hidden border border-[var(--border)] h-[280px] sm:h-[420px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112223.23578313264!2d76.96131464335938!3d28.459496499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d582e38859%3A0x2cf5de8c5d258c91!2sGurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1714400000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57994.45!2d84.1497!3d25.7581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d4061e9a03b2b%3A0x5d9c3abfb3c1f1a0!2sBallia%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1714400000000!5m2!1sen!2sin"
               width="100%" height="100%" style={{ border: 0, filter: "saturate(0.8)" }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
             />
           </div>

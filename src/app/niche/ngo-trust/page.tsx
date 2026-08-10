@@ -6,7 +6,7 @@ import { getFAQSchema, getServiceSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "NGO & Trust Website Design India | Donation Website | Expecto | Starting ₹1,999",
-  description: "Professional NGO, trust and charity website design in India starting ₹1,999. Online donation, volunteer registration, project showcase, impact reports. Uttar Pradesh, Delhi, Madhya Pradesh. 7-day delivery. Call +91 62024 79470.",
+  description: "Professional NGO, trust and charity website design in India starting ₹1,999. Online donation, volunteer registration, project showcase, impact reports. Uttar Pradesh, Delhi, Madhya Pradesh. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/niche/ngo-trust" },
   keywords: ["ngo website design india", "trust website design india", "charity website india", "donation website india", "ngo website lucknow", "ngo website delhi", "ngo website indore", "volunteer registration website india", "social organization website india", "foundation website india"],
   openGraph: {

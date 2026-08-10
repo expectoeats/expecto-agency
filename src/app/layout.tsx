@@ -12,6 +12,8 @@ import {
   getOrganizationSchema,
   getWebSiteSchema,
   getLocalBusinessSchema,
+  getWebDesignBusinessSchema,
+  getSiteLinksSearchBoxSchema,
 } from "@/lib/seo";
 
 const montserrat = Montserrat({
@@ -92,8 +94,8 @@ export const metadata: Metadata = {
   other: {
     "geo.region": "IN-UP",
     "geo.placename": "Ballia, Uttar Pradesh, India",
-    "geo.position": "28.4595;77.0266",
-    ICBM: "28.4595, 77.0266",
+    "geo.position": "25.7581;84.1497",
+    ICBM: "25.7581, 84.1497",
     "og:locale:alternate": "hi_IN",
     "theme-color": "#FFFFFF",
     "color-scheme": "light",
@@ -116,17 +118,30 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const orgSchema = getOrganizationSchema();
   const webSchema = getWebSiteSchema();
   const localSchema = getLocalBusinessSchema();
+  const wdbSchema = getWebDesignBusinessSchema();
+  const slsSchema = getSiteLinksSearchBoxSchema();
 
   return (
     <html lang="en-IN" data-scroll-behavior="smooth" className={`${montserrat.variable} ${ubuntu.variable} ${mono.variable}`}>
       <head>
+        {/* DNS prefetch + preconnect for all external hosts — reduces LCP */}
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
         <link rel="dns-prefetch" href="https://s.wordpress.com" />
         <link rel="preconnect" href="https://s.wordpress.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://interfaceclasses.com" />
+        <link rel="preconnect" href="https://interfaceclasses.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://www.swapzy.store" />
+        <link rel="dns-prefetch" href="https://png.pngtree.com" />
+        {/* Explicit viewport — belt-and-suspenders for Core Web Vitals CLS */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </head>
       <body className="bg-white text-[var(--text)] antialiased">
         <Script id="schema-organization" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} strategy="lazyOnload" />
         <Script id="schema-website" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webSchema) }} strategy="lazyOnload" />
         <Script id="schema-localbusiness" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localSchema) }} strategy="lazyOnload" />
+        <Script id="schema-webdesignbusiness" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(wdbSchema) }} strategy="lazyOnload" />
+        <Script id="schema-sitelinks-searchbox" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(slsSchema) }} strategy="lazyOnload" />
         <Navbar />
         {children}
         <FloatingContact />

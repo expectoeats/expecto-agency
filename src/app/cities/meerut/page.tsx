@@ -6,7 +6,7 @@ import { getCitySchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Website Design in Meerut | CRM & Custom Website | Expecto Digital Agency | ₹1,999",
-  description: "Best website design agency in Meerut, Uttar Pradesh. Custom websites, CRM software, ecommerce stores, coaching websites starting ₹1,999. 7-day delivery. Call +91 62024 79470.",
+  description: "Best website design agency in Meerut, Uttar Pradesh. Custom websites, CRM software, ecommerce stores, coaching websites starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/cities/meerut" },
   keywords: ["website design meerut", "web development meerut", "digital agency meerut", "crm development meerut", "ecommerce website meerut", "affordable website meerut uttar pradesh"],
   openGraph: {

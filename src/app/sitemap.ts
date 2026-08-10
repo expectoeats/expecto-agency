@@ -12,13 +12,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/work`,          lastModified: NOW, changeFrequency: "monthly", priority: 0.85 },
     { url: `${BASE}/about`,         lastModified: NOW, changeFrequency: "monthly", priority: 0.80 },
     { url: `${BASE}/contact`,       lastModified: NOW, changeFrequency: "monthly", priority: 0.90 },
+    // ── Blog ──
+    { url: `${BASE}/blog`,                                                               lastModified: NOW, changeFrequency: "weekly",  priority: 0.88 },
+    { url: `${BASE}/blog/website-development-cost-in-ballia`,                            lastModified: NOW, changeFrequency: "monthly", priority: 0.87 },
+    { url: `${BASE}/blog/how-we-ranked-coaching-institute-1-on-google`,                  lastModified: NOW, changeFrequency: "monthly", priority: 0.87 },
+    { url: `${BASE}/blog/best-cms-for-small-business-india`,                             lastModified: NOW, changeFrequency: "monthly", priority: 0.86 },
+    // ── Ballia local SEO cluster — highest priority after homepage ──
+    { url: `${BASE}/cities/ballia`,                          lastModified: NOW, changeFrequency: "weekly", priority: 0.98 },
+    { url: `${BASE}/website-development-ballia`,             lastModified: NOW, changeFrequency: "weekly", priority: 0.97 },
+    { url: `${BASE}/portfolio-website-developer-ballia`,     lastModified: NOW, changeFrequency: "weekly", priority: 0.96 },
+    // ── Eastern UP city hubs — rich content pages ──
+    { url: `${BASE}/cities/varanasi`,                        lastModified: NOW, changeFrequency: "weekly", priority: 0.94 },
+    { url: `${BASE}/cities/gorakhpur`,                       lastModified: NOW, changeFrequency: "weekly", priority: 0.94 },
+    { url: `${BASE}/cities/mau`,                             lastModified: NOW, changeFrequency: "weekly", priority: 0.93 },
+    { url: `${BASE}/cities/ghazipur`,                        lastModified: NOW, changeFrequency: "weekly", priority: 0.93 },
+    // ── Programmatic /website-development-[city] pages ──
+    { url: `${BASE}/website-development-varanasi`,           lastModified: NOW, changeFrequency: "weekly", priority: 0.93 },
+    { url: `${BASE}/website-development-gorakhpur`,          lastModified: NOW, changeFrequency: "weekly", priority: 0.93 },
+    { url: `${BASE}/website-development-mau`,                lastModified: NOW, changeFrequency: "weekly", priority: 0.92 },
+    { url: `${BASE}/website-development-ghazipur`,           lastModified: NOW, changeFrequency: "weekly", priority: 0.92 },
   ];
 
   // ── City pages ────────────────────────────────────────────────────────────
   const cities = [
-    // Uttar Pradesh
-    "lucknow", "kanpur", "agra", "ballia", "varanasi", "prayagraj",
-    "gorakhpur", "noida", "meerut", "aligarh", "bareilly",
+    // Uttar Pradesh — excluding Eastern UP cluster (handled above with rich pages)
+    "lucknow", "kanpur", "agra", "prayagraj",
+    "noida", "meerut", "aligarh", "bareilly",
     // Delhi NCR
     "gurgaon", "delhi", "faridabad", "ghaziabad",
     // Madhya Pradesh

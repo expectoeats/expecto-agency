@@ -6,7 +6,7 @@ import { getCitySchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Website Design in Prayagraj Allahabad | CRM & Custom Website | Expecto | ₹1,999",
-  description: "Best website design agency in Prayagraj (Allahabad), Uttar Pradesh. Custom websites, CRM software, coaching websites, hospital websites starting ₹1,999. 7-day delivery. Call +91 62024 79470.",
+  description: "Best website design agency in Prayagraj (Allahabad), Uttar Pradesh. Custom websites, CRM software, coaching websites, hospital websites starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/cities/prayagraj" },
   keywords: ["website design prayagraj", "website design allahabad", "web development prayagraj", "digital agency prayagraj", "crm development prayagraj", "coaching website prayagraj", "affordable website prayagraj uttar pradesh"],
   openGraph: {

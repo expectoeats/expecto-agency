@@ -6,7 +6,7 @@ import { getCitySchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Website Design in Lucknow | CRM, Custom Website & App | Expecto Digital Agency | ₹1,999",
-  description: "Best website design agency in Lucknow, Uttar Pradesh. Custom websites, CRM software, coaching websites, hospital websites, ecommerce stores starting ₹1,999. 7-day delivery. Serving Lucknow, Kanpur, Varanasi, Prayagraj. Call +91 62024 79470.",
+  description: "Best website design agency in Lucknow, Uttar Pradesh. Custom websites, CRM software, coaching websites, hospital websites, ecommerce stores starting ₹1,999. 7-day delivery. Serving Lucknow, Kanpur, Varanasi, Prayagraj. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/cities/lucknow" },
   keywords: ["website design lucknow", "web development lucknow", "digital agency lucknow", "crm development lucknow", "custom website lucknow", "ecommerce website lucknow", "coaching website lucknow", "hospital website lucknow", "school website lucknow", "affordable website lucknow uttar pradesh", "website banwao lucknow"],
   openGraph: {

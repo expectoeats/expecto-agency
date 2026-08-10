@@ -6,7 +6,7 @@ import { getCitySchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Website Design in Gwalior | CRM & Custom Website | Expecto Digital Agency | ₹1,999",
-  description: "Best website design agency in Gwalior, Madhya Pradesh. Custom websites, CRM software, ecommerce stores, coaching websites starting ₹1,999. 7-day delivery. Call +91 62024 79470.",
+  description: "Best website design agency in Gwalior, Madhya Pradesh. Custom websites, CRM software, ecommerce stores, coaching websites starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/cities/gwalior" },
   keywords: ["website design gwalior", "web development gwalior", "digital agency gwalior", "crm development gwalior", "ecommerce website gwalior", "affordable website gwalior madhya pradesh"],
   openGraph: {

@@ -6,7 +6,7 @@ import { getFAQSchema, getServiceSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Travel Agency & Hotel Website Design India | Booking Website | Expecto | Starting ₹2,999",
-  description: "Professional travel agency and hotel website design in India starting ₹2,999. Online booking, tour packages, room booking, payment gateway. Agra, Varanasi, Mathura, Ujjain, Delhi. 7-day delivery. Call +91 62024 79470.",
+  description: "Professional travel agency and hotel website design in India starting ₹2,999. Online booking, tour packages, room booking, payment gateway. Agra, Varanasi, Mathura, Ujjain, Delhi. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/niche/travel-hotel" },
   keywords: ["travel agency website india", "hotel website design india", "tour operator website india", "hotel website agra", "hotel website varanasi", "hotel website mathura", "hotel website ujjain", "travel website delhi", "online booking website india", "homestay website india", "resort website india", "tour package website india"],
   openGraph: {

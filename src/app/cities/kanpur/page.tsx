@@ -6,7 +6,7 @@ import { getCitySchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Website Design in Kanpur | CRM & Custom Website | Expecto Digital Agency | ₹1,999",
-  description: "Best website design agency in Kanpur, Uttar Pradesh. Custom websites, CRM software, ecommerce stores, coaching websites, hospital websites starting ₹1,999. 7-day delivery. Call +91 62024 79470.",
+  description: "Best website design agency in Kanpur, Uttar Pradesh. Custom websites, CRM software, ecommerce stores, coaching websites, hospital websites starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/cities/kanpur" },
   keywords: ["website design kanpur", "web development kanpur", "digital agency kanpur", "crm development kanpur", "custom website kanpur", "ecommerce website kanpur", "coaching website kanpur", "affordable website kanpur uttar pradesh"],
   openGraph: {

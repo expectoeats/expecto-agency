@@ -6,7 +6,7 @@ import { getCitySchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Website Design in Jaipur | CRM & Custom Website | Expecto Digital Agency | ₹1,999",
-  description: "Best website design agency in Jaipur, Rajasthan. Custom websites, CRM software, ecommerce stores, hotel websites, coaching websites starting ₹1,999. 7-day delivery. Call +91 62024 79470.",
+  description: "Best website design agency in Jaipur, Rajasthan. Custom websites, CRM software, ecommerce stores, hotel websites, coaching websites starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/cities/jaipur" },
   keywords: ["website design jaipur", "web development jaipur", "digital agency jaipur", "crm development jaipur", "hotel website jaipur", "ecommerce website jaipur", "coaching website jaipur", "affordable website jaipur rajasthan"],
   openGraph: {

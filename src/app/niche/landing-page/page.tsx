@@ -6,7 +6,7 @@ import { getFAQSchema, getServiceSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Landing Page Design India | High-Converting Landing Pages | Expecto | Starting ₹1,999",
-  description: "High-converting landing page design in India starting ₹1,999. Lead generation landing pages, product launch pages, ad landing pages for Google Ads and Meta Ads. Uttar Pradesh, Delhi, Madhya Pradesh. 7-day delivery. Call +91 62024 79470.",
+  description: "High-converting landing page design in India starting ₹1,999. Lead generation landing pages, product launch pages, ad landing pages for Google Ads and Meta Ads. Uttar Pradesh, Delhi, Madhya Pradesh. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/niche/landing-page" },
   keywords: ["landing page design india", "landing page development india", "high converting landing page india", "lead generation landing page india", "google ads landing page india", "meta ads landing page india", "product launch page india", "landing page lucknow", "landing page delhi", "landing page indore", "conversion optimized landing page india"],
   openGraph: {

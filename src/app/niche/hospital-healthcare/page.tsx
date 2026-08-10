@@ -6,7 +6,7 @@ import { getFAQSchema, getServiceSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Hospital & Healthcare Website Design India | Doctor Website | Expecto | Starting ₹2,999",
-  description: "Professional hospital, clinic and doctor website design in India starting ₹2,999. Online appointment booking, doctor profiles, patient portal, health blog. Uttar Pradesh, Delhi, Madhya Pradesh. 7-day delivery. Call +91 62024 79470.",
+  description: "Professional hospital, clinic and doctor website design in India starting ₹2,999. Online appointment booking, doctor profiles, patient portal, health blog. Uttar Pradesh, Delhi, Madhya Pradesh. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/niche/hospital-healthcare" },
   keywords: ["hospital website design india", "clinic website design india", "doctor website design india", "hospital website lucknow", "hospital website delhi", "hospital website indore", "hospital website bhopal", "online appointment booking website india", "patient portal development india", "healthcare website india", "diagnostic center website india", "pharmacy website india"],
   openGraph: {

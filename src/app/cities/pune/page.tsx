@@ -6,7 +6,7 @@ import { getCitySchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Website Design in Pune | CRM, SaaS & Custom Website | Expecto Digital Agency | ₹1,999",
-  description: "Best website design agency in Pune, Maharashtra. Custom websites, CRM software, SaaS development, startup websites, ecommerce stores starting ₹1,999. 7-day delivery. Call +91 62024 79470.",
+  description: "Best website design agency in Pune, Maharashtra. Custom websites, CRM software, SaaS development, startup websites, ecommerce stores starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/cities/pune" },
   keywords: ["website design pune", "web development pune", "digital agency pune", "crm development pune", "saas development pune", "startup website pune", "ecommerce website pune", "affordable website pune maharashtra"],
   openGraph: {

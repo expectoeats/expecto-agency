@@ -6,7 +6,7 @@ import { getCitySchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Website Design in Chandigarh | CRM & Custom Website | Expecto Digital Agency | ₹1,999",
-  description: "Best website design agency in Chandigarh. Custom websites, CRM software, ecommerce stores, coaching websites, startup websites starting ₹1,999. 7-day delivery. Call +91 62024 79470.",
+  description: "Best website design agency in Chandigarh. Custom websites, CRM software, ecommerce stores, coaching websites, startup websites starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/cities/chandigarh" },
   keywords: ["website design chandigarh", "web development chandigarh", "digital agency chandigarh", "crm development chandigarh", "startup website chandigarh", "ecommerce website chandigarh", "affordable website chandigarh punjab haryana"],
   openGraph: {

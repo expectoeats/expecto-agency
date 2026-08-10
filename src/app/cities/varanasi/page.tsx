@@ -1,29 +1,58 @@
 import { Metadata } from "next";
 import Script from "next/script";
-import CityPageTemplate from "@/components/seo/CityPageTemplate";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
-import { getCitySchema } from "@/lib/seo";
+import WebDevCityPage from "@/components/seo/WebDevCityPage";
+import { getCitySchema, getFAQSchema, siteUrl } from "@/lib/seo";
+import { getCityData } from "@/lib/citiesData";
+
+const city = getCityData("varanasi")!;
 
 export const metadata: Metadata = {
-  title: "Website Design in Varanasi | CRM, Hotel & Custom Website | Expecto Digital Agency | ₹1,999",
-  description: "Best website design agency in Varanasi, Uttar Pradesh. Custom websites, CRM software, hotel websites, travel websites, coaching websites starting ₹1,999. 7-day delivery. Call +91 62024 79470.",
-  alternates: { canonical: "https://expecto.online/cities/varanasi" },
-  keywords: ["website design varanasi", "web development varanasi", "digital agency varanasi", "crm development varanasi", "hotel website varanasi", "travel website varanasi", "coaching website varanasi", "affordable website varanasi uttar pradesh", "website banwao varanasi"],
+  title: "Website Design in Varanasi | Hotels, Coaching & CRM | Expecto Digital Agency | ₹1,999",
+  description:
+    "Best website design agency in Varanasi, Uttar Pradesh. Custom websites, CRM software, hotel websites, travel websites, coaching websites starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
+  keywords: city.targetKeywords,
+  alternates: {
+    canonical: `${siteUrl}/cities/varanasi`,
+    languages: { "en-IN": `${siteUrl}/cities/varanasi`, "x-default": `${siteUrl}/cities/varanasi` },
+  },
   openGraph: {
-    title: "Website Design in Varanasi | CRM & Hotel Website | Expecto",
+    title: "Website Design in Varanasi | Hotels, Coaching & CRM | Expecto",
     description: "Custom websites, CRM, hotel & travel websites starting ₹1,999 in Varanasi. 7-day delivery.",
-    url: "https://expecto.online/cities/varanasi",
+    url: `${siteUrl}/cities/varanasi`,
     type: "website",
+    locale: "en_IN",
+    images: [{ url: `${siteUrl}/opengraph-image`, width: 1200, height: 630, alt: "Website Development Varanasi — Expecto Digital Agency" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Website Design in Varanasi | Expecto Digital Agency",
+    description: "Custom websites for Varanasi hotels, coaching & businesses. ₹1,999. 7-day delivery.",
+    images: [`${siteUrl}/opengraph-image`],
+  },
+  other: {
+    "geo.region": "IN-UP",
+    "geo.placename": "Varanasi, Uttar Pradesh, India",
+    "geo.position": "25.3176;82.9739",
+    ICBM: "25.3176, 82.9739",
   },
 };
 
 export default function Page() {
+  const citySchema = getCitySchema("Varanasi", "Uttar Pradesh", 25.3176, 82.9739);
+  const faqSchema  = getFAQSchema(city.faqs);
   return (
     <>
       <Script id="schema-city-varanasi" type="application/ld+json" strategy="lazyOnload"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(getCitySchema("Varanasi", "Uttar Pradesh", 25.3176, 82.9739)) }} />
-      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Cities", path: "/cities/varanasi" }, { name: "Varanasi", path: "/cities/varanasi" }]} />
-      <CityPageTemplate city="Varanasi" />
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(citySchema) }} />
+      <Script id="schema-faq-varanasi" type="application/ld+json" strategy="lazyOnload"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <BreadcrumbJsonLd items={[
+        { name: "Home", path: "/" },
+        { name: "Cities", path: "/cities/varanasi" },
+        { name: "Website Development Varanasi", path: "/cities/varanasi" },
+      ]} />
+      <WebDevCityPage city={city} />
     </>
   );
 }

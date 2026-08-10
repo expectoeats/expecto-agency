@@ -6,7 +6,7 @@ import { getCitySchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Website Design in Ghaziabad | CRM & Custom Website | Expecto Digital Agency | ₹1,999",
-  description: "Best website design agency in Ghaziabad, Delhi NCR. Custom websites, CRM software, ecommerce stores, startup websites starting ₹1,999. 7-day delivery. Call +91 62024 79470.",
+  description: "Best website design agency in Ghaziabad, Delhi NCR. Custom websites, CRM software, ecommerce stores, startup websites starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/cities/ghaziabad" },
   keywords: ["website design ghaziabad", "web development ghaziabad", "digital agency ghaziabad", "crm development ghaziabad", "ecommerce website ghaziabad", "affordable website ghaziabad delhi ncr"],
   openGraph: {

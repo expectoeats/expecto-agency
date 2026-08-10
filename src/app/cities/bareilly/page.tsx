@@ -6,7 +6,7 @@ import { getCitySchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Website Design in Bareilly | CRM & Custom Website | Expecto Digital Agency | ₹1,999",
-  description: "Best website design agency in Bareilly, Uttar Pradesh. Custom websites, CRM software, coaching websites, ecommerce stores starting ₹1,999. 7-day delivery. Call +91 62024 79470.",
+  description: "Best website design agency in Bareilly, Uttar Pradesh. Custom websites, CRM software, coaching websites, ecommerce stores starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/cities/bareilly" },
   keywords: ["website design bareilly", "web development bareilly", "digital agency bareilly", "crm development bareilly", "coaching website bareilly", "affordable website bareilly uttar pradesh"],
   openGraph: {
