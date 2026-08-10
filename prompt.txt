@@ -1,0 +1,630 @@
+Build a complete, production-ready agency website for Expecto — a full-service digital agency based in India offering web development, app development, software/SaaS, video editing, branding, digital marketing, and tech consulting. The agency targets small and medium Indian businesses with affordable pricing and fast delivery.
+Feel: Think Infosys meets a modern boutique agency — clean, corporate-premium, trustworthy, yet approachable. Not startup-flashy. Not corporate-boring. The sweet spot between professional credibility and warm approachability.
+
+🎨 Design System
+Color Palette
+Primary Background:     #FFFFFF
+Secondary Background:   #F8F9FA
+Tertiary Background:    #F1F3F5
+Accent Primary:         #0A0A0A (near black)
+Accent Secondary:       #1A1A2E (deep navy)
+Brand Blue:             #1565C0 (professional trust blue)
+Brand Blue Light:       #1976D2
+Brand Highlight:        #E3F0FF (very light blue tint)
+Text Primary:           #0A0A0A
+Text Secondary:         #4A5568
+Text Muted:             #718096
+Border Color:           #E2E8F0
+Border Hover:           #CBD5E0
+Success Green:          #2D6A4F
+Card Shadow:            0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04)
+Rule: Light background, dark text, blue as the ONLY accent. No gradients except very subtle blue tints. No purple, no orange, no neon.
+Typography
+Display / Hero:     "Syne" (Google Fonts) — weight 700, 800
+Headings:           "Syne" — weight 600, 700
+Body / UI:          "DM Sans" — weight 400, 500
+Mono / Tags:        "JetBrains Mono" — weight 400
+Spacing System
+Section padding:    120px top/bottom (desktop), 80px (tablet), 60px (mobile)
+Container max:      1200px, centered, 24px horizontal padding
+Card padding:       32px
+Grid gap:           24px
+Border Radius
+Buttons:            6px
+Cards:              12px
+Badges/Tags:        4px
+Input fields:       8px
+Shadows
+Card default:       0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04)
+Card hover:         0 4px 12px rgba(0,0,0,0.08), 0 16px 40px rgba(0,0,0,0.06)
+Button:             0 2px 8px rgba(21,101,192,0.25)
+
+✨ Animation & Motion System
+Philosophy
+Subtle, purposeful, corporate. No bouncy animations, no color explosions. Think how McKinsey or Infosys websites feel — smooth, confident, restrained.
+Animation Rules
+Default easing:         cubic-bezier(0.16, 1, 0.3, 1)
+Hover transitions:      200ms ease
+Entrance animations:    600ms cubic-bezier(0.16, 1, 0.3, 1)
+Stagger delay:          80ms between items
+Page load:              Elements fade up from translateY(24px) opacity 0 → 1
+Specific Animations
+
+Hero text: Word-by-word or line-by-line fade-up with stagger on page load
+Scroll reveal: Intersection Observer — cards and sections fade up as they enter viewport (threshold: 0.1)
+Stat counters: Numbers count up from 0 when section enters viewport
+Navigation: Subtle background blur + border appears on scroll (not visible at top)
+Cards hover: translateY(-4px) + shadow deepens + border color shifts to Brand Blue — 200ms
+Buttons: Subtle scale(0.98) on click, background darkens on hover
+Service icons: SVG stroke draw animation on hover
+Marquee: Smooth infinite horizontal scroll for client logos (CSS animation, no JS)
+CTA section: Very subtle blue tint background pulse (keyframe, 4s loop, barely visible)
+Page cursor: Custom cursor dot (12px filled blue circle) + ring (28px outline, 80ms lag) on desktop only
+
+What NOT to do
+
+No particle effects
+No 3D transforms
+No color-changing animations
+No text glitch effects
+No loading spinners on sections
+No parallax scrolling
+
+
+📐 Page Structure & Sections
+1. NAVIGATION
+Layout: Fixed top, full width, z-index 1000
+Height: 72px
+Background: rgba(255,255,255,0) → rgba(255,255,255,0.95) with backdrop-filter: blur(12px) on scroll
+Border: none → 1px solid #E2E8F0 on scroll
+Transition: all 300ms ease
+
+Left: "Expecto" wordmark — Syne 700, 20px, #0A0A0A
+     Small tagline next to it: "Digital Agency" — DM Sans 12px, #718096
+
+Center: Nav links — DM Sans 500, 15px
+        Services | Work | About | Pricing | Contact
+        Active/hover: color shifts to #1565C0, underline dot appears below
+
+Right: "Start a Project →" — Button, Brand Blue bg, white text, 6px radius
+       + WhatsApp icon button (outline style)
+2. HERO SECTION
+Height: 100vh minimum, padding top 72px (nav height)
+Background: #FFFFFF with very subtle dot grid pattern (SVG background, opacity 0.04)
+
+Layout: Two-column on desktop (60/40 split), stacked on mobile
+
+LEFT COLUMN:
+  - Small badge at top: 
+    "🇮🇳 India's Fast-Delivery Digital Agency" 
+    Style: border 1px solid #E2E8F0, background #F8F9FA, 
+    DM Sans 13px, #4A5568, border-radius 4px, padding 6px 14px
+    
+  - Main headline (animate word by word, stagger 60ms):
+    Line 1: "We Build Digital"  
+    Line 2: "Experiences That"
+    Line 3: "Drive Revenue."
+    Style: Syne 800, 72px desktop / 48px mobile, #0A0A0A, line-height 1.1
+    
+  - Subheadline (fade in after headline, 300ms delay):
+    "From websites to apps to SaaS — Expecto delivers 
+     premium digital solutions for Indian businesses. 
+     Fast. Affordable. Ownership guaranteed."
+    Style: DM Sans 400, 18px, #4A5568, line-height 1.7, max-width 520px
+    
+  - CTA Buttons row (fade up, 500ms delay):
+    Primary: "Start Your Project →" — #1565C0 bg, white, padding 14px 28px
+    Secondary: "View Our Work" — transparent, border 1px solid #E2E8F0, #0A0A0A
+    
+  - Trust bar below CTAs (fade in, 700ms delay):
+    "✓ 7-Day Delivery  ✓ 100% Code Ownership  ✓ Free Revisions"
+    DM Sans 13px, #718096, gap 24px
+
+RIGHT COLUMN:
+  - Floating stats card cluster (3 cards, staggered entrance):
+    Card 1: "50+" / "Projects Delivered" 
+    Card 2: "7 Days" / "Avg. Delivery Time"
+    Card 3: "100%" / "Client Satisfaction"
+    Style: White bg, card shadow, 12px radius, Syne bold number, DM Sans label
+    Positioned overlapping slightly, slight rotation on card 2 (-2deg)
+    
+  - Background: Light blue tint oval/blob shape (#E3F0FF, opacity 0.5, 
+    blur 60px, purely decorative)
+3. MARQUEE / CLIENTS STRIP
+Background: #F8F9FA
+Border top/bottom: 1px solid #E2E8F0
+Padding: 20px 0
+
+Content: "Trusted by growing businesses across India →" label
+         then infinite scrolling client name pills
+         
+Client names (text only, no logos):
+The Brew House • FitForm Gym • Glow & Go Salon • Urban Cravings • 
+Iron Roots • Serene Spa • Daily Grind • Peak Performance • 
+Elite Scissors • Rustic Table • Naava Investments • CampusEats
+
+Style: DM Sans 500, 14px, #4A5568
+Pills: background #FFFFFF, border 1px solid #E2E8F0, padding 8px 16px, radius 4px
+Animation: CSS marquee, 30s linear infinite, pause on hover
+4. SERVICES SECTION
+Heading badge: "What We Do"
+Main heading: "Every Service Your Business Needs"
+Subtext: "One agency. Full stack. From concept to launch to growth."
+
+Layout: 3-column grid (desktop), 2-col (tablet), 1-col (mobile)
+Cards scroll-reveal with 80ms stagger
+
+SERVICE CARDS (8 total):
+
+1. Web Development
+   Icon: </> (monospace styled)
+   Desc: "Business websites, landing pages, e-commerce — 
+          built on Next.js for speed and SEO."
+   Tag: "Starting ₹1,999"
+   
+2. App Development  
+   Icon: smartphone outline
+   Desc: "Android & iOS apps with React Native. 
+          From simple business apps to complex platforms."
+   Tag: "Starting ₹12,999"
+
+3. Software & SaaS
+   Icon: layers/stack icon
+   Desc: "Custom dashboards, CRMs, booking systems, 
+          and full SaaS products with MERN stack."
+   Tag: "Starting ₹7,999"
+
+4. Video Editing & Reels
+   Icon: play circle
+   Desc: "Instagram reels, YouTube edits, brand promos — 
+          content that stops the scroll."
+   Tag: "Starting ₹499"
+
+5. Brand & Design
+   Icon: pen tool / feather
+   Desc: "Logo, brand kit, social media templates, 
+          UI/UX wireframes — your visual identity."
+   Tag: "Starting ₹699"
+
+6. Digital Marketing & SEO
+   Icon: trending up / chart
+   Desc: "Local SEO, Google Business, Meta ads — 
+          get found and convert visitors to customers."
+   Tag: "Starting ₹799"
+
+7. Cloud & Deployment
+   Icon: cloud upload
+   Desc: "Domain setup, hosting, SSL, CI/CD pipelines — 
+          we handle the technical infrastructure."
+   Tag: "Starting ₹999"
+
+8. Tech Consulting
+   Icon: lightbulb / brain
+   Desc: "MVP scoping, tech stack advice, digital audits — 
+          strategy before you spend a rupee."
+   Tag: "Free Audit Available"
+
+CARD STYLE:
+- Background: #FFFFFF
+- Border: 1px solid #E2E8F0
+- Border-radius: 12px
+- Padding: 32px
+- Icon: 40x40px, background #E3F0FF, color #1565C0, border-radius 8px
+- Tag pill: background #F1F3F5, DM Sans 12px, #4A5568
+- Arrow → appears on hover (slides in from left, opacity 0→1)
+- Hover: translateY(-4px), border-color #1565C0, shadow deepens
+5. TECH STACK SECTION
+Background: #1A1A2E (deep navy — only dark section on page)
+Text color: white
+
+Heading: "Our Signature Stack"
+Subtext: "We don't use 10 tools. We master one stack and deliver faster."
+
+Layout: Horizontal pill list, centered
+
+Pills:
+Next.js • React.js • Node.js • Express • MongoDB Atlas • 
+React Native • Vercel • Railway • Firebase • Figma • Tailwind CSS
+
+Style: 
+- Each pill: border 1px solid rgba(255,255,255,0.15), 
+             background rgba(255,255,255,0.06)
+             DM Sans 500, 14px, rgba(255,255,255,0.85)
+             padding 10px 20px, radius 4px
+- Hover: border-color rgba(255,255,255,0.4), background rgba(255,255,255,0.12)
+- JetBrains Mono font for tech names
+
+Bottom line: 
+"Built on Next.js & React — fast, SEO-optimised, and scalable from day one."
+DM Sans 400, 16px, rgba(255,255,255,0.5), italic
+6. CASE STUDIES / WORK SECTION
+Heading badge: "Our Work"
+Main heading: "Real Products. Real Results."
+Subtext: "We've built our own products — which means we know 
+          exactly what it takes to ship something people actually use."
+
+Layout: Full-width cards, 2-col grid on desktop
+
+CASE STUDY CARD STYLE:
+- Large card, full bleed
+- Top half: colored background (each project gets unique muted color)
+- Bottom half: white, content
+- On hover: top image area scales 1.02, subtle
+
+PROJECTS:
+
+Card 1: Expecto Eats
+Color strip: #E3F0FF (light blue)
+Tag: "Food Tech • Campus"
+Title: "Expecto Eats — Campus Food Ordering Platform"  
+Desc: "Harry Potter-themed food ordering system for 
+       Parul University with 8-stage order flow, 
+       UPI payments, and real-time notifications."
+Stack tags: Next.js • MongoDB • Firebase • Vercel
+Metrics row: "142% Growth in Orders" | "300+ Active Users" | "8-Stage Order Flow"
+
+Card 2: Swapzy
+Color strip: #F0FDF4 (light green tint)
+Tag: "Marketplace • Campus"
+Title: "Swapzy — Campus C2C Marketplace"
+Desc: "Peer-to-peer buying, selling and renting platform 
+       exclusive to university campuses. Smart pricing 
+       guidance, verification system, and push notifications."
+Stack tags: Next.js • MongoDB Atlas • Cloudinary • FCM
+Metrics row: "2.5x Revenue Growth" | "500+ Listings" | "Smart Price System"
+
+Card 3: Naava (full width, smaller)
+Color strip: #FFFBEB (warm cream)
+Tag: "Fintech • Landing Page"  
+Title: "Naava — Premium Investment Landing Page"
+Desc: "Conversion-focused landing page for financial 
+       consultants with 99% uptime and 48-hour delivery."
+Metrics: "99% Uptime" | "48hr Delivery" | "₹0 Hosting Cost"
+7. PRICING SECTION
+Background: #F8F9FA
+Heading badge: "Pricing"
+Main heading: "Transparent Pricing. No Surprises."
+Subtext: "Every quote includes a line-by-line breakdown. 
+          No hidden charges. No surprise billings. Ever."
+
+TAB NAVIGATION (DM Sans 500, 14px):
+[Web] [Apps] [Software] [Video] [Design] [Marketing] [Combos]
+
+Default active tab: Web
+
+PRICING CARDS per tab (3-col grid):
+
+WEB TAB:
+Card 1 — Landing Page — ₹1,999 — 3 days
+  • 1-page design
+  • Mobile responsive
+  • Contact form
+  • WhatsApp integration
+  
+Card 2 — Business Website — ₹3,999 — 5 days [POPULAR badge]
+  • Up to 5 pages
+  • SEO-ready
+  • Google Maps embed
+  • WhatsApp ordering
+  
+Card 3 — Custom Web App — ₹14,999 — 15 days
+  • Full MERN stack
+  • Admin dashboard
+  • Auth system
+  • API integrations
+
+COMBOS TAB:
+Card 1 — Starter Pack — ₹2,499
+  Landing Page + Logo + 2 Reels
+  Save ₹998
+
+Card 2 — Local Biz 360 — ₹5,999/mo [POPULAR]
+  Website + Brand Kit + 4 Reels/mo + SEO
+  Save ₹1,948
+
+Card 3 — Full Stack Startup — ₹24,999
+  SaaS MVP + Brand Kit + Pitch Deck
+  Save ₹8,948
+
+CARD STYLE:
+- White bg, 1px border, 12px radius
+- Popular card: border 2px solid #1565C0, 
+  "Most Popular" badge — blue bg, white text
+- Price: Syne 700, 32px, #0A0A0A
+- Period/delivery: DM Sans 400, 14px, #718096
+- Features: DM Sans 400, 15px with ✓ checkmarks in #2D6A4F
+- CTA button: "Get Started →" 
+  Popular: blue solid | Others: outline
+- Footer note: "* Indicative pricing. Final quote after discovery call."
+8. WHY EXPECTO / DIFFERENTIATORS
+Background: #FFFFFF
+Heading: "Why Businesses Choose Expecto"
+
+Layout: 2-col grid (left: big statement, right: 5 differentiator cards)
+
+Left column:
+  Large quote-style text:
+  "We don't just build websites —
+   we build partnerships."
+  
+  Below: DM Sans 400, 16px, #4A5568
+  "Most agencies disappear after delivery. 
+   We're here for the long run — monthly support, 
+   free audits, and a team that actually picks up the phone."
+  
+  "We've Built Our Own Products" callout box:
+  Background: #E3F0FF
+  "Swapzy and Expecto Eats are our own products — 
+   serving real users at Parul University. 
+   We know what it takes to ship and scale."
+  DM Sans 500, 14px, #1565C0
+
+Right column — 5 feature cards (compact, stacked):
+
+1. ⚡ 7-Day Delivery Guarantee
+   "Cashback protection if we're late. In writing."
+   
+2. 🔒 100% Code Ownership
+   "Signed certificate. No lock-in. Transfer-ready files."
+   
+3. 👁 Live Build Access  
+   "Private preview URL from day 1. Watch us build."
+   
+4. 💬 WhatsApp-First Support
+   "2-hour response. 7 days a week. Direct line to your dev."
+
+5. 📊 Free Expecto Score Audit
+   "Website speed, SEO, mobile, security — scored & graded free."
+
+CARD STYLE: 
+- Left border accent: 3px solid #1565C0
+- Border-radius: 0 8px 8px 0  
+- Background: #F8F9FA
+- Padding: 20px 24px
+- Icon: 20px, #1565C0
+- Title: DM Sans 600, 15px
+- Desc: DM Sans 400, 13px, #718096
+9. PROCESS SECTION
+Background: #F8F9FA
+Heading: "How We Work"
+Subtext: "Simple. Transparent. Efficient."
+
+Layout: 4 steps, horizontal on desktop (connected by dotted line), 
+        vertical on mobile
+
+Steps:
+01 — Discovery Call
+     "We understand your vision, goals, and requirements."
+     
+02 — Design & Plan  
+     "Figma wireframes and architecture delivered in 24 hours."
+     
+03 — Build & Test
+     "Daily WhatsApp updates. You review as we build."
+     
+04 — Launch 🚀
+     "Deployment, domain setup, and post-launch support."
+
+STYLE:
+- Step number: Syne 800, 48px, #E2E8F0 (large, background text)
+- Step title: Syne 600, 18px, #0A0A0A (overlaid on number)
+- Description: DM Sans 400, 14px, #718096
+- Connector: dashed line, #CBD5E0, between circles
+- Circle indicator: 40px, border 2px solid #1565C0, 
+                    step number inside, #1565C0
+- Active step (on scroll into view): circle fills blue
+10. TESTIMONIALS
+Background: #FFFFFF
+Heading badge: "Testimonials"  
+Heading: "Success Stories from the Frontlines"
+
+Layout: 3-col grid (desktop), horizontal scroll snap (mobile)
+
+TESTIMONIAL CARDS:
+- Background: #F8F9FA
+- Border: 1px solid #E2E8F0
+- Large opening quote mark: Syne 800, 80px, #E3F0FF, position absolute
+- Quote text: DM Sans 400, 16px, #4A5568, line-height 1.7
+- Author row: initials avatar (40px circle, #1565C0 bg, white text) + name + role
+
+QUOTES:
+1. "Expecto transformed our cafe's digital presence. 
+    Table bookings increased by 40% in just one month!"
+   — Rajesh Kumar, Owner, The Brew House
+
+2. "The appointment system is seamless. My clients love 
+    the new look and it's so much easier to manage."
+   — Anita Sharma, Founder, Glow & Go Salon
+   
+3. "7-day delivery was real and the results are amazing. 
+    Best investment for our gym's online presence."
+   — Vikram Singh, Manager, FitForm Gym
+11. STATS / NUMBERS SECTION
+Background: #1A1A2E (second use of dark section)
+Layout: 4-col stat grid, centered
+
+Stats (counter animation on scroll into view):
+50+     Projects Delivered
+4       Team Members  
+7       Avg. Days to Delivery
+100%    Client Satisfaction
+
+STYLE:
+- Number: Syne 800, 56px, #FFFFFF
+- Suffix (+, %): Syne 800, 32px, #1976D2
+- Label: DM Sans 400, 15px, rgba(255,255,255,0.6)
+- Divider lines between stats: 1px solid rgba(255,255,255,0.1)
+12. FAQ SECTION
+Background: #F8F9FA
+Layout: Two-column — left: heading + contact CTA, right: accordion
+
+Heading: "Common Questions"
+Subtext: "From Indian business owners before starting a project."
+
+LEFT SIDE also has:
+"Still have questions?"
+"Chat with us on WhatsApp →" button (green outline)
+
+QUESTIONS:
+Q: Is pricing transparent or are there hidden charges?
+A: Your proposal includes a line-by-line breakdown of design, 
+   development, deployment, revisions, and add-ons. 
+   No hidden charges, ever.
+
+Q: Who owns the domain and website after delivery?
+A: You do — completely. Every client receives a signed Code 
+   Ownership Certificate confirming 100% rights to source code, 
+   design assets, and database.
+
+Q: Do you provide support after launch?
+A: Yes. We offer monthly maintenance plans from ₹999/month. 
+   WhatsApp support is available 7 days a week.
+
+Q: Will my website appear on Google?
+A: All our websites are built SEO-ready with proper meta tags, 
+   sitemaps, and Google Business Profile setup. Advanced SEO 
+   is available as an add-on.
+
+Q: What if I need changes in the future?
+A: All projects include free revision rounds during build. 
+   Post-launch changes are available on maintenance plans 
+   or charged transparently per scope.
+
+Q: How do I know the 7-day delivery is real?
+A: It's in writing. We provide a delivery commitment with 
+   cashback protection if qualifying projects are delayed.
+
+ACCORDION STYLE:
+- Each item: white bg, 1px border, radius 8px
+- Question: DM Sans 500, 16px, #0A0A0A
+- + / - toggle icon: #1565C0
+- Open state: border-color #1565C0 (left border 3px)
+- Answer: DM Sans 400, 15px, #4A5568, line-height 1.7
+- Smooth height transition: 300ms ease
+13. CONTACT / CTA SECTION
+Background: #FFFFFF
+Border top: 1px solid #E2E8F0
+
+Layout: Two-column — left: form, right: contact info
+
+Heading: "Start Your Project"
+Subtext: "Tell us about your idea. We'll respond within 2 hours."
+
+FORM FIELDS:
+- Full Name * (text input)
+- Email Address * (email input)  
+- Phone Number (tel input, +91 prefix)
+- Service Needed (select dropdown — all 8 services)
+- Budget Range (select — ₹1k-5k / ₹5k-15k / ₹15k-50k / ₹50k+)
+- Message (textarea, 4 rows)
+- Submit: "Send Message →" — full width, blue solid button
+
+FORM STYLE:
+- Input: border 1px solid #E2E8F0, radius 8px, padding 12px 16px
+- Focus: border-color #1565C0, box-shadow 0 0 0 3px rgba(21,101,192,0.1)
+- Label: DM Sans 500, 13px, #4A5568, margin-bottom 6px
+
+RIGHT SIDE contact cards:
+WhatsApp:  +91 8707224376  [Open Chat →]
+Email:     adarshsingh10803@gmail.com  [Send Email →]
+Location:  Ballia, Uttar Pradesh, India
+Response:  Within 2 hours
+
+"Premium onboarding slot opens weekly."
+Small note in DM Sans 13px, #718096
+14. FOOTER
+Background: #0A0A0A (darkest — clean closing)
+Text: rgba(255,255,255,0.7)
+
+Layout: 4 columns
+
+Col 1: Brand
+  "Expecto" — Syne 700, 20px, white
+  "Digital Agency" — DM Sans 400, 13px, rgba(255,255,255,0.4)
+  Tagline: "We build growth, not just code."
+  Social icons: LinkedIn, Instagram, Twitter/X (outline style)
+
+Col 2: Services
+  Web Development
+  App Development
+  Software & SaaS
+  Video Editing
+  Brand & Design
+  Digital Marketing
+
+Col 3: Company
+  About Us
+  Our Work  
+  Pricing
+  Expecto Score (Free Audit)
+  Privacy Policy
+  Terms of Service
+
+Col 4: Contact
+  +91 8707224376
+  adarshsingh10803@gmail.com
+  Ballia, Uttar Pradesh, India
+  "Start a Project →" (blue outline button)
+
+Bottom bar:
+Left: "© 2026 Expecto. All rights reserved."
+Right: "Built with Next.js • Designed for Growth"
+Divider: 1px solid rgba(255,255,255,0.08)
+DM Sans 400, 13px, rgba(255,255,255,0.4)
+
+📱 Responsive Breakpoints
+Desktop:   1200px+ (all multi-column layouts)
+Laptop:    992px–1199px (slight condensing)
+Tablet:    768px–991px (2-col grids, stacked hero)
+Mobile:    <768px (full single column, reduced font sizes)
+
+Mobile-specific:
+- Hero font: 42px → 32px on small screens
+- Section padding: 60px top/bottom
+- Nav: hamburger menu, slide-down drawer
+- Cards: horizontal scroll on pricing tabs
+- Footer: 2-col then 1-col
+
+⚙️ Technical Requirements
+Framework:        Next.js 14+ (App Router)
+Styling:          Tailwind CSS
+Fonts:            Google Fonts (Syne, DM Sans, JetBrains Mono)
+Animations:       Framer Motion for scroll reveals + counters
+Icons:            Lucide React
+Forms:            React Hook Form + basic validation
+Performance:      
+  - Images: Next/Image with lazy loading
+  - Fonts: next/font with preload
+  - LCP target: <2.5s
+  - No layout shift on font load
+SEO:
+  - metadata export in layout.tsx
+  - OG tags complete
+  - robots.txt + sitemap.xml
+  - Structured data (LocalBusiness schema)
+
+🚫 Design Don'ts
+✗ No purple gradients
+✗ No glassmorphism cards  
+✗ No dark mode toggle (light only)
+✗ No particle.js or canvas confetti
+✗ No emoji in headings
+✗ No typewriter effect on hero
+✗ No hero video backgrounds
+✗ No stock photos of laptops
+✗ No "we are passionate about" copy
+✗ No generic "Our Mission" section
+✗ No floating chatbot widget
+
+✅ Final Checklist Before Shipping
+□ Custom cursor active on desktop only
+□ All counters fire exactly once on viewport entry
+□ Marquee pauses on hover
+□ Pricing tabs switch without layout jump
+□ Accordion only one open at a time
+□ Form shows inline validation errors
+□ WhatsApp button opens wa.me link in new tab
+□ All external links open in new tab
+□ Meta title: "Expecto — Digital Agency | Websites, Apps & Growth"
+□ Favicon: "E" monogram, blue square
+□ Console: zero errors on production build
