@@ -1,8 +1,9 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { HandDrawnArrow } from "@/components/HandDrawnArt";
 
 const BG = "/dark-teal.webp";
 
@@ -84,6 +85,19 @@ export default function Hero() {
               </Link>
             </div>
 
+            {/* Hand-drawn launch callout */}
+            <div className="mt-6 flex items-center gap-2.5 select-none">
+              <HandDrawnArrow className="w-8 h-7 text-white/50 -rotate-12 shrink-0" />
+              <Link
+                href="https://ramainstitutetech.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[0.6875rem] text-white/75 hover:text-white tracking-wide border-b border-dashed border-white/40 pb-0.5 transition-colors"
+              >
+                Latest Release: Rama Coaching Center ERP — Shipped in 10 Days →
+              </Link>
+            </div>
+
             <div className="mt-6 md:mt-8">
               <span className="font-montserrat text-[0.75rem] text-white/35 tracking-wide">
                 Websites · Web Apps · E-commerce · CRM · ERP · Digital Products
@@ -91,8 +105,16 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="hidden lg:flex lg:col-start-10 lg:col-span-3 justify-end items-end pb-1">
-            <div className="text-right">
+          <div className="hidden lg:flex lg:col-start-9 lg:col-span-4 justify-end items-end pb-1">
+            <div className="text-right flex flex-col items-end">
+              <div className="border border-white/15 bg-white/5 px-3 py-2 rounded-sm mb-3">
+                <p className="font-mono text-[0.6875rem] text-white/80 uppercase tracking-widest font-semibold">
+                  10-Day Sprint Guarantee
+                </p>
+                <p className="font-montserrat text-[0.625rem] text-white/40 mt-0.5">
+                  Production-ready builds with full code handover
+                </p>
+              </div>
               <p className="font-montserrat text-[0.6875rem] text-white/40 uppercase tracking-[0.15em] mb-1.5">Based in India</p>
               <p className="font-montserrat text-[0.6875rem] text-white/40 uppercase tracking-[0.15em]">Ballia, Uttar Pradesh</p>
             </div>

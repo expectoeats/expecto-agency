@@ -6,6 +6,17 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
+    logo: "https://ramainstitutetech.com/logo.jpeg",
+    name: "Rama Coaching Center",
+    tags: ["Coaching ERP", "Marksheet Engine", "Mock Tests"],
+    desc: "Complete coaching management platform with automated marksheet & certificate generation, mock test portal, and full CMS. Deployed in 10 days.",
+    stat: "10 Days",
+    statLabel: "Turnaround Time",
+    bgImage: "/work/rama-banner.png",
+    href: "https://ramainstitutetech.com/",
+    category: "Education / Fatehpur UP",
+  },
+  {
     logo: "https://interfaceclasses.com/assets/logo-main.jpeg",
     name: "Interface Classes",
     tags: ["Website Redesign", "SEO", "CMS"],
@@ -39,12 +50,12 @@ export default function SelectedWork() {
           <span className="label-tag">Selected Work</span>
           <div className="h-px flex-1 bg-[var(--border)]" />
           <span className="font-montserrat text-[0.6875rem] text-[var(--text-3)] uppercase tracking-[0.12em]">
-            2 projects · Verified
+            3 projects · Verified
           </span>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((p) => (
             <Link
               key={p.name}

@@ -1,10 +1,11 @@
-﻿"use client";
+"use client";
 
 import dynamic from "next/dynamic";
 
 const SelectedWork   = dynamic(() => import("@/components/SelectedWork"),   { ssr: false });
 const ClientsMarquee = dynamic(() => import("@/components/ClientsMarquee"), { ssr: false });
 const TechMarquee    = dynamic(() => import("@/components/TechMarquee"),    { ssr: false });
+const CaseStudyRama  = dynamic(() => import("@/components/CaseStudyRama"),  { ssr: false });
 const CaseStudy1     = dynamic(() => import("@/components/CaseStudy1"),     { ssr: false });
 const CaseStudy2     = dynamic(() => import("@/components/CaseStudy2"),     { ssr: false });
 const Services       = dynamic(() => import("@/components/Services"),       { ssr: false });
@@ -26,6 +27,8 @@ export default function HomeSections() {
       <SelectedWork />
       <ClientsMarquee />
 
+      <section aria-label="Case Study: Rama Coaching Center"><CaseStudyRama /></section>
+      <Divider />
       <section aria-label="Case Study: Interface Classes"><CaseStudy1 /></section>
       <Divider />
       <section aria-label="Case Study: Swapzy"><CaseStudy2 /></section>

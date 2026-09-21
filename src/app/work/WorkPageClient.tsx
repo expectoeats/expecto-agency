@@ -11,6 +11,18 @@ import { ProjectCardPreview } from "@/components/ProjectCardPreview";
 
 const featuredProjects = [
   {
+    id: "rama-coaching",
+    url: "https://ramainstitutetech.com/",
+    category: "coaching" as const,
+    tag: "ERP • LMS • Marksheet Engine • 10-Day Sprint",
+    title: "Rama Coaching Center",
+    desc: "Complete coaching management platform with automated marksheet & QR-verified certificate generation, mock test portal, and full CMS. Deployed in 10 days.",
+    stack: ["Next.js", "MongoDB", "PDF Engine", "Tailwind CSS"],
+    results: [{ label: "Turnaround", val: "10 Days" }, { label: "Core Modules", val: "7+" }],
+    color: "#EFF6FF", accent: "#1D4ED8",
+    localImage: "/work/rama-banner.png",
+  },
+  {
     id: "expecto-eats",
     url: "https://expecto-sepia.vercel.app/",
     category: "food_ordering" as const,
@@ -49,6 +61,7 @@ const cafeProjects = [
 ];
 
 const coachingProjects = [
+  { name: "Rama Coaching Center", url: "https://ramainstitutetech.com/", desc: "Full coaching ERP with marksheet generator, mock tests & CMS", color: "#EFF6FF", accent: "#1D4ED8", category: "coaching" as const, localImage: "/work/rama-banner.png" },
   { name: "Expecto Coaching",  url: "https://expecto-demo-coaching.vercel.app/", desc: "Modern coaching platform with course management", color: "#E8EAF6", accent: "#283593", category: "coaching" as const, localImage: "/work/coaching/expecto-demo-coaching.webp" },
   { name: "Adroit Academy",    url: "https://adroit-demo.vercel.app/",           desc: "Coaching website with course listings",          color: "#E8EAF6", accent: "#283593", category: "coaching" as const, localImage: "/work/coaching/adroit.webp" },
   { name: "Takshashila IAS",   url: "https://takshashila-ias-md.vercel.app/",    desc: "Premium IAS coaching with batch management",     color: "#FFF3E0", accent: "#BF360C", category: "coaching" as const, localImage: "/work/coaching/takshila.webp" },

@@ -6,6 +6,13 @@ import { ArrowUpRight } from "lucide-react";
 
 const featured = [
   {
+    category: "Education · Coaching ERP & LMS",
+    name: "Rama Coaching Center",
+    purpose: "Coaching ERP with automated marksheet generator, mock tests & QR certificate verification.",
+    url: "https://ramainstitutetech.com/",
+    image: "/work/rama-banner.png",
+  },
+  {
     category: "Commerce · Marketplace",
     name: "Swapzy",
     purpose: "Live peer-to-peer student marketplace at Parul University, Vadodara.",

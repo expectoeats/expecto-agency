@@ -1,4 +1,4 @@
-﻿import type { NextConfig } from "next";
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "interfaceclasses.com", pathname: "/**" },
       { protocol: "https", hostname: "www.swapzy.store", pathname: "/**" },
       { protocol: "https", hostname: "png.pngtree.com", pathname: "/**" },
+      { protocol: "https", hostname: "ramainstitutetech.com", pathname: "/**" },
     ],
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 604800,

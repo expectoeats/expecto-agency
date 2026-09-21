@@ -4,12 +4,48 @@ import Image from "next/image";
 
 // Featured clients with real logos first, then others
 const clients = [
-  { name: "Interface Classes", meta: "Website Redesign · SEO · #1 Google", logo: "https://interfaceclasses.com/assets/logo-main.jpeg", isExternal: true },
-  { name: "Swapzy",            meta: "Student Marketplace · Live Platform",  logo: "https://www.swapzy.store/_next/image?url=%2Fswapzy-logo.png&w=64&q=75", isExternal: true },
-  { name: "Expecto Eats",      meta: "Food Ordering Platform",               logo: "/logo.png",  isExternal: false },
-  { name: "Education CRM",     meta: "CRM · Web Application",               logo: "/logo.png",  isExternal: false },
-  { name: "Real Estate CRM",   meta: "CRM · Property Management",           logo: "/logo.png",  isExternal: false },
-  { name: "NEET Coaching",     meta: "Coaching Website",                    logo: "/logo.png",  isExternal: false },
+  {
+    name: "Rama Coaching Center",
+    meta: "Coaching ERP · Marksheet & Mock Tests · 10 Days",
+    logo: "https://ramainstitutetech.com/logo.jpeg",
+    isExternal: true,
+  },
+  {
+    name: "Interface Classes",
+    meta: "Website Redesign · SEO · #1 Google",
+    logo: "https://interfaceclasses.com/assets/logo-main.jpeg",
+    isExternal: true,
+  },
+  {
+    name: "Swapzy",
+    meta: "Student Marketplace · Live Platform",
+    logo: "https://www.swapzy.store/_next/image?url=%2Fswapzy-logo.png&w=64&q=75",
+    isExternal: true,
+  },
+  {
+    name: "Expecto Eats",
+    meta: "Food Ordering Platform",
+    logo: "/logo.png",
+    isExternal: false,
+  },
+  {
+    name: "Education CRM",
+    meta: "CRM · Web Application",
+    logo: "/logo.png",
+    isExternal: false,
+  },
+  {
+    name: "Real Estate CRM",
+    meta: "CRM · Property Management",
+    logo: "/logo.png",
+    isExternal: false,
+  },
+  {
+    name: "NEET Coaching",
+    meta: "Coaching Website",
+    logo: "/logo.png",
+    isExternal: false,
+  },
 ];
 
 const items = [...clients, ...clients, ...clients];
@@ -43,11 +79,22 @@ export default function ClientsMarquee() {
               <div className="w-8 h-8 rounded-sm overflow-hidden flex items-center justify-center shrink-0 bg-white border border-[var(--border)] p-1">
                 {item.isExternal ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={item.logo} alt={item.name} width={32} height={32}
-                    className="w-full h-full object-contain" loading="lazy" />
+                  <img
+                    src={item.logo}
+                    alt={item.name}
+                    width={32}
+                    height={32}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
                 ) : (
-                  <Image src={item.logo} alt={item.name} width={32} height={32}
-                    className="w-full h-full object-contain opacity-30" />
+                  <Image
+                    src={item.logo}
+                    alt={item.name}
+                    width={32}
+                    height={32}
+                    className="w-full h-full object-contain opacity-30"
+                  />
                 )}
               </div>
 
