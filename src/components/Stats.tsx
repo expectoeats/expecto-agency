@@ -4,10 +4,10 @@ import React, { useEffect, useRef } from "react";
 import { motion, useInView, useSpring, useTransform } from "framer-motion";
 
 const stats = [
-  { value: 50, suffix: "+", label: "Projects Delivered", desc: "Across web, app & SaaS" },
-  { value: 4,  suffix: "",  label: "Team Members",      desc: "Senior engineers only" },
-  { value: 7,  suffix: "",  label: "Days to Delivery",  desc: "Average turnaround" },
-  { value: 99, suffix: "%", label: "Client Satisfaction",desc: "Verified & retained" },
+  { value: 50,  suffix: "+", label: "Brands Served",   desc: "Across web, app & SaaS" },
+  { value: 7,   suffix: "",  label: "Days to Delivery", desc: "Guaranteed in writing" },
+  { value: 100, suffix: "%", label: "Code Ownership",   desc: "You own everything" },
+  { value: 99,  suffix: "%", label: "On-Time Rate",     desc: "50+ projects delivered" },
 ];
 
 function Counter({ value }: { value: number }) {

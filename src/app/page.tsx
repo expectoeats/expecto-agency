@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const homeFaqs = [
   {
     q: "How much does a website cost at Expecto?",
-    a: "Our websites start at Rs. 1,999 for a basic business website. Growth packages start at Rs. 3,999 and full custom builds from Rs. 7,999. All prices include design, development, and deployment.",
+    a: "Our websites start at Rs. 4,999 for a landing page. Business websites start at Rs. 9,999. All prices include design, development, and deployment with 7-day delivery guarantee.",
   },
   {
     q: "Do you really deliver a website in 7 days?",
@@ -47,7 +47,7 @@ const homeFaqs = [
 ];
 
 const homeServices = [
-  { name: "Website Design & Development India", desc: "Professional website design starting Rs. 1,999 with 7-day delivery for Indian businesses.", url: "/services" },
+  { name: "Website Design & Development India", desc: "Professional website design starting Rs. 4,999 with 7-day delivery for Indian businesses.", url: "/services" },
   { name: "Mobile App Development India", desc: "React Native iOS and Android app development for Indian businesses.", url: "/services" },
   { name: "Business SaaS Development India", desc: "Custom ERP, CRM, and SaaS product development for Indian companies.", url: "/services" },
   { name: "Cinematic Video Production India", desc: "High-impact social media content and brand films for Indian businesses.", url: "/services" },

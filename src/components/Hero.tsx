@@ -39,8 +39,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12">
           <div className="lg:col-span-9">
             <h1 className="font-montserrat font-semibold text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.15] tracking-tight text-white">
-              Your business deserves a website<br className="hidden sm:block" />
-              that{" "}
+              We build websites that bring you{" "}
               <span
                 className="relative inline-block"
                 style={{
@@ -52,9 +51,9 @@ export default function Hero() {
                   animation: "shimmer 4s linear infinite",
                 }}
               >
-                actually works
+                customers
               </span>{" "}
-              for you.
+              — not just compliments.
             </h1>
           </div>
         </div>
@@ -68,7 +67,7 @@ export default function Hero() {
               style={{ background: "rgba(255,255,255,0.06)", backdropFilter: "blur(12px)" }}
             >
               <p className="font-montserrat text-white/80 text-[0.9375rem] md:text-[1rem] leading-[1.8]">
-                We design and build websites, web apps, CRM systems and digital products that bring in customers, look credible and run without constant maintenance.
+                50+ Indian businesses trust Expecto for websites, apps, CRM &amp; digital products — delivered in 7 days, with 100% code ownership.
               </p>
             </div>
 
@@ -78,23 +77,16 @@ export default function Hero() {
                   bg-white text-[#111111] hover:bg-white/90">
                 Start a Project <ArrowRight size={14} strokeWidth={1.75} />
               </Link>
-              <Link href="/work"
-                className="inline-flex items-center justify-center gap-2 font-montserrat font-medium text-[0.875rem] px-6 py-3.5 transition-colors duration-150
-                  border border-white/25 text-white hover:border-white/60 hover:bg-white/5">
-                Explore Our Work
-              </Link>
             </div>
 
             {/* Hand-drawn launch callout */}
             <div className="mt-6 flex items-center gap-2.5 select-none">
               <HandDrawnArrow className="w-8 h-7 text-white/50 -rotate-12 shrink-0" />
               <Link
-                href="https://ramainstitutetech.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/contact"
                 className="font-mono text-[0.6875rem] text-white/75 hover:text-white tracking-wide border-b border-dashed border-white/40 pb-0.5 transition-colors"
               >
-                Latest Release: Rama Coaching Center ERP — Shipped in 10 Days →
+                ✓ 7-Day Delivery Guaranteed in Writing — or 20% Cashback →
               </Link>
             </div>
 
@@ -112,7 +104,7 @@ export default function Hero() {
                   10-Day Sprint Guarantee
                 </p>
                 <p className="font-montserrat text-[0.625rem] text-white/40 mt-0.5">
-                  Production-ready builds with full code handover
+                  50+ brands served · 100% code ownership
                 </p>
               </div>
               <p className="font-montserrat text-[0.6875rem] text-white/40 uppercase tracking-[0.15em] mb-1.5">Based in India</p>

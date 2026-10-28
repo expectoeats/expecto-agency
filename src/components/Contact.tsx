@@ -1,7 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowRight, Mail, Phone, MapPin, MessageSquare } from "lucide-react";
 
 type FormData = {
   name: string;
@@ -9,13 +9,10 @@ type FormData = {
   email: string;
   phone: string;
   projectType: string;
-  currentWebsite: string;
-  budgetRange: string;
   details: string;
 };
 
 const projectTypes = ["New Website","Website Redesign","E-Commerce","Web Application","CRM / ERP","Custom Software","Design / Creative","Other"];
-const budgetRanges = ["Under ₹15,000","₹15,000 – ₹30,000","₹30,000 – ₹60,000","₹60,000 – ₹1,50,000","₹1,50,000+","Let's discuss"];
 
 export default function Contact() {
   const { register, handleSubmit, formState: { isSubmitting } } = useForm<FormData>();
@@ -25,9 +22,7 @@ export default function Contact() {
       "Hi Expecto Team,","","I'd like to discuss a project.","",
       `Name: ${data.name}`,`Business: ${data.businessName || "—"}`,
       `Email: ${data.email}`,`Phone: ${data.phone || "—"}`,
-      `Project type: ${data.projectType || "—"}`,
-      `Current website: ${data.currentWebsite || "—"}`,
-      `Budget: ${data.budgetRange || "—"}`,"",
+      `Project type: ${data.projectType || "—"}`,"",
       "Details:", data.details || "—",
     ];
     window.open(`https://wa.me/918707224376?text=${encodeURIComponent(lines.join("\n"))}`, "_blank");
@@ -85,13 +80,30 @@ export default function Contact() {
           {/* Bottom trust signal */}
           <div className="border-t border-white/10 pt-8">
             <p className="font-montserrat text-[0.75rem] text-white/30 leading-[1.7]">
-              We respond within a few hours. No automated replies — a real person reads every message.
+              2 ghante mein reply guaranteed. Koi automated bot nahi — ek real insaan aapka message padhta hai.
             </p>
           </div>
         </div>
 
         {/* Right — form */}
         <div className="lg:col-span-8 bg-white p-6 sm:p-8 md:p-10 border-2 border-[var(--text)] shadow-[4px_4px_0px_0px_#111111] md:border md:border-[var(--border)] md:shadow-none">
+
+          {/* WhatsApp CTA */}
+          <a
+            href="https://wa.me/918707224376"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 w-full bg-[#25D366] text-white font-montserrat font-semibold text-base py-4 rounded-sm mb-6 hover:bg-[#1ebe5d] transition-colors"
+          >
+            <MessageSquare size={20} />
+            WhatsApp Karo — Instant Reply
+          </a>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="flex-1 h-px bg-[var(--border)]" />
+            <span className="font-montserrat text-[0.75rem] text-[var(--text-3)]">ya form bharo</span>
+            <div className="flex-1 h-px bg-[var(--border)]" />
+          </div>
+
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -116,26 +128,12 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="flex flex-col gap-1.5">
-                <label htmlFor="c-type" className="font-montserrat text-[0.6875rem] text-[var(--text-3)] uppercase tracking-[0.08em] font-medium">What do you need?</label>
-                <select id="c-type" {...register("projectType")} className="form-input bg-white">
-                  <option value="">Select project type</option>
-                  {projectTypes.map((t) => <option key={t} value={t}>{t}</option>)}
-                </select>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label htmlFor="c-budget" className="font-montserrat text-[0.6875rem] text-[var(--text-3)] uppercase tracking-[0.08em] font-medium">Budget Range</label>
-                <select id="c-budget" {...register("budgetRange")} className="form-input bg-white">
-                  <option value="">Select a range</option>
-                  {budgetRanges.map((r) => <option key={r} value={r}>{r}</option>)}
-                </select>
-              </div>
-            </div>
-
             <div className="flex flex-col gap-1.5">
-              <label htmlFor="c-url" className="font-montserrat text-[0.6875rem] text-[var(--text-3)] uppercase tracking-[0.08em] font-medium">Current Website URL</label>
-              <input id="c-url" type="url" {...register("currentWebsite")} className="form-input" placeholder="https://yourbusiness.com (leave blank if none)" autoComplete="url" />
+              <label htmlFor="c-type" className="font-montserrat text-[0.6875rem] text-[var(--text-3)] uppercase tracking-[0.08em] font-medium">What do you need?</label>
+              <select id="c-type" {...register("projectType")} className="form-input bg-white">
+                <option value="">Select project type</option>
+                {projectTypes.map((t) => <option key={t} value={t}>{t}</option>)}
+              </select>
             </div>
 
             <div className="flex flex-col gap-1.5">
@@ -146,11 +144,11 @@ export default function Contact() {
 
             <button type="submit" disabled={isSubmitting}
               className="btn-black w-full justify-center text-[0.9375rem] py-4">
-              Start the Conversation <ArrowRight size={15} strokeWidth={1.75} />
+              Send on WhatsApp → <ArrowRight size={15} strokeWidth={1.75} />
             </button>
 
             <p className="font-montserrat text-[0.75rem] text-[var(--text-3)] text-center">
-              Submits via WhatsApp. We typically respond within 2–3 hours.
+              WhatsApp par seedha jaata hai. 2 ghante mein reply milega.
             </p>
           </form>
         </div>

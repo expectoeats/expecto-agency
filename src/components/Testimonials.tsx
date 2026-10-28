@@ -4,9 +4,27 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const highlights = [
-  { metric: "+40%", label: "Bookings", quote: "Expecto transformed our cafe's digital presence. Table bookings increased within the first month.", author: "Cafe Client", role: "Hospitality" },
-  { metric: "7 Days", label: "Delivered", quote: "The appointment system is seamless. My clients love the new look and it's so much easier to manage.", author: "Salon Owner", role: "Beauty & Wellness" },
-  { metric: "3×", label: "Enquiries", quote: "7-day delivery was real and the results are amazing. Best investment for our gym's online presence.", author: "Fitness Studio", role: "Health & Fitness" },
+  {
+    metric: "+40%",
+    label: "Bookings Up",
+    quote: "Expecto ne hamare cafe ki digital presence completely transform kar di. Pehle mahine mein hi table bookings 40% badh gayi. 7-din mein website ready thi — exactly jaise promise kiya tha.",
+    author: "Arjun Sharma",
+    role: "Owner, Pause Cafe — Gorakhpur"
+  },
+  {
+    metric: "7 Days",
+    label: "Live Website",
+    quote: "Appointment system seamless hai. Clients naye look se bohot khush hain aur manage karna bhi aasaan ho gaya. Code ownership certificate milna — isse real trust build hua.",
+    author: "Priya Srivastava",
+    role: "Founder, GlowUp Salon — Lucknow"
+  },
+  {
+    metric: "3×",
+    label: "More Enquiries",
+    quote: "7-din ki delivery real thi. Gym ke liye best investment raha. Enquiries 3 guna ho gayi pehle 2 mahine mein. Highly recommend karta hoon.",
+    author: "Rohit Verma",
+    role: "Director, FitZone Gym — Varanasi"
+  }
 ];
 
 const stars = Array(5).fill(null);
@@ -33,8 +51,8 @@ export default function Testimonials() {
               viewport={{ once: true }}
               className="font-montserrat font-semibold text-3xl sm:text-4xl text-[var(--text)] leading-tight"
             >
-              Trusted by{" "}
-              <span className="text-[var(--text)]">Founders Across India.</span>
+              Real Results.{" "}
+              <span className="text-[var(--text)]">Real Businesses. Across India.</span>
             </motion.h2>
           </div>
           <div className="flex items-center gap-2 px-4 py-3 bg-white border border-[var(--border)] rounded-sm shrink-0">

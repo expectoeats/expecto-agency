@@ -7,28 +7,28 @@ import Link from "next/link";
 
 const faqs = [
   {
-    q: "Is pricing transparent or are there hidden charges?",
-    a: "Your proposal includes a line-by-line breakdown of design, development, deployment, revisions, and add-ons. No hidden charges, ever.",
+    q: "7-din delivery — kya ye sach mein hota hai?",
+    a: "Haan, aur ye likhit mein diya jaata hai. Agar hum qualifying project ki deadline miss karte hain, toh 20% cashback milta hai. Humne 50+ projects time par deliver kiye hain — aur proof hai.",
   },
   {
-    q: "Who owns the domain and website after delivery?",
-    a: "You do — completely. Every client receives a signed Code Ownership Certificate confirming 100% rights to source code, design assets, and database.",
+    q: "Maine pehle ek freelancer hire kiya tha jo beech mein ghayab ho gaya — aapke saath aisa nahi hoga?",
+    a: "Hum samajhte hain. Isliye hum har project par ek signed agreement dete hain, milestones ke saath advance nahi lete, aur poora kaam deliver hone par baaki payment lete hain. Code Ownership Certificate bhi milta hai — toh aap kabhi lock-in mein nahi rahenge.",
   },
   {
-    q: "Do you provide support after launch?",
-    a: "Yes. We offer monthly maintenance plans from ₹999/month. WhatsApp support is available 7 days a week.",
+    q: "Website ke baad domain aur code kaun ka hoga?",
+    a: "100% aapka. Har client ko ek signed Code Ownership Certificate milta hai jisme source code, design assets aur database ke poore rights confirm hote hain. Koi lock-in nahi, kabhi nahi.",
   },
   {
-    q: "Will my website appear on Google?",
-    a: "All our websites are built SEO-ready with proper meta tags, sitemaps, and Google Business Profile setup. Advanced SEO is available as an add-on.",
+    q: "Kya meri website Google par aayegi?",
+    a: "Haan. Sabhi websites SEO-ready build hoti hain — proper meta tags, sitemap, schema markup aur Google Business Profile setup ke saath. Advanced SEO add-on ke roop mein available hai.",
   },
   {
-    q: "What if I need changes in the future?",
-    a: "All projects include free revision rounds during build. Post-launch changes are available on maintenance plans or charged transparently per scope.",
+    q: "Mujhe kitna involve hona padega? Main bohot busy hoon.",
+    a: "Bohot kam. Ek 30-minute discovery call, content aap WhatsApp par share karo — baaki hum handle karte hain. Progress updates regular milte hain. Koi lengthy meetings nahi, koi back-and-forth nahi.",
   },
   {
-    q: "How do I know the 7-day delivery is real?",
-    a: "It's in writing. We provide a delivery commitment with cashback protection if qualifying projects are delayed.",
+    q: "Pricing transparent hai ya hidden charges hain?",
+    a: "Bilkul transparent. Aapke proposal mein design, development, deployment, revisions aur add-ons ka line-by-line breakdown hoga. Koi hidden charges nahi — kabhi nahi. Quote 24 ghante mein free milta hai.",
   },
 ];
 

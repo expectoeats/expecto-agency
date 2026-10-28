@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 
-const tabs = ["Web", "Apps", "Software", "Video", "Design", "Marketing", "Combos"];
+const tabs = ["Starter", "Growth", "Enterprise"];
 
 interface PricingCard {
   name: string;
@@ -15,168 +15,80 @@ interface PricingCard {
   features: string[];
 }
 
-const webCards: PricingCard[] = [
+const starterCards: PricingCard[] = [
   {
     name: "Landing Page",
-    price: "\u20B91,999",
+    price: "\u20B94,999",
     delivery: "3 days",
-    features: ["1-page design", "Mobile responsive", "Contact form", "WhatsApp integration"],
+    features: ["1-page custom design", "Mobile responsive", "Contact form + WhatsApp", "Google Maps embed", "SEO-ready meta tags"],
   },
   {
     name: "Business Website",
-    price: "\u20B93,999",
+    price: "\u20B99,999",
     delivery: "5 days",
     popular: true,
-    features: ["Up to 5 pages", "SEO-ready", "Google Maps embed", "WhatsApp ordering"],
+    features: ["Up to 5 pages", "Custom UI design", "SEO + sitemap", "WhatsApp integration", "1 month free support"],
   },
   {
-    name: "Custom Web App",
-    price: "\u20B914,999",
-    delivery: "8 days",
-    features: ["Full MERN stack", "Admin dashboard", "Auth system", "API integrations"],
-  },
-];
-
-const videoCards: PricingCard[] = [
-  {
-    name: "Reels Starter",
-    price: "\u20B9499",
-    delivery: "2 days",
-    features: ["Up to 3 short reels", "Captions + transitions", "Trending music sync", "1 revision included"],
-  },
-  {
-    name: "YouTube Editing Pro",
-    price: "\u20B91,999",
-    delivery: "3 days",
-    popular: true,
-    features: ["1 long-form video edit", "Hook + pacing optimization", "B-roll & SFX", "Custom thumbnail text style"],
-  },
-  {
-    name: "Motion Graphics Pack",
-    price: "\u20B94,999",
-    delivery: "5 days",
-    features: ["Brand intro/outro", "Kinetic typography", "Lower thirds & callouts", "Export in social formats"],
-  },
-];
-
-const softwareCards: PricingCard[] = [
-  {
-    name: "Internal Tool",
-    price: "\u20B97,999",
+    name: "E-Commerce Store",
+    price: "\u20B919,999",
     delivery: "7 days",
-    features: ["Custom dashboard", "Role-based access", "Basic reporting", "Deployment support"],
+    features: ["Product catalogue", "Cart & checkout", "Payment gateway", "Order management", "Mobile-first design"],
   },
+];
+
+const growthCards: PricingCard[] = [
   {
-    name: "Business Automation Suite",
-    price: "\u20B914,999",
-    delivery: "12 days",
-    popular: true,
-    features: ["Workflow automation", "CRM modules", "Notifications", "3rd-party integrations"],
-  },
-  {
-    name: "SaaS MVP Build",
+    name: "Web Application",
     price: "\u20B929,999",
+    delivery: "10 days",
+    features: ["Full MERN stack", "User auth + roles", "Admin dashboard", "API integrations", "Deployment included"],
+  },
+  {
+    name: "Mobile App",
+    price: "\u20B959,999",
+    delivery: "15 days",
+    popular: true,
+    features: ["React Native (iOS + Android)", "Push notifications", "User auth", "App Store upload", "6 weeks support"],
+  },
+  {
+    name: "Brand + Video Pack",
+    price: "\u20B912,999",
+    delivery: "7 days",
+    features: ["Logo + brand kit", "5 social media reels", "Motion graphics", "Content calendar", "Social profile setup"],
+  },
+];
+
+const enterpriseCards: PricingCard[] = [
+  {
+    name: "CRM / ERP System",
+    price: "\u20B939,999",
+    delivery: "12 days",
+    features: ["Custom modules", "Role-based access", "Workflow automation", "Reporting dashboard", "3rd-party integrations"],
+  },
+  {
+    name: "SaaS MVP",
+    price: "\u20B979,999",
     delivery: "21 days",
-    features: ["Multi-tenant architecture", "Subscription setup", "Admin analytics", "Scalable backend"],
-  },
-];
-
-const designCards: PricingCard[] = [
-  {
-    name: "Logo Starter",
-    price: "\u20B9699",
-    delivery: "2 days",
-    features: ["2 logo concepts", "Color palette", "PNG + SVG files", "1 revision included"],
-  },
-  {
-    name: "Brand Identity Kit",
-    price: "\u20B91,999",
-    delivery: "4 days",
     popular: true,
-    features: ["Logo system", "Typography pairing", "Brand guidelines", "Social profile kit"],
+    features: ["Multi-tenant architecture", "Subscription billing", "Admin analytics", "Scalable backend", "Launch support"],
   },
   {
-    name: "UI/UX Design Pack",
-    price: "\u20B94,999",
-    delivery: "6 days",
-    features: ["Wireframes + mockups", "Design system basics", "Prototype flow", "Handoff-ready screens"],
-  },
-];
-
-const marketingCards: PricingCard[] = [
-  {
-    name: "Local SEO Boost",
-    price: "\u20B9799",
-    delivery: "3 days",
-    features: ["Google Business optimization", "Keyword setup", "On-page fixes", "Performance checklist"],
-  },
-  {
-    name: "Social Growth Plan",
-    price: "\u20B92,999/mo",
-    delivery: "Monthly",
-    popular: true,
-    features: ["Content calendar", "8 creatives per month", "Caption + hashtag strategy", "Monthly insights report"],
-  },
-  {
-    name: "Performance Ads Sprint",
-    price: "\u20B95,999/mo",
-    delivery: "Monthly",
-    features: ["Meta/Google ad setup", "Audience targeting", "A/B testing", "Weekly optimization"],
+    name: "Full Digital Setup",
+    price: "\u20B924,999/mo",
+    delivery: "Monthly retainer",
+    features: ["Website + maintenance", "Social media (8 posts)", "Local SEO", "Monthly report", "WhatsApp priority support"],
   },
 ];
 
 const pricingData: Record<string, PricingCard[]> = {
-  Web: webCards,
-  Apps: [
-    {
-      name: "Simple App",
-      price: "\u20B912,999",
-      delivery: "10 days",
-      features: ["React Native", "Single platform", "Core features", "Firebase integration"],
-    },
-    {
-      name: "Full App",
-      price: "\u20B924,999",
-      delivery: "15 days",
-      popular: true,
-      features: ["Both iOS & Android", "User auth", "Push notifications", "App Store upload"],
-    },
-    {
-      name: "Enterprise App",
-      price: "\u20B949,999",
-      delivery: "30 days",
-      features: ["Custom backend", "Payment gateway", "Complex logic", "Maintenance plan"],
-    },
-  ],
-  Software: softwareCards,
-  Video: videoCards,
-  Design: designCards,
-  Marketing: marketingCards,
-  Combos: [
-    {
-      name: "Starter Pack",
-      price: "\u20B92,499",
-      save: "Save \u20B9998",
-      features: ["Landing Page", "Logo Design", "2 Reels/Videos"],
-    },
-    {
-      name: "Local Biz 360",
-      price: "\u20B95,999/mo",
-      save: "Save \u20B91,948",
-      popular: true,
-      features: ["Website Maintenance", "Brand Kit", "4 Reels/mo", "Local SEO"],
-    },
-    {
-      name: "Full Stack Startup",
-      price: "\u20B924,999",
-      save: "Save \u20B98,948",
-      features: ["SaaS MVP", "Brand Kit", "Pitch Deck", "Launch Support"],
-    },
-  ],
+  Starter: starterCards,
+  Growth: growthCards,
+  Enterprise: enterpriseCards,
 };
 
 export default function Pricing() {
-  const [activeTab, setActiveTab] = useState("Web");
+  const [activeTab, setActiveTab] = useState("Starter");
 
   const handleGetStarted = (card: PricingCard) => {
     const message = `Hi Expecto Team,\n\nI'm interested in the "${card.name}" plan from your ${activeTab} services.\n\nPrice: ${card.price}\nDelivery: ${card.delivery || "Contact for timeline"}\n\nI'd like to discuss this further.`;
@@ -219,6 +131,13 @@ export default function Pricing() {
           >
             Every quote includes a line-by-line breakdown. No hidden charges. No surprise billings. Ever.
           </motion.p>
+        </div>
+
+        {/* Guarantee badge strip */}
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 border border-[var(--border)] rounded-sm text-[0.75rem] font-montserrat text-[var(--text-3)] text-center">
+            ✓ 7-Day Delivery Guaranteed &nbsp;·&nbsp; ✓ 100% Code Ownership &nbsp;·&nbsp; ✓ Free Quote in 24 Hours
+          </div>
         </div>
 
         <div className="flex justify-center mb-12 overflow-x-auto pb-4 no-scrollbar px-4">
@@ -306,7 +225,7 @@ export default function Pricing() {
 
         <div className="text-center mt-12">
           <p className="font-montserrat text-[var(--text-3)] text-[13px]">
-            * Indicative pricing. Final quote after discovery call.
+            * Starting prices. Exact quote within 24 hours — free, no obligation.
           </p>
         </div>
       </div>

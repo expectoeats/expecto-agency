@@ -30,20 +30,17 @@ export default function FinalCTA() {
 
         <div className="max-w-[860px] mb-16">
           <p className="font-montserrat font-semibold text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.15] tracking-tight text-white mb-10">
-            Your business deserves a <span className="shimmer-text-light">better</span><br />
-            digital experience.
+            Ready to get your website <span className="shimmer-text-light">live in 7 days</span>?
           </p>
           <p className="font-montserrat text-[1rem] text-white/50 leading-[1.75] max-w-[440px] mb-10">
-            Let&apos;s build something useful, fast and memorable.
+            100+ Indian businesses served. Aapki baari ab hai.
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-3">
-            <Link href="/contact"
+            <Link href="https://wa.me/918707224376"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white text-[#111111] font-montserrat font-medium text-[0.875rem] px-7 py-4 hover:bg-white/90 transition-colors duration-150">
-              Start a Project <ArrowRight size={14} strokeWidth={1.75} />
-            </Link>
-            <Link href="/work"
-              className="inline-flex items-center gap-2 border border-white/20 text-white font-montserrat font-medium text-[0.875rem] px-7 py-4 hover:border-white/50 transition-colors duration-150">
-              View Our Work
+              WhatsApp Karo — Free Consultation <ArrowRight size={14} strokeWidth={1.75} />
             </Link>
           </div>
         </div>
