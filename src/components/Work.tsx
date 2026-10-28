@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Layout } from "lucide-react";
 import { ProjectCardPreview } from "./ProjectCardPreview";
 
 const featuredProjects = [
@@ -63,7 +63,8 @@ export default function Work() {
               viewport={{ once: true }}
               className="label-tag text-[var(--text-3)] mb-4 block"
             >
-              🎨 Showcase
+              <Layout size={13} className="inline-block mr-1.5 -mt-0.5" />
+              Showcase
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 16 }}

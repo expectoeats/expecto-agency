@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { HandDrawnArrow } from "@/components/HandDrawnArt";
 
 const BG = "/dark-teal.webp";
@@ -86,7 +86,8 @@ export default function Hero() {
                 href="/contact"
                 className="font-mono text-[0.6875rem] text-white/75 hover:text-white tracking-wide border-b border-dashed border-white/40 pb-0.5 transition-colors"
               >
-                ✓ 7-Day Delivery Guaranteed in Writing — or 20% Cashback →
+                <CheckCircle size={11} className="inline-block mr-1 -mt-0.5 text-white/60" />
+                7-Day Delivery Guaranteed in Writing — or 20% Cashback →
               </Link>
             </div>
 

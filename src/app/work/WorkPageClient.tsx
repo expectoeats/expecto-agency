@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Layers, Lightbulb } from "lucide-react";
 import { ProjectCardPreview } from "@/components/ProjectCardPreview";
 
 // ── Data ─────────────────────────────────────────────────────────────────────
@@ -224,7 +224,7 @@ export default function WorkPageClient() {
             className="font-montserrat text-[0.6875rem] text-white/50 uppercase tracking-[0.18em] mb-6 inline-block border border-white/15 px-4 py-2 rounded-sm"
             style={{ background:"rgba(255,255,255,0.06)", backdropFilter:"blur(8px)" }}
           >
-            🎨 Curated Portfolio
+            <Layers size={12} className="inline-block mr-1.5 -mt-0.5" /> Curated Portfolio
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
@@ -310,7 +310,9 @@ export default function WorkPageClient() {
       <section className="py-16 sm:py-24 bg-[var(--bg-subtle)]">
         <div className="container mx-auto max-w-6xl px-4 sm:px-6">
           <div className="bg-white border border-[var(--border)] rounded-sm p-8 sm:p-14 text-center">
-            <span className="label-tag text-[var(--text-3)] mb-6 inline-block">💡 Have a Vision?</span>
+            <span className="label-tag text-[var(--text-3)] mb-6 inline-block">
+              <Lightbulb size={13} className="inline-block mr-1.5 -mt-0.5" /> Have a Vision?
+            </span>
             <h2 className="font-montserrat font-semibold text-3xl sm:text-5xl text-[var(--text)] mb-5 leading-tight">
               Let&apos;s Build Your{" "}
               <span className="text-[var(--text)]">Next Breakthrough.</span>

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { motion, useInView, useSpring, useTransform } from "framer-motion";
+import { BarChart2 } from "lucide-react";
 
 const stats = [
   { value: 50,  suffix: "+", label: "Brands Served",   desc: "Across web, app & SaaS" },
@@ -29,7 +30,10 @@ export default function Stats() {
           viewport={{ once: true }}
           className="text-center mb-10 sm:mb-14"
         >
-          <span className="label-tag text-[var(--text-3)]">📊 By The Numbers</span>
+          <span className="label-tag text-[var(--text-3)]">
+            <BarChart2 size={13} className="inline-block mr-1.5 -mt-0.5" />
+            By The Numbers
+          </span>
         </motion.div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">

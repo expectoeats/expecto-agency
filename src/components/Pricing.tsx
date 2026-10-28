@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, CheckCircle } from "lucide-react";
 
 const tabs = ["Starter", "Growth", "Enterprise"];
 
@@ -24,15 +24,15 @@ const starterCards: PricingCard[] = [
   },
   {
     name: "Business Website",
-    price: "\u20B99,999",
-    delivery: "5 days",
+    price: "\u20B97,999",
+    delivery: "7 days",
     popular: true,
     features: ["Up to 5 pages", "Custom UI design", "SEO + sitemap", "WhatsApp integration", "1 month free support"],
   },
   {
     name: "E-Commerce Store",
-    price: "\u20B919,999",
-    delivery: "7 days",
+    price: "\u20B913,999",
+    delivery: "12 days",
     features: ["Product catalogue", "Cart & checkout", "Payment gateway", "Order management", "Mobile-first design"],
   },
 ];
@@ -40,42 +40,42 @@ const starterCards: PricingCard[] = [
 const growthCards: PricingCard[] = [
   {
     name: "Web Application",
-    price: "\u20B929,999",
+    price: "\u20B914,999",
     delivery: "10 days",
     features: ["Full MERN stack", "User auth + roles", "Admin dashboard", "API integrations", "Deployment included"],
   },
   {
     name: "Mobile App",
-    price: "\u20B959,999",
+    price: "\u20B914,999",
     delivery: "15 days",
     popular: true,
     features: ["React Native (iOS + Android)", "Push notifications", "User auth", "App Store upload", "6 weeks support"],
   },
   {
-    name: "Brand + Video Pack",
-    price: "\u20B912,999",
-    delivery: "7 days",
-    features: ["Logo + brand kit", "5 social media reels", "Motion graphics", "Content calendar", "Social profile setup"],
+    name: "Marketing Starter Pack",
+    price: "\u20B97,999",
+    delivery: "5 days",
+    features: ["Logo + brand kit", "8 social media creatives", "Content calendar (1 month)", "Instagram/Facebook page setup", "Social profile optimization"],
   },
 ];
 
 const enterpriseCards: PricingCard[] = [
   {
     name: "CRM / ERP System",
-    price: "\u20B939,999",
+    price: "\u20B914,999",
     delivery: "12 days",
     features: ["Custom modules", "Role-based access", "Workflow automation", "Reporting dashboard", "3rd-party integrations"],
   },
   {
     name: "SaaS MVP",
-    price: "\u20B979,999",
+    price: "\u20B924,999",
     delivery: "21 days",
     popular: true,
     features: ["Multi-tenant architecture", "Subscription billing", "Admin analytics", "Scalable backend", "Launch support"],
   },
   {
     name: "Full Digital Setup",
-    price: "\u20B924,999/mo",
+    price: "\u20B921,999/mo",
     delivery: "Monthly retainer",
     features: ["Website + maintenance", "Social media (8 posts)", "Local SEO", "Monthly report", "WhatsApp priority support"],
   },
@@ -135,8 +135,12 @@ export default function Pricing() {
 
         {/* Guarantee badge strip */}
         <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 border border-[var(--border)] rounded-sm text-[0.75rem] font-montserrat text-[var(--text-3)] text-center">
-            ✓ 7-Day Delivery Guaranteed &nbsp;·&nbsp; ✓ 100% Code Ownership &nbsp;·&nbsp; ✓ Free Quote in 24 Hours
+          <div className="inline-flex items-center gap-4 px-5 py-2.5 border border-[var(--border)] rounded-sm text-[0.75rem] font-montserrat text-[var(--text-3)]">
+            <span className="inline-flex items-center gap-1.5"><CheckCircle size={13} className="text-[var(--text)]" /> 7-Day Delivery Guaranteed</span>
+            <span className="text-[var(--border)]">·</span>
+            <span className="inline-flex items-center gap-1.5"><CheckCircle size={13} className="text-[var(--text)]" /> 100% Code Ownership</span>
+            <span className="text-[var(--border)]">·</span>
+            <span className="inline-flex items-center gap-1.5"><CheckCircle size={13} className="text-[var(--text)]" /> Free Quote in 24 Hours</span>
           </div>
         </div>
 

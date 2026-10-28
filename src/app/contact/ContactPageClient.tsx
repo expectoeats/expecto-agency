@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { motion } from "framer-motion";
-import { Phone, MessageSquare, MapPin, ArrowRight, Clock } from "lucide-react";
+import { Phone, MessageSquare, MapPin, ArrowRight, Clock, Mail } from "lucide-react";
 import FAQ from "@/components/FAQ";
 
 const services = ["Web Development", "App Development", "Software & SaaS", "Digital Marketing", "Brand & Design", "Video Editing", "Other"];
@@ -16,7 +16,7 @@ export default function ContactPageClient() {
   const { register, handleSubmit, formState: { errors } } = useForm<ContactFormValues>();
 
   const onSubmit: SubmitHandler<ContactFormValues> = (data) => {
-    const message = `Hi Expecto Team,\n\n👤 Name: ${data.name}\n📧 Email: ${data.email}\n📱 Phone: ${data.phone || "Not provided"}\n🛠️ Service: ${data.service || "Not specified"}\n📝 Message: ${data.message}\n\nLooking forward to hearing from you.`;
+    const message = `Hi Expecto Team,\n\nName: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone || "Not provided"}\nService: ${data.service || "Not specified"}\nMessage: ${data.message}\n\nLooking forward to hearing from you.`;
     window.open(`https://wa.me/918707224376?text=${encodeURIComponent(message)}`, "_blank");
   };
 
@@ -45,7 +45,7 @@ export default function ContactPageClient() {
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
             className="font-montserrat text-[0.6875rem] text-white/50 uppercase tracking-[0.18em] mb-6 inline-block border border-white/15 px-4 py-2 rounded-sm"
             style={{ background:"rgba(255,255,255,0.06)", backdropFilter:"blur(8px)" }}>
-            💬 Get In Touch
+            <MessageSquare size={12} className="inline-block mr-1.5 -mt-0.5" /> Get In Touch
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
             className="font-montserrat font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 text-balance text-white">

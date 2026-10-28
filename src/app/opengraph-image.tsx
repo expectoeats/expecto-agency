@@ -123,10 +123,10 @@ export default async function Image() {
         {/* Bottom row — stat pills */}
         <div style={{ display: "flex", gap: 16 }}>
           {[
-            "🚀 7-Day Delivery",
-            "💰 From ₹1,999",
-            "✅ 50+ Projects",
-            "🏆 100% Satisfaction",
+            "→ 7-Day Delivery",
+            "₹4,999 Starting",
+            "✦ 50+ Projects",
+            "✦ 100% Satisfaction",
           ].map((tag) => (
             <div
               key={tag}

@@ -2,33 +2,33 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, MessageSquare } from "lucide-react";
+import { Plus, Minus, MessageSquare, HelpCircle } from "lucide-react";
 import Link from "next/link";
 
 const faqs = [
   {
-    q: "7-din delivery — kya ye sach mein hota hai?",
-    a: "Haan, aur ye likhit mein diya jaata hai. Agar hum qualifying project ki deadline miss karte hain, toh 20% cashback milta hai. Humne 50+ projects time par deliver kiye hain — aur proof hai.",
+    q: "Is the 7-day delivery actually real?",
+    a: "Yes — and it is guaranteed in writing. If we miss the deadline on a qualifying project, you receive a 20% cashback. We have delivered 50+ projects on time, with proof to back it up.",
   },
   {
-    q: "Maine pehle ek freelancer hire kiya tha jo beech mein ghayab ho gaya — aapke saath aisa nahi hoga?",
-    a: "Hum samajhte hain. Isliye hum har project par ek signed agreement dete hain, milestones ke saath advance nahi lete, aur poora kaam deliver hone par baaki payment lete hain. Code Ownership Certificate bhi milta hai — toh aap kabhi lock-in mein nahi rahenge.",
+    q: "I hired a freelancer before who disappeared mid-project. How is this different?",
+    a: "We understand that concern. Every project comes with a signed agreement, milestone-based payments (no large upfront amounts), and a Code Ownership Certificate on delivery. You are never locked in — the code is yours from day one.",
   },
   {
-    q: "Website ke baad domain aur code kaun ka hoga?",
-    a: "100% aapka. Har client ko ek signed Code Ownership Certificate milta hai jisme source code, design assets aur database ke poore rights confirm hote hain. Koi lock-in nahi, kabhi nahi.",
+    q: "Who owns the website and code after delivery?",
+    a: "You do — 100%. Every client receives a signed Code Ownership Certificate confirming full rights to source code, design assets, and the database. No lock-in, ever.",
   },
   {
-    q: "Kya meri website Google par aayegi?",
-    a: "Haan. Sabhi websites SEO-ready build hoti hain — proper meta tags, sitemap, schema markup aur Google Business Profile setup ke saath. Advanced SEO add-on ke roop mein available hai.",
+    q: "Will my website show up on Google?",
+    a: "Yes. Every website we build is SEO-ready — with proper meta tags, sitemap, schema markup, and Google Business Profile setup included. Advanced SEO is available as an add-on.",
   },
   {
-    q: "Mujhe kitna involve hona padega? Main bohot busy hoon.",
-    a: "Bohot kam. Ek 30-minute discovery call, content aap WhatsApp par share karo — baaki hum handle karte hain. Progress updates regular milte hain. Koi lengthy meetings nahi, koi back-and-forth nahi.",
+    q: "How much of my time will this take? I am very busy.",
+    a: "Very little. A 30-minute discovery call, content shared over WhatsApp — and we handle the rest. You get regular progress updates with no lengthy meetings or back-and-forth.",
   },
   {
-    q: "Pricing transparent hai ya hidden charges hain?",
-    a: "Bilkul transparent. Aapke proposal mein design, development, deployment, revisions aur add-ons ka line-by-line breakdown hoga. Koi hidden charges nahi — kabhi nahi. Quote 24 ghante mein free milta hai.",
+    q: "Is the pricing transparent or are there hidden charges?",
+    a: "Completely transparent. Your proposal includes a line-by-line breakdown of design, development, deployment, revisions, and any add-ons. No hidden charges — ever. A free quote is delivered within 24 hours.",
   },
 ];
 
@@ -80,7 +80,8 @@ export default function FAQ() {
               viewport={{ once: true }}
               className="label-tag text-[var(--text-3)] block"
             >
-              🤔 Common Queries
+              <HelpCircle size={13} className="inline-block mr-1.5 -mt-0.5" />
+              Common Queries
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 16 }}
