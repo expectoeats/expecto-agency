@@ -45,7 +45,7 @@ const heroCards = [
 
 const letters = ["E", "x", "p", "e", "c", "t"];
 
-export default function Hero() {
+function LiveClock() {
   const [time, setTime] = useState<string>("00:00");
 
   useEffect(() => {
@@ -64,6 +64,16 @@ export default function Hero() {
     return () => clearInterval(id);
   }, []);
 
+  return (
+    <div className="flex items-center gap-1.5 tabular-nums">
+      <span>(</span>
+      <span className="text-[#1E1E1E] font-medium">{time}</span>
+      <span>IST )</span>
+    </div>
+  );
+}
+
+export default function Hero() {
   const carouselItems = [...heroCards, ...heroCards];
 
   return (
@@ -71,11 +81,7 @@ export default function Hero() {
       {/* Top Meta Bar */}
       <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between text-xs font-mono text-[#5A6271] pb-6">
         {/* Left: Time */}
-        <div className="flex items-center gap-1.5 tabular-nums">
-          <span>(</span>
-          <span className="text-[#1E1E1E] font-medium">{time}</span>
-          <span>IST )</span>
-        </div>
+        <LiveClock />
 
         {/* Center: Location */}
         <div className="hidden sm:block text-center text-[#5A6271] text-xs font-mono">
@@ -155,9 +161,11 @@ export default function Hero() {
                   playsInline
                   preload="none"
                   poster={card.poster}
+                  aria-hidden="true"
                   className="w-full h-full object-cover object-center pointer-events-none"
                 >
                   <source src={card.src} type="video/mp4" />
+                  <track kind="captions" />
                 </video>
               ) : (
                 <Image
@@ -167,6 +175,8 @@ export default function Hero() {
                   sizes="(max-width: 640px) 130px, (max-width: 768px) 195px, 240px"
                   className="object-cover object-center pointer-events-none"
                   priority={idx === 0}
+                  loading={idx === 0 ? "eager" : undefined}
+                  fetchPriority={idx === 0 ? "high" : undefined}
                 />
               )}
             </div>

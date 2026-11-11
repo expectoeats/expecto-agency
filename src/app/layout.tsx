@@ -127,6 +127,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {/* Explicit viewport */}
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        {/* High-priority LCP image preload for instant paint */}
+        <link
+          rel="preload"
+          as="image"
+          href="/_next/image?url=%2Fhero%2Fanalytics.webp&w=256&q=75"
+          fetchPriority="high"
+        />
       </head>
       <body className="bg-white text-[var(--text)] antialiased">
         <Script id="schema-organization" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} strategy="lazyOnload" />

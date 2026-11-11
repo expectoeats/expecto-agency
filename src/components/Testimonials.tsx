@@ -109,9 +109,9 @@ export default function Testimonials() {
                         .join("")}
                     </div>
                     <div>
-                      <h4 className="text-base font-semibold text-[#1E1E1E]">
+                      <p className="text-base font-semibold text-[#1E1E1E]">
                         {realTestimonials[current].author}
-                      </h4>
+                      </p>
                       <p className="font-mono text-xs text-[#5A6271] mt-0.5">
                         {realTestimonials[current].role} • {realTestimonials[current].company}
                       </p>
@@ -128,16 +128,20 @@ export default function Testimonials() {
         </div>
 
         {/* Indicator dots */}
-        <div className="flex items-center gap-2 mt-8">
+        <div className="flex items-center gap-1 mt-8">
           {realTestimonials.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrent(idx)}
               aria-label={`Go to slide ${idx + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                current === idx ? "w-8 bg-[#1E1E1E]" : "w-2 bg-[#D0D8E4]"
-              }`}
-            />
+              className="py-3 px-1.5 cursor-pointer flex items-center justify-center min-w-[28px] min-h-[28px]"
+            >
+              <span
+                className={`h-1.5 rounded-full transition-all duration-300 block ${
+                  current === idx ? "w-8 bg-[#1E1E1E]" : "w-2 bg-[#D0D8E4]"
+                }`}
+              />
+            </button>
           ))}
         </div>
       </div>
