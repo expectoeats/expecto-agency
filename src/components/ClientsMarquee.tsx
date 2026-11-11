@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 const clientLogos = [
   {
@@ -64,16 +61,7 @@ export default function ClientsMarquee() {
         <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
-        <motion.div
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 55,
-            ease: "linear",
-          }}
-          className="flex items-center gap-6 sm:gap-8 w-max py-4 group-hover:[animation-play-state:paused]"
-        >
+        <div className="flex items-center gap-6 sm:gap-8 w-max py-4 animate-[marquee_55s_linear_infinite] group-hover:[animation-play-state:paused]">
           {repeated.map((client, i) => (
             <div
               key={`${client.name}-${i}`}
@@ -106,7 +94,7 @@ export default function ClientsMarquee() {
               </span>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

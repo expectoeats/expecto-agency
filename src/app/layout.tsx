@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Chivo_Mono, Montserrat } from "next/font/google";
+import { Inter, Chivo_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -26,12 +26,6 @@ const inter = Inter({
 const chivoMono = Chivo_Mono({
   subsets: ["latin"],
   variable: "--font-chivo-mono",
-  display: "swap",
-});
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
   display: "swap",
 });
 
@@ -123,15 +117,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const slsSchema = getSiteLinksSearchBoxSchema();
 
   return (
-    <html lang="en-IN" data-scroll-behavior="smooth" className={`${inter.variable} ${chivoMono.variable} ${montserrat.variable}`}>
+    <html lang="en-IN" data-scroll-behavior="smooth" className={`${inter.variable} ${chivoMono.variable}`}>
       <head>
         {/* Explicit viewport */}
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        {/* High-priority LCP image preload for instant paint */}
+        {/* High-priority direct static LCP image preload for instant 0ms paint */}
         <link
           rel="preload"
           as="image"
-          href="/_next/image?url=%2Fhero%2Fanalytics.webp&w=256&q=75"
+          href="/hero/analytics.webp"
           fetchPriority="high"
         />
       </head>

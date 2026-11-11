@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 const realProjects = [
@@ -66,14 +63,8 @@ export default function SelectedWork() {
 
         {/* Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 pt-12">
-          {realProjects.map((p, index) => (
-            <motion.div
-              key={p.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
-            >
+          {realProjects.map((p) => (
+            <div key={p.name}>
               <Link
                 href={p.link}
                 target={p.link.startsWith("http") ? "_blank" : undefined}
@@ -119,7 +110,7 @@ export default function SelectedWork() {
                   {p.desc}
                 </p>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

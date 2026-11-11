@@ -150,6 +150,8 @@ export default function Hero() {
                   priority={idx === 0}
                   loading={idx === 0 ? "eager" : undefined}
                   fetchPriority={idx === 0 ? "high" : undefined}
+                  unoptimized={idx === 0}
+                  decoding={idx === 0 ? "sync" : "async"}
                 />
               )}
             </div>

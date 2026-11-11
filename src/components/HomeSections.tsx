@@ -1,14 +1,10 @@
-"use client";
-
-import dynamic from "next/dynamic";
-
-const SelectedWork     = dynamic(() => import("@/components/SelectedWork"),     { ssr: true });
-const Services         = dynamic(() => import("@/components/Services"),         { ssr: true });
-const ClientsMarquee   = dynamic(() => import("@/components/ClientsMarquee"),   { ssr: false });
-const Testimonials     = dynamic(() => import("@/components/Testimonials"),     { ssr: false });
-const FAQ              = dynamic(() => import("@/components/FAQ"),              { ssr: true });
-const CreativeDispatch = dynamic(() => import("@/components/CreativeDispatch"), { ssr: true });
-const FinalCTA         = dynamic(() => import("@/components/FinalCTA"),         { ssr: true });
+import SelectedWork from "@/components/SelectedWork";
+import Services from "@/components/Services";
+import ClientsMarquee from "@/components/ClientsMarquee";
+import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
+import CreativeDispatch from "@/components/CreativeDispatch";
+import FinalCTA from "@/components/FinalCTA";
 
 export default function HomeSections() {
   return (
