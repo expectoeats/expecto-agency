@@ -1,138 +1,106 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, MessageSquare, HelpCircle } from "lucide-react";
-import Link from "next/link";
+import { Plus } from "lucide-react";
 
-const faqs = [
+const realFaqs = [
   {
     q: "Is the 7-day delivery actually real?",
-    a: "Yes — and it is guaranteed in writing. If we miss the deadline on a qualifying project, you receive a 20% cashback. We have delivered 50+ projects on time, with proof to back it up.",
+    a: "Yes — and it is guaranteed in writing. If we miss the deadline on a qualifying project, you receive a 20% cashback. We have delivered 50+ projects on time, with verified client proof across India.",
   },
   {
     q: "I hired a freelancer before who disappeared mid-project. How is this different?",
-    a: "We understand that concern. Every project comes with a signed agreement, milestone-based payments (no large upfront amounts), and a Code Ownership Certificate on delivery. You are never locked in — the code is yours from day one.",
+    a: "We understand that concern. As a registered digital agency, every project comes with a signed agreement, milestone-based payments (no full upfront lock-in), and a Code Ownership Certificate on delivery.",
   },
   {
     q: "Who owns the website and code after delivery?",
-    a: "You do — 100%. Every client receives a signed Code Ownership Certificate confirming full rights to source code, design assets, and the database. No lock-in, ever.",
+    a: "You do — 100%. Every client receives a signed Code Ownership Certificate confirming full rights to source code, design assets, and the database. No vendor lock-in, ever.",
   },
   {
     q: "Will my website show up on Google?",
-    a: "Yes. Every website we build is SEO-ready — with proper meta tags, sitemap, schema markup, and Google Business Profile setup included. Advanced SEO is available as an add-on.",
+    a: "Yes. Every website we build is engineered SEO-ready — with proper meta tags, sitemaps, structured schema markup, and Google Business Profile indexing included from day one.",
   },
   {
     q: "How much of my time will this take? I am very busy.",
-    a: "Very little. A 30-minute discovery call, content shared over WhatsApp — and we handle the rest. You get regular progress updates with no lengthy meetings or back-and-forth.",
+    a: "Very little. A quick 30-minute discovery call, assets shared conveniently over WhatsApp, and our engineering team handles the rest. You get clear milestone updates without tedious back-and-forth.",
   },
   {
     q: "Is the pricing transparent or are there hidden charges?",
-    a: "Completely transparent. Your proposal includes a line-by-line breakdown of design, development, deployment, revisions, and any add-ons. No hidden charges — ever. A free quote is delivered within 24 hours.",
+    a: "Completely transparent. Websites start at Rs. 4,999. Your proposal includes a line-by-line breakdown of design, development, deployment, and revisions. No hidden surprises — ever.",
   },
 ];
-
-function AccordionItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: boolean; onClick: () => void }) {
-  return (
-    <div className={`border border-[var(--border)] overflow-hidden transition-all duration-300 bg-white ${isOpen ? "border-[var(--text)]" : "hover:border-[var(--text-2)]"}`}>
-      <button
-        onClick={onClick}
-        className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--text)]"
-      >
-        <span className={`font-montserrat font-medium text-base sm:text-lg leading-snug ${isOpen ? "text-[var(--text)]" : "text-[var(--text)]"}`}>
-          {q}
-        </span>
-        <div className={`shrink-0 w-8 h-8 rounded-sm border border-[var(--border)] flex items-center justify-center transition-colors duration-200 ${isOpen ? "bg-[var(--text)] text-white border-[var(--text)]" : "bg-[var(--bg-subtle)] text-[var(--text-3)]"}`}>
-          {isOpen ? <Minus size={16} strokeWidth={2} /> : <Plus size={16} strokeWidth={2} />}
-        </div>
-      </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25 }}
-          >
-            <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-4 border-t border-[var(--border)] font-montserrat text-[var(--text-3)] text-sm sm:text-base leading-relaxed">
-              {a}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
+  const toggle = (i: number) => {
+    setOpenIndex(openIndex === i ? null : i);
+  };
+
   return (
-    <div className="py-4 bg-transparent">
-      <div className="container mx-auto max-w-5xl px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.8fr] gap-10 lg:gap-20">
-
-          {/* Left sticky column */}
-          <div className="lg:sticky lg:top-28 h-fit space-y-6">
-            <motion.span
-              initial={{ opacity: 0, x: -12 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="label-tag text-[var(--text-3)] block"
-            >
-              <HelpCircle size={13} className="inline-block mr-1.5 -mt-0.5" />
-              Common Queries
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="font-montserrat font-semibold text-3xl sm:text-4xl text-[var(--text)] leading-tight"
-            >
-              Frequently Asked{" "}
-              <span className="text-[var(--text)]">Questions.</span>
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="font-montserrat text-[var(--text-3)] text-base leading-relaxed"
-            >
-              Essential insights for Indian business owners scaling their digital presence.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white border border-[var(--border)] rounded-sm p-5"
-            >
-              <h3 className="font-montserrat font-medium text-base text-[var(--text)] mb-3">Still have questions?</h3>
-              <Link
-                href="https://wa.me/918707224376"
-                target="_blank"
-                className="inline-flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 rounded-sm font-montserrat font-medium text-sm hover:-translate-y-0.5 transition-transform"
-              >
-                <MessageSquare size={18} strokeWidth={2} />
-                WhatsApp Us →
-              </Link>
-            </motion.div>
+    <section className="py-20 md:py-32 px-6 md:px-12 bg-white border-t border-[#E5E7EB]" aria-label="FAQ">
+      <div className="w-full max-w-[1400px] mx-auto">
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-12 md:pb-16 border-b border-[#E5E7EB]">
+          <div>
+            <span className="font-mono text-xs text-[#8A919B] block mb-3">
+              ( FREQUENTLY ASKED QUESTIONS )
+            </span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-[#1E1E1E]">
+              FAQ.
+            </h2>
           </div>
 
-          {/* Right accordion */}
-          <div className="space-y-3">
-            {faqs.map((faq, i) => (
-              <AccordionItem
-                key={i}
-                q={faq.q}
-                a={faq.a}
-                isOpen={openIndex === i}
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-              />
-            ))}
-          </div>
+          <span className="font-mono text-xs text-[#8A919B]">
+            ( 06 COMMON QUESTIONS )
+          </span>
+        </div>
+
+        {/* Accordion List */}
+        <div className="divide-y divide-[#E5E7EB] pt-4">
+          {realFaqs.map((item, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <div key={item.q} className="py-6 md:py-8">
+                <button
+                  onClick={() => toggle(i)}
+                  aria-expanded={isOpen}
+                  className="w-full flex items-center justify-between gap-6 text-left group cursor-pointer focus:outline-none"
+                >
+                  <span className="text-lg md:text-2xl font-medium text-[#1E1E1E] group-hover:opacity-60 transition-opacity">
+                    {item.q}
+                  </span>
+
+                  <div
+                    className={`w-9 h-9 md:w-11 md:h-11 rounded-full border border-[#E5E7EB] flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                      isOpen ? "bg-[#1E1E1E] text-white rotate-45 border-[#1E1E1E]" : "bg-[#F8F9FA] text-[#1E1E1E] group-hover:bg-[#EEF0F6]"
+                    }`}
+                  >
+                    <Plus size={18} />
+                  </div>
+                </button>
+
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <p className="text-sm md:text-base text-[#5A6271] leading-relaxed pt-5 max-w-4xl">
+                        {item.a}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

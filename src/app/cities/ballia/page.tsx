@@ -319,7 +319,7 @@ export default function BalliaPage() {
               </div>
 
               <Link
-                href="/work"
+                href="/services"
                 className="inline-flex items-center gap-2 font-montserrat font-medium text-[0.875rem] text-[var(--text)] border-b border-[var(--text)] pb-0.5 hover:opacity-60 transition-opacity mt-2 self-start"
               >
                 See our full portfolio <ArrowRight size={13} strokeWidth={1.75} />

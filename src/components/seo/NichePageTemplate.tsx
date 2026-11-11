@@ -96,8 +96,8 @@ export default function NichePageTemplate({
                 <Link href="/contact" className="btn-black">
                   Start a Project <ArrowRight size={14} strokeWidth={1.75} />
                 </Link>
-                <Link href="/work" className="btn-outline">
-                  See Our Work
+                <Link href="/services" className="btn-outline">
+                  Our Capabilities
                 </Link>
               </div>
             </div>
@@ -339,9 +339,9 @@ export default function NichePageTemplate({
                 className="inline-flex items-center gap-2 bg-white text-[#111111] font-montserrat font-medium text-[0.875rem] px-6 py-4 hover:bg-white/90 transition-colors duration-150">
                 Start a Project <ArrowRight size={14} strokeWidth={1.75} />
               </Link>
-              <Link href="/work"
+              <Link href="/services"
                 className="inline-flex items-center gap-2 border border-white/20 text-white font-montserrat font-medium text-[0.875rem] px-6 py-4 hover:border-white/50 transition-colors duration-150">
-                View Our Work
+                View Capabilities
               </Link>
             </div>
           </div>

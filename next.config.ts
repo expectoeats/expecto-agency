@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   compress: true,
@@ -14,6 +16,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "www.swapzy.store", pathname: "/**" },
       { protocol: "https", hostname: "png.pngtree.com", pathname: "/**" },
       { protocol: "https", hostname: "ramainstitutetech.com", pathname: "/**" },
+      { protocol: "https", hostname: "framerusercontent.com", pathname: "/**" },
     ],
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 604800,
@@ -22,10 +25,9 @@ const nextConfig: NextConfig = {
   },
 
   async headers() {
-    const isProd = process.env.NODE_ENV === "production";
     return [
       {
-        // Security headers for all routes EXCEPT _next/static (handled by Next.js itself)
+        // Security headers for all routes EXCEPT _next/static (handled automatically by Next.js)
         source: "/((?!_next/static).*)",
         headers: [
           { key: "X-Content-Type-Options", value: "nosniff" },
@@ -38,11 +40,6 @@ const nextConfig: NextConfig = {
             ? [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }]
             : []),
         ],
-      },
-      {
-        // JS/CSS chunks — must be immutable (content-hashed filenames)
-        source: "/_next/static/(.*)",
-        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
       {
         source: "/(.*)\\.(woff2|woff|ttf|otf|eot)",
@@ -69,4 +66,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-

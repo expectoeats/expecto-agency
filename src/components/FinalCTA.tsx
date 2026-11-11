@@ -1,69 +1,102 @@
 "use client";
 
-import Image from "next/image";
+import { useState } from "react";
+import { ArrowUpRight, Send, Check, MessageSquare } from "lucide-react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-
-const thumbs = [
-  { src: "/work/coaching/expecto-demo-coaching.webp", alt: "NEET Coaching Website" },
-  { src: "/work/swapzy.webp",                         alt: "Swapzy" },
-  { src: "/work/edu-crm.webp",                        alt: "Education CRM" },
-  { src: "/work/real-estate-crm.webp",                alt: "Real Estate CRM" },
-  { src: "/work/school/kindergarten.webp",            alt: "Kindergarten Website" },
-  { src: "/work/school/kindergarten2.webp",           alt: "Kindergarten Website 02" },
-];
 
 export default function FinalCTA() {
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setSubscribed(true);
+      setEmail("");
+    }
+  };
+
   return (
-    <section className="bg-[#111111] relative overflow-hidden" aria-label="Final call to action">
-      {/* Pattern texture — very subtle */}
-      <div className="absolute inset-0 pointer-events-none select-none">
-        <Image
-          src="/pattern.webp"
-          alt=""
-          fill
-          className="object-cover object-center opacity-[0.06]"
-          sizes="100vw"
-        />
-      </div>
-      <div className="max-w-[1360px] mx-auto px-8 md:px-12 pt-24 md:pt-32 pb-16 md:pb-20">
+    <section className="py-24 md:py-36 px-6 md:px-12 bg-white border-t border-[#E5E7EB]" aria-label="Contact & Newsletter">
+      <div className="w-full max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          {/* Left Column: Direct Agency Inquiry */}
+          <div className="lg:col-span-7">
+            <span className="font-mono text-xs text-[#8A919B] block mb-4">
+              ( START A PROJECT )
+            </span>
 
-        <div className="max-w-[860px] mb-16">
-          <p className="font-montserrat font-semibold text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.15] tracking-tight text-white mb-10">
-            Ready to get your website <span className="shimmer-text-light">live in 7 days</span>?
-          </p>
-          <p className="font-montserrat text-[1rem] text-white/50 leading-[1.75] max-w-[440px] mb-10">
-            100+ Indian businesses served. Aapki baari ab hai.
-          </p>
-          <div className="flex flex-col sm:flex-row items-start gap-3">
-            <Link href="https://wa.me/918707224376"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-[#111111] font-montserrat font-medium text-[0.875rem] px-7 py-4 hover:bg-white/90 transition-colors duration-150">
-              WhatsApp Karo — Free Consultation <ArrowRight size={14} strokeWidth={1.75} />
-            </Link>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-[#1E1E1E] leading-[1.12] mb-8">
+              Ready to get your website or custom business software live in 7 days?
+            </h2>
+
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-8">
+              <a
+                href="mailto:hello@expecto.online"
+                className="group inline-flex items-center gap-3 text-2xl sm:text-3xl font-semibold text-[#1E1E1E] hover:opacity-60 transition-opacity border-b-2 border-[#1E1E1E] pb-1"
+              >
+                <span>hello@expecto.online</span>
+                <ArrowUpRight size={24} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </a>
+
+              <Link
+                href="https://wa.me/918707224376"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#1E1E1E] text-white hover:bg-[#333333] transition-colors px-6 py-3.5 rounded-full font-medium text-sm font-mono"
+              >
+                <MessageSquare size={16} />
+                <span>WhatsApp Consult</span>
+              </Link>
+            </div>
+
+            <p className="font-mono text-xs text-[#8A919B] mt-6">
+              Phone: +91 87072 24376 • Guaranteed turnaround in writing with 20% cashback policy.
+            </p>
+          </div>
+
+          {/* Right Column: Newsletter Box */}
+          <div className="lg:col-span-5 flex flex-col justify-end">
+            <div className="p-8 md:p-10 rounded-[24px] bg-[#F8F9FA] border border-[#E5E7EB]">
+              <span className="font-mono text-xs text-[#8A919B] block mb-2">
+                ( AGENCY UPDATES )
+              </span>
+
+              <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-[#1E1E1E] mb-2">
+                Join our newsletter
+              </h3>
+
+              <p className="text-sm text-[#5A6271] mb-6">
+                Curated insights on web performance, software architecture, and digital growth strategies for Indian founders.
+              </p>
+
+              {subscribed ? (
+                <div className="p-4 rounded-xl bg-white border border-[#E5E7EB] text-sm text-[#1E1E1E] flex items-center gap-2">
+                  <Check size={16} className="text-[#1E1E1E]" />
+                  <span>You are subscribed. Welcome to Expecto!</span>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your business email"
+                    className="flex-1 px-4 py-3.5 rounded-full bg-white border border-[#E5E7EB] focus:border-[#1E1E1E] focus:outline-none text-sm text-[#1E1E1E] placeholder:text-[#8A919B]"
+                  />
+                  <button
+                    type="submit"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#1E1E1E] text-white hover:bg-[#333333] transition-colors text-xs font-mono font-medium shrink-0 cursor-pointer"
+                  >
+                    <span>SEND</span>
+                    <Send size={12} />
+                  </button>
+                </form>
+              )}
+            </div>
           </div>
         </div>
-
-        {/* Project proof strip */}
-        <div className="border-t border-white/10 pt-10">
-          <p className="font-montserrat text-[0.6875rem] text-white/30 uppercase tracking-[0.15em] mb-5">Recent builds</p>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-2">
-            {thumbs.map((t) => (
-              <div key={t.alt} className="relative aspect-[16/10] overflow-hidden border border-white/15 ring-1 ring-white/10">
-                <Image
-                  src={t.src}
-                  alt={t.alt}
-                  fill
-                  className="object-cover object-top opacity-60 hover:opacity-90 transition-opacity duration-200"
-                  sizes="(max-width:640px) 33vw, 16vw"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
       </div>
     </section>
   );

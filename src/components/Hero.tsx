@@ -1,120 +1,201 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, CheckCircle } from "lucide-react";
-import { HandDrawnArrow } from "@/components/HandDrawnArt";
+import { motion } from "framer-motion";
 
-const BG = "/dark-teal.webp";
+const heroCards = [
+  {
+    type: "image",
+    src: "/hero/analytics.webp",
+    alt: "Google Top 1 Rank Visual",
+    radius: "rounded-tl-[80px] rounded-br-[80px]",
+  },
+  {
+    type: "image",
+    src: "/hero/google-glass.webp",
+    alt: "Modern Interactive UI",
+    radius: "rounded-tr-[80px] rounded-bl-[80px]",
+  },
+  {
+    type: "video",
+    src: "/hero/card-3.mp4",
+    poster: "/hero/analytics.webp",
+    alt: "Motion Showreel",
+    radius: "rounded-tl-[80px] rounded-br-[80px]",
+  },
+  {
+    type: "image",
+    src: "/hero/motion.webp",
+    alt: "7-Day Sprint Delivery Guarantee",
+    radius: "rounded-tr-[80px] rounded-bl-[80px]",
+  },
+  {
+    type: "image",
+    src: "/hero/lock.webp",
+    alt: "100% Code Ownership & Security",
+    radius: "rounded-tl-[80px] rounded-br-[80px]",
+  },
+  {
+    type: "image",
+    src: "/hero/laptop.webp",
+    alt: "Scalable Web & Cloud Platforms",
+    radius: "rounded-tr-[80px] rounded-bl-[80px]",
+  },
+];
+
+const letters = ["E", "x", "p", "e", "c", "t"];
 
 export default function Hero() {
-  return (
-    <section className="relative pt-[72px] md:pt-20 overflow-hidden bg-[#0D0D0D]" aria-label="Hero">
+  const [time, setTime] = useState<string>("00:00");
 
-      {/* Background image — full bleed, dark overlay everywhere */}
-      <div className="absolute inset-0 pointer-events-none select-none">
-        <Image
-          src={BG}
-          alt=""
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-          priority
-        />
-        {/* Unified dark overlay — same on mobile + desktop */}
-        <div className="absolute inset-0 bg-[#0D0D0D]/72" />
-        {/* Subtle vignette bottom */}
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0D0D0D]/60 to-transparent" />
+  useEffect(() => {
+    const update = () => {
+      setTime(
+        new Date().toLocaleTimeString("en-US", {
+          hour12: false,
+          hour: "2-digit",
+          minute: "2-digit",
+          timeZone: "Asia/Kolkata",
+        })
+      );
+    };
+    update();
+    const id = setInterval(update, 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  const carouselItems = [...heroCards, ...heroCards];
+
+  return (
+    <section className="relative pt-24 md:pt-28 pb-16 md:pb-24 bg-white overflow-hidden" aria-label="Hero">
+      {/* Top Meta Bar */}
+      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between text-xs font-mono text-[#8A919B] pb-6">
+        {/* Left: Time */}
+        <div className="flex items-center gap-1.5 tabular-nums">
+          <span>(</span>
+          <span className="text-[#1E1E1E] font-medium">{time}</span>
+          <span>IST )</span>
+        </div>
+
+        {/* Center: Location */}
+        <div className="hidden sm:block text-center text-[#5A6271] text-xs font-mono">
+          Digital agency based in Ballia, Uttar Pradesh.
+        </div>
+
+        {/* Right: Socials */}
+        <div className="flex items-center gap-2">
+          {[
+            { label: "WA", href: "https://wa.me/918707224376" },
+            { label: "IG", href: "https://instagram.com/expecto.web" },
+            { label: "LI", href: "https://www.linkedin.com/company/expecto-digital-solutions/" },
+          ].map((s, i) => (
+            <span key={s.label} className="flex items-center gap-2">
+              <a
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#1E1E1E] transition-colors"
+              >
+                {s.label}
+              </a>
+              {i < 2 && <span className="text-[#D0D8E4]">/</span>}
+            </span>
+          ))}
+        </div>
       </div>
 
-      <div className="relative z-10 max-w-[1360px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+      {/* Giant "Expecto" Title with Automatic Stagger Wave & Typographically Scaled "O" Logo */}
+      <div className="w-full text-center px-4 pt-2 pb-6 md:pb-8 select-none flex items-center justify-center">
+        <div className="inline-flex items-baseline justify-center cursor-default select-none">
+          {/* Automatic Calm & Rhythmic Letter Wave */}
+          {letters.map((char, i) => (
+            <motion.span
+              key={char + i}
+              animate={{
+                y: [0, -6, 0, 0],
+              }}
+              transition={{
+                duration: 2.8,
+                repeat: Infinity,
+                repeatDelay: 1.2,
+                delay: i * 0.12,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="text-[16vw] sm:text-[17vw] md:text-[18vw] leading-[0.86] font-bold tracking-tight text-[#1E1E1E] inline-block font-sans"
+            >
+              {char}
+            </motion.span>
+          ))}
 
-        <div className="pt-10 md:pt-24 pb-4">
-          <span className="font-montserrat text-[0.625rem] text-white/50 uppercase tracking-[0.22em]">
-            Expecto / Digital Agency
+          {/* Letter "o" as Rotating Expecto Logo, Sized & Baseline-Aligned with Lowercase "c" & "e" */}
+          <span className="inline-block relative w-[0.53em] h-[0.53em] ml-[0.02em] align-baseline text-[16vw] sm:text-[17vw] md:text-[18vw] translate-y-[0.03em]">
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{
+                repeat: Infinity,
+                duration: 24,
+                ease: "linear",
+              }}
+              className="relative w-full h-full rounded-full overflow-hidden bg-[#1E1E1E] shadow-xs"
+            >
+              <Image
+                src="/logo.png"
+                alt="Expecto O Logo"
+                fill
+                sizes="(max-width: 768px) 120px, 160px"
+                className="object-cover"
+                priority
+              />
+            </motion.div>
           </span>
         </div>
+      </div>
 
-        {/* Heading with frosted-glass background pill */}
-        <div className="grid grid-cols-1 lg:grid-cols-12">
-          <div className="lg:col-span-9">
-            <h1 className="font-montserrat font-semibold text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.15] tracking-tight text-white">
-              We build websites that bring you{" "}
-              <span
-                className="relative inline-block"
-                style={{
-                  background: "linear-gradient(105deg,#fff 0%,#fff 30%,#aaa 45%,#eee 50%,#aaa 55%,#fff 70%,#fff 100%)",
-                  backgroundSize: "200% auto",
-                  WebkitBackgroundClip: "text",
-                  backgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  animation: "shimmer 4s linear infinite",
-                }}
-              >
-                customers
-              </span>{" "}
-              — not just compliments.
-            </h1>
-          </div>
-        </div>
+      {/* Horizontal Arch Card Slider (Bungee Marquee) */}
+      <div className="relative w-full overflow-hidden mt-2">
+        {/* Soft edge gradient fades */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 mt-8 md:mt-12 gap-6 md:gap-8 items-end pb-12 md:pb-24">
-          <div className="lg:col-span-5">
-
-            {/* Description — frosted card */}
+        <motion.div
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 36,
+            ease: "linear",
+          }}
+          className="flex items-center gap-4 sm:gap-5 md:gap-6 w-max py-2 px-4 cursor-grab active:cursor-grabbing"
+        >
+          {carouselItems.map((card, idx) => (
             <div
-              className="mb-7 md:mb-8 px-5 py-4 rounded-sm border border-white/10"
-              style={{ background: "rgba(255,255,255,0.06)", backdropFilter: "blur(12px)" }}
+              key={idx}
+              className={`relative flex-none w-[175px] sm:w-[195px] md:w-[215px] lg:w-[230px] h-[440px] sm:h-[480px] md:h-[520px] overflow-hidden bg-[#F0F2F5] shadow-sm hover:scale-[1.02] transition-transform duration-300 ${card.radius}`}
             >
-              <p className="font-montserrat text-white/80 text-[0.9375rem] md:text-[1rem] leading-[1.8]">
-                50+ Indian businesses trust Expecto for websites, apps, CRM &amp; digital products — delivered in 7 days, with 100% code ownership.
-              </p>
+              {card.type === "video" ? (
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster={card.poster}
+                  className="w-full h-full object-cover object-center pointer-events-none"
+                >
+                  <source src={card.src} type="video/mp4" />
+                </video>
+              ) : (
+                <Image
+                  src={card.src}
+                  alt={card.alt}
+                  fill
+                  sizes="(max-width: 768px) 200px, 240px"
+                  className="object-cover object-center pointer-events-none"
+                />
+              )}
             </div>
-
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <Link href="/contact"
-                className="inline-flex items-center justify-center gap-2 font-montserrat font-medium text-[0.875rem] px-6 py-3.5 transition-colors duration-150
-                  bg-white text-[#111111] hover:bg-white/90">
-                Start a Project <ArrowRight size={14} strokeWidth={1.75} />
-              </Link>
-            </div>
-
-            {/* Hand-drawn launch callout */}
-            <div className="mt-6 flex items-center gap-2.5 select-none">
-              <HandDrawnArrow className="w-8 h-7 text-white/50 -rotate-12 shrink-0" />
-              <Link
-                href="/contact"
-                className="font-mono text-[0.6875rem] text-white/75 hover:text-white tracking-wide border-b border-dashed border-white/40 pb-0.5 transition-colors"
-              >
-                <CheckCircle size={11} className="inline-block mr-1 -mt-0.5 text-white/60" />
-                7-Day Delivery Guaranteed in Writing — or 20% Cashback →
-              </Link>
-            </div>
-
-            <div className="mt-6 md:mt-8">
-              <span className="font-montserrat text-[0.75rem] text-white/35 tracking-wide">
-                Websites · Web Apps · E-commerce · CRM · ERP · Digital Products
-              </span>
-            </div>
-          </div>
-
-          <div className="hidden lg:flex lg:col-start-9 lg:col-span-4 justify-end items-end pb-1">
-            <div className="text-right flex flex-col items-end">
-              <div className="border border-white/15 bg-white/5 px-3 py-2 rounded-sm mb-3">
-                <p className="font-mono text-[0.6875rem] text-white/80 uppercase tracking-widest font-semibold">
-                  10-Day Sprint Guarantee
-                </p>
-                <p className="font-montserrat text-[0.625rem] text-white/40 mt-0.5">
-                  50+ brands served · 100% code ownership
-                </p>
-              </div>
-              <p className="font-montserrat text-[0.6875rem] text-white/40 uppercase tracking-[0.15em] mb-1.5">Based in India</p>
-              <p className="font-montserrat text-[0.6875rem] text-white/40 uppercase tracking-[0.15em]">Ballia, Uttar Pradesh</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="h-px bg-white/10" />
+          ))}
+        </motion.div>
       </div>
     </section>
   );

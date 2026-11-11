@@ -221,7 +221,7 @@ export default function WebDevCityPage({ city }: Props) {
                 ))}
               </div>
               <Link
-                href="/work"
+                href="/services"
                 className="inline-flex items-center gap-2 font-montserrat font-medium text-[0.8125rem] text-[var(--text)] border-b border-[var(--text)] pb-0.5 hover:opacity-60 transition-opacity self-start mt-2"
               >
                 See full portfolio <ArrowRight size={13} strokeWidth={1.75} />

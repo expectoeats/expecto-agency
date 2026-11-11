@@ -1,351 +1,284 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { 
-  Check, 
-  ArrowRight,
-  IndianRupee,
-  ShieldCheck,
-  Zap,
-  Eye
-} from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ParallaxSection from "@/components/ParallaxSection";
 import Link from "next/link";
+import { ArrowUpRight, Check, HelpCircle } from "lucide-react";
 
-const comboPackages = [
+const pricingTiers = [
   {
-    name: "Business Launchpad",
-    savings: "Save ₹2,000",
-    price: "₹5,499",
-    features: ["Business Website", "Google Business Setup", "1 month SEO Maintenance", "Professional Email"],
-    popular: false
+    name: "Landing Page Sprint",
+    price: "₹1,999",
+    tagline: "3-Day High-Conversion Sprint",
+    desc: "Single-page landing page engineered for Google Ads, Meta Ads, and direct campaign inquiry conversion.",
+    features: [
+      "Custom UI Design (No generic templates)",
+      "Sub-second Next.js load speed",
+      "WhatsApp 1-Click floating chat",
+      "Lead capture inquiry form",
+      "On-page SEO & Schema metadata",
+      "100% mobile-responsive layout",
+      "7-Day post-launch bug support",
+    ],
+    popular: false,
+    cta: "Start Landing Page",
   },
   {
-    name: "Growth Kit",
-    savings: "Save ₹4,000",
-    price: "₹14,999",
-    features: ["Custom Web App", "Meta Ads Setup", "Brand Kit", "Priority Support"],
-    popular: true
+    name: "Business Website",
+    price: "₹3,999",
+    tagline: "5-Day Full Company Website",
+    desc: "Multi-page bespoke website for growing clinics, academies, legal firms, restaurants, and local businesses.",
+    features: [
+      "Up to 5 custom-designed pages",
+      "Google Search Console & indexing setup",
+      "Interactive contact & booking form",
+      "Social media & Google Maps integration",
+      "Core Web Vitals 95+ score",
+      "Full source code ownership",
+      "14-Day post-launch support",
+    ],
+    popular: true,
+    cta: "Start Business Website",
   },
   {
-    name: "Content Engine",
-    savings: "Save ₹1,500",
-    price: "₹3,999/mo",
-    features: ["8 Reels / month", "Monthly SEO", "Social Media Graphics", "Strategy Call"],
-    popular: false
+    name: "E-Commerce Store",
+    price: "₹6,999",
+    tagline: "7-Day E-Commerce Launch",
+    desc: "Fast digital store with product catalog, cart, Razorpay payment gateway, and automated order alerts.",
+    features: [
+      "Full product catalog & dynamic cart",
+      "Razorpay / Cashfree / Stripe checkout",
+      "Automated customer WhatsApp receipts",
+      "Simple admin panel to manage products",
+      "Inventory tracking & order dashboard",
+      "Full code ownership & IP certificate",
+      "30-Day dedicated technical support",
+    ],
+    popular: false,
+    cta: "Launch E-Commerce Store",
   },
   {
-    name: "SaaS Starter",
-    savings: "Save ₹7,000",
-    price: "₹34,999",
-    features: ["SaaS MVP", "Cloud Infrastructure", "CI/CD Setup", "Admin Dashboard"],
-    popular: false
+    name: "Custom Software & ERP",
+    price: "₹9,999+",
+    tagline: "Milestone-Based Custom Sprint",
+    desc: "Bespoke web applications, CRM software, role management portals, and automated business workflows.",
+    features: [
+      "Full-stack architecture (Next.js, Node, Postgres)",
+      "Role-Based Access Control (RBAC)",
+      "Lead pipeline & WhatsApp API integration",
+      "Custom analytics & reporting dashboard",
+      "Written Service Level Agreement (SLA)",
+      "100% IP & database ownership",
+      "Milestone-based milestone billing",
+    ],
+    popular: false,
+    cta: "Request Architecture Scope",
   },
-  {
-    name: "The Full Suite",
-    savings: "Best Value",
-    price: "Custom",
-    features: ["Web + App + SaaS", "Full Digital Marketing", "Dedicated Manager", "Unlimited Revisions"],
-    popular: false
-  }
 ];
 
 const addOns = [
-  { name: "Payment Gateway", price: "+₹1,999" },
-  { name: "Advanced SEO", price: "+₹1,500" },
-  { name: "Custom Branding Pack", price: "+₹3,000" },
-  { name: "Order Dashboard", price: "+₹5,000" },
-  { name: "Member Portal", price: "+₹4,000" },
-  { name: "Automated Booking", price: "+₹2,500" },
-  { name: "Digital Gift Cards", price: "+₹1,200" },
-  { name: "Merchandise Store", price: "+₹3,500" },
-  { name: "Monthly Maintenance", price: "+₹999/mo" },
+  { name: "Payment Gateway Integration (Razorpay/Stripe)", price: "₹1,499" },
+  { name: "WhatsApp Cloud API Automation", price: "₹1,999" },
+  { name: "Local Google Business (GMB) Rank Optimization", price: "₹1,499" },
+  { name: "Custom Brand Identity & Vector Logo Kit", price: "₹1,999" },
+  { name: "Monthly High-Speed Maintenance & Backups", price: "₹999/mo" },
+  { name: "Bespoke Multi-Role Admin Dashboard", price: "₹4,999" },
 ];
 
 const faqs = [
   {
-    q: "How do I pay?",
-    a: "We accept UPI, bank transfer, and Razorpay. 50% upfront, 50% on delivery."
+    q: "How does the 7-day turnaround guarantee work?",
+    a: "For qualified sprints (Landing Pages and Business Websites), we commit to a strict delivery date in writing. If we fail to deliver the staging preview on time due to our fault, you receive cashback.",
   },
   {
-    q: "Do you offer EMI?",
-    a: "For projects above ₹10,000 we offer a 3-part payment plan at no extra cost."
+    q: "Do I truly own 100% of the code?",
+    a: "Yes. Unlike agencies that lock you into monthly subscriptions or proprietary site builders, Expecto hands over the full GitHub repository, assets, and deployment keys upon final milestone payment.",
   },
   {
-    q: "Can I get a custom quote?",
-    a: "Absolutely. WhatsApp us or fill the contact form and we'll send a detailed proposal within 2 hours."
+    q: "What is your payment structure?",
+    a: "We work on transparent milestone payments: 50% upfront to initiate the sprint, and 50% upon final delivery and client approval before live DNS handover.",
   },
   {
-    q: "Are revisions included?",
-    a: "Yes — 3 free revision rounds during build. Post-launch revisions on maintenance plan."
-  }
+    q: "Can I upgrade my site later into an e-commerce store or app?",
+    a: "Absolutely. Because we write clean modular Next.js and React code, your platform can scale from a simple 3-page site into a full-scale e-commerce store or mobile app anytime.",
+  },
 ];
 
 export default function PricingPageClient() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const isCompactViewport = window.matchMedia("(max-width: 1024px), (hover: none), (pointer: coarse)").matches;
-    if (isCompactViewport) return;
-
-    gsap.registerPlugin(ScrollTrigger);
-    
-    const timer = setTimeout(() => {
-      const ctx = gsap.context(() => {
-        gsap.utils.toArray<HTMLElement>("section").forEach((section) => {
-          gsap.from(
-            section,
-            {
-              opacity: 0,
-              y: 50,
-              duration: 1.2,
-              ease: "power4.out",
-              scrollTrigger: {
-                trigger: section,
-                start: "top 90%",
-                toggleActions: "play none none reverse",
-              },
-            }
-          );
-        });
-        
-        ScrollTrigger.refresh();
-      }, containerRef);
-
-      return () => ctx.revert();
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  const waLink = "https://wa.me/918707224376?text=Hi%20Expecto%20Team%2C%0A%0AI%20came%20across%20your%20website%20and%20I%27m%20interested%20in%20discussing%20a%20project.%0A%0AHere%27s%20a%20quick%20overview%3A%0A%F0%9F%93%8C%20Service%20Needed%3A%20%0A%F0%9F%93%85%20Timeline%3A%20%0A%F0%9F%92%B0%20Budget%20Range%3A%20%0A%0ALooking%20forward%20to%20hearing%20from%20you.%0A%0ARegards";
-
   return (
-    <div ref={containerRef} className="bg-[var(--bg)] text-[var(--text)] min-h-screen">
-      {/* Page Hero */}
-      <section className="relative min-h-[72vh] flex items-center justify-center pt-28 md:pt-40 pb-14 md:pb-20 overflow-hidden bg-[#0D0D0D]">
-        {/* Background */}
-        <div className="absolute inset-0 pointer-events-none">
-          <Image
-            src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1600&q=80&auto=format&fit=crop"
-            alt=""
-            fill
-            className="object-cover object-center"
-            sizes="100vw"
-            priority
-            unoptimized
-          />
-          <div className="absolute inset-0 bg-[#0D0D0D]/78" />
-          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0D0D0D]/70 to-transparent" />
-        </div>
-        <div className="container mx-auto max-w-[1200px] px-4 sm:px-6 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-montserrat text-[0.6875rem] text-white/50 uppercase tracking-[0.18em] mb-10 inline-block border border-white/15 px-4 py-2 rounded-sm"
-            style={{ background:"rgba(255,255,255,0.06)", backdropFilter:"blur(8px)" }}
-          >
-            Investment
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="font-montserrat font-semibold text-[clamp(1.8rem,6.2vw,4rem)] leading-[1.02] mb-8 md:mb-10 tracking-tight uppercase text-balance text-white"
-          >
-            VALUE{" "}
-            <span style={{ background:"linear-gradient(105deg,#fff 0%,#fff 30%,#aaa 45%,#eee 50%,#aaa 55%,#fff 70%,#fff 100%)", backgroundSize:"200% auto", WebkitBackgroundClip:"text", backgroundClip:"text", WebkitTextFillColor:"transparent", animation:"shimmer 4s linear infinite" }}>
-              UNCOMPROMISED.
-            </span>
-          </motion.h1>
-          {/* Frosted description */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.4 }}
-            className="inline-block px-6 py-4 rounded-sm border border-white/10 max-w-3xl mx-auto"
-            style={{ background:"rgba(255,255,255,0.06)", backdropFilter:"blur(12px)" }}
-          >
-            <p className="font-montserrat text-base sm:text-xl text-white/75 leading-relaxed">
-              Transparent, performance-driven pricing for businesses that demand excellence. No hidden fees. No compromises.
-            </p>
-          </motion.div>
+    <div className="bg-white text-[#1E1E1E] min-h-screen pt-24 md:pt-32">
+      {/* ── 01 / HERO HEADER ── */}
+      <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 pb-16 md:pb-24 border-b border-[#E5E7EB]">
+        <div className="max-w-4xl">
+          <span className="font-mono text-xs text-[#8A919B] block mb-4">
+            ( 01 / TRANSPARENT PRICING )
+          </span>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#1E1E1E] leading-[1.05] mb-8">
+            Clear investment. Zero surprise fees.
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl text-[#5A6271] font-mono leading-relaxed max-w-3xl mb-10">
+            Fixed sprint pricing with guaranteed timelines. Full code ownership, sub-second performance, and verified deliverables backed in writing.
+          </p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#1E1E1E] text-white text-xs font-mono font-medium hover:bg-black transition-colors"
+            >
+              <span>Get Custom Quote</span>
+              <ArrowUpRight size={14} />
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#F6F7F9] text-[#1E1E1E] text-xs font-mono font-medium border border-[#E5E7EB] hover:bg-[#EEF0F6] transition-colors"
+            >
+              <span>Explore Capabilities</span>
+              <ArrowUpRight size={14} />
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Pricing Philosophy */}
-      <ParallaxSection accentColor="var(--border)" variant="horizontal" className="border-t border-[var(--border)]">
-        <div className="container mx-auto max-w-[1200px] px-4 sm:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {[
-              { 
-                icon: IndianRupee,
-                title: "Indicative Pricing", 
-                desc: "All prices shown are starting points. Final quote is based on your specific requirements — always shared before we start.",
-              },
-              { 
-                icon: ShieldCheck,
-                title: "No Hidden Costs", 
-                desc: "What's in your proposal is what you pay. Domain, hosting, add-ons — all listed separately and transparently.",
-              },
-              { 
-                icon: Zap,
-                title: "Cashback on Delays", 
-                desc: "If we miss the delivery deadline on a qualifying project, you get cashback. It's in writing.",
-              }
-            ].map((v, i) => (
-              <div key={i} className="group p-10 bg-white border border-[var(--border)] rounded-sm hover:border-[var(--text)] transition-all duration-300">
-                <div className="w-16 h-16 rounded-sm bg-[var(--bg-subtle)] border border-[var(--border)] flex items-center justify-center mb-8 group-hover:scale-105 transition-transform duration-300">
-                  <v.icon size={32} strokeWidth={1.5} className="text-[var(--text)]" />
+      {/* ── 02 / PRICING TIERS ── */}
+      <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-32 border-b border-[#E5E7EB]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          {pricingTiers.map((tier) => (
+            <div
+              key={tier.name}
+              className={`p-6 sm:p-8 rounded-[28px] border flex flex-col justify-between transition-all duration-300 relative ${
+                tier.popular
+                  ? "bg-white border-[#1E1E1E] shadow-xl ring-2 ring-[#1E1E1E]/10"
+                  : "bg-[#F8F9FA] border-[#E5E7EB] hover:border-[#1E1E1E]"
+              }`}
+            >
+              {tier.popular && (
+                <div className="absolute -top-3.5 left-8 bg-[#1E1E1E] text-white font-mono text-[10px] uppercase font-semibold px-3 py-1 rounded-full shadow-sm">
+                  Most Popular
                 </div>
-                <h4 className="font-montserrat font-semibold text-2xl mb-6 text-[var(--text)]">{v.title}</h4>
-                <p className="font-montserrat text-[var(--text-3)] text-lg leading-relaxed">{v.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </ParallaxSection>
+              )}
 
-      {/* Explore Service Pricing CTA */}
-      <ParallaxSection accentColor="var(--border)" variant="reveal" className="border-y border-[var(--border)]">
-        <div className="container mx-auto max-w-[1200px] px-6 text-center">
-          <h2 className="font-montserrat font-semibold text-3xl md:text-5xl mb-8 text-[var(--text)]">Need granular details?</h2>
-          <p className="font-montserrat text-[var(--text-3)] text-xl mb-12 max-w-2xl mx-auto">
-            Select a specific service category to see a deep dive into our modular pricing options.
+              <div>
+                <span className="font-mono text-xs text-[#8A919B] block mb-2">
+                  {tier.tagline}
+                </span>
+                <h3 className="text-2xl font-bold tracking-tight text-[#1E1E1E] mb-2">
+                  {tier.name}
+                </h3>
+                <div className="text-4xl font-mono font-bold tracking-tight text-[#1E1E1E] mb-4">
+                  {tier.price}
+                </div>
+                <p className="text-xs text-[#5A6271] font-mono leading-relaxed mb-6">
+                  {tier.desc}
+                </p>
+
+                <div className="border-t border-[#E5E7EB] pt-6 mb-8 space-y-2.5">
+                  {tier.features.map((feat) => (
+                    <div key={feat} className="flex items-start gap-2.5 text-xs font-mono text-[#1E1E1E]">
+                      <div className="w-4 h-4 rounded-full bg-[#1E1E1E] text-white flex items-center justify-center shrink-0 mt-0.5">
+                        <Check size={10} strokeWidth={3} />
+                      </div>
+                      <span className="leading-tight">{feat}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <Link
+                href="/contact"
+                className={`w-full py-3.5 rounded-full text-xs font-mono font-medium text-center transition-colors block ${
+                  tier.popular
+                    ? "bg-[#1E1E1E] text-white hover:bg-black"
+                    : "bg-white text-[#1E1E1E] border border-[#E5E7EB] hover:bg-[#1E1E1E] hover:text-white"
+                }`}
+              >
+                {tier.cta} →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 03 / MODULAR ADD-ONS ── */}
+      <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-32 border-b border-[#E5E7EB]">
+        <div className="max-w-3xl mb-12">
+          <span className="font-mono text-xs text-[#8A919B] block mb-3">
+            ( 02 / MODULAR ADD-ONS )
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1E1E1E] mb-4">
+            Custom Add-Ons & Enhancements.
+          </h2>
+          <p className="font-mono text-sm text-[#5A6271] leading-relaxed">
+            Attach any of these high-value extensions to your base project sprint at any time.
           </p>
-          <Link href="/services" className="group relative inline-flex items-center gap-4 bg-[var(--text)] text-white px-12 py-6 rounded-sm font-montserrat font-medium text-xl hover:bg-[#333333] transition-all duration-300">
-            VIEW MODULAR PRICING
-            <Eye size={24} strokeWidth={2} className="group-hover:scale-110 transition-transform" />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {addOns.map((add) => (
+            <div
+              key={add.name}
+              className="p-6 rounded-[20px] bg-[#F8F9FA] border border-[#E5E7EB] flex items-center justify-between"
+            >
+              <span className="text-sm font-medium text-[#1E1E1E] pr-4">
+                {add.name}
+              </span>
+              <span className="font-mono text-sm font-bold text-[#1E1E1E] shrink-0">
+                {add.price}
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 04 / FREQUENTLY ASKED QUESTIONS ── */}
+      <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-32 border-b border-[#E5E7EB]">
+        <div className="max-w-3xl mb-12">
+          <span className="font-mono text-xs text-[#8A919B] block mb-3">
+            ( 03 / COMMON INQUIRIES )
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1E1E1E]">
+            Frequently Asked Questions.
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+          {faqs.map((f) => (
+            <div
+              key={f.q}
+              className="p-6 sm:p-8 rounded-[24px] bg-[#F8F9FA] border border-[#E5E7EB]"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <HelpCircle size={16} className="text-[#8A919B]" />
+                <h3 className="text-lg font-bold tracking-tight text-[#1E1E1E]">
+                  {f.q}
+                </h3>
+              </div>
+              <p className="font-mono text-xs sm:text-sm text-[#5A6271] leading-relaxed">
+                {f.a}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 05 / FINAL CTA ── */}
+      <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-32">
+        <div className="p-8 sm:p-12 md:p-16 rounded-[36px] bg-[#1E1E1E] text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <div className="max-w-2xl">
+            <span className="font-mono text-xs text-white/50 block mb-3">
+              ( CUSTOM SCOPE? )
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
+              Need a bespoke enterprise proposal?
+            </h2>
+            <p className="font-mono text-sm text-white/70 leading-relaxed">
+              Message us on WhatsApp or submit your project details. We deliver complete architectural scopes within 2 hours.
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="px-8 py-4 rounded-full bg-white text-[#1E1E1E] text-xs font-mono font-bold hover:bg-[#F0F2F5] transition-colors whitespace-nowrap shadow-lg"
+          >
+            Request Custom Proposal →
           </Link>
         </div>
-      </ParallaxSection>
-
-      {/* Combo Packages */}
-      <ParallaxSection accentColor="var(--border)" variant="split">
-        <div className="container mx-auto max-w-[1200px] px-4 sm:px-6">
-          <div className="text-center mb-16 md:mb-24">
-            <h2 className="font-montserrat font-semibold text-2xl md:text-5xl mb-6 text-balance text-[var(--text)]">High-Impact Bundles</h2>
-            <div className="w-16 md:w-24 h-px bg-[var(--border)] mx-auto mb-8" />
-            <p className="font-montserrat text-[var(--text-3)] text-lg md:text-xl text-balance">Strategically architected packages for maximum market impact.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
-            {comboPackages.map((pkg) => (
-              <motion.div 
-                key={pkg.name}
-                whileHover={{ y: -4 }}
-                className={`relative p-6 sm:p-8 lg:p-10 rounded-sm border flex flex-col h-full group ${
-                  pkg.popular
-                    ? "bg-white border-[var(--text)] border-2"
-                    : "bg-white border-[var(--border)] hover:border-[var(--text-2)]"
-                } transition-all duration-300`}
-              >
-                {pkg.popular && (
-                  <div className="absolute top-0 right-10 bg-[var(--text)] text-white px-6 py-2 rounded-b-sm text-[10px] font-montserrat font-medium uppercase tracking-[0.2em] z-10">
-                    Recommended
-                  </div>
-                )}
-                
-                <div className="mb-12">
-                  <h4 className="font-montserrat font-semibold text-2xl mb-2 text-[var(--text)]">{pkg.name}</h4>
-                  <div className="text-[10px] sm:text-[12px] font-montserrat font-medium text-[var(--text-2)] uppercase tracking-[0.2em] mb-6 sm:mb-8">{pkg.savings}</div>
-                  <div className="font-montserrat font-semibold text-[clamp(1.45rem,3.2vw,2.2rem)] mb-10 md:mb-12 tracking-tight text-[var(--text)]">{pkg.price}</div>
-                  
-                  <ul className="space-y-4 sm:space-y-6">
-                    {pkg.features.map(f => (
-                      <li key={f} className="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-[var(--text-3)] group-hover:text-[var(--text)] transition-colors font-montserrat">
-                        <Check size={18} strokeWidth={2.5} className="text-[var(--text)] shrink-0" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <a 
-                  href={waLink} 
-                  target="_blank" 
-                  className={`mt-auto w-full flex items-center justify-center gap-3 py-5 rounded-sm font-montserrat font-medium text-sm uppercase tracking-widest transition-all duration-300 ${
-                    pkg.popular
-                      ? "bg-[var(--text)] text-white hover:bg-[#333333]"
-                      : "bg-[var(--bg-subtle)] text-[var(--text)] hover:bg-[var(--text)] hover:text-white border border-[var(--border)]"
-                  }`}
-                >
-                  Acquire Plan <ArrowRight size={20} strokeWidth={2} />
-                </a>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </ParallaxSection>
-
-      {/* Add-ons Section */}
-      <ParallaxSection accentColor="var(--border)" variant="magnetic" className="border-t border-[var(--border)]">
-        <div className="container mx-auto max-w-[1200px] px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 lg:gap-24 items-center">
-            <div>
-              <h2 className="font-montserrat font-semibold text-3xl md:text-5xl mb-8 leading-tight text-[var(--text)]">Modular <br />Extensions.</h2>
-              <p className="font-montserrat text-xl text-[var(--text-3)] leading-relaxed mb-10">
-                Enhance your core deployment with high-performance modules designed for specific business needs.
-              </p>
-              <div className="inline-flex items-center gap-4 p-6 bg-white border border-[var(--border)] rounded-sm">
-                <div className="w-12 h-12 rounded-sm bg-[var(--bg-subtle)] border border-[var(--border)] flex items-center justify-center">
-                  <Zap size={24} strokeWidth={2} className="text-[var(--text)]" />
-                </div>
-                <div className="font-montserrat font-medium text-lg text-[var(--text)]">Custom requests welcome</div>
-              </div>
-            </div>
-
-            <div className="bg-white border border-[var(--border)] rounded-sm overflow-hidden">
-              <div className="divide-y divide-[var(--border)]">
-                {addOns.map((addon) => (
-                  <div key={addon.name} className="flex justify-between items-center p-8 hover:bg-[var(--bg-subtle)] transition-colors group">
-                    <span className="font-montserrat font-medium text-lg text-[var(--text-3)] group-hover:text-[var(--text)] transition-colors">{addon.name}</span>
-                    <span className="font-montserrat font-semibold text-xl text-[var(--text)]">{addon.price}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </ParallaxSection>
-
-      {/* FAQ Section */}
-      <ParallaxSection accentColor="var(--border)" variant="depth">
-        <div className="container mx-auto max-w-[900px] px-6">
-          <h2 className="font-montserrat font-semibold text-3xl md:text-5xl text-center mb-24 text-[var(--text)]">Precision <br /><span className="text-[var(--text-2)]">Clarified.</span></h2>
-          <div className="space-y-8">
-            {faqs.map((faq, i) => (
-              <div key={i} className="group p-10 rounded-sm bg-white border border-[var(--border)] hover:border-[var(--text)] transition-all duration-300">
-                <h4 className="font-montserrat font-semibold text-2xl mb-6 text-[var(--text)]">{faq.q}</h4>
-                <p className="font-montserrat text-lg text-[var(--text-3)] leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </ParallaxSection>
-
-      {/* Final CTA */}
-      <ParallaxSection accentColor="var(--border)" variant="reveal">
-        <div className="container mx-auto max-w-[1200px] px-6 relative z-10">
-          <div className="bg-white border border-[var(--border)] rounded-sm p-16 md:p-24 text-center">
-            <h2 className="font-montserrat font-semibold text-[clamp(1.7rem,5.8vw,3.5rem)] leading-[1.03] mb-12 tracking-tight text-[var(--text)]">SECURE YOUR <br /><span className="text-[var(--text-2)]">QUOTATION.</span></h2>
-            <p className="font-montserrat text-xl text-[var(--text-3)] mb-16 max-w-2xl mx-auto leading-relaxed">
-              Receive a comprehensive, line-by-line proposal within 2 hours of your initial request.
-            </p>
-            <motion.a 
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              href="/contact"
-              className="inline-flex items-center gap-4 bg-[var(--text)] text-white px-12 py-6 rounded-sm font-montserrat font-medium text-xl hover:bg-[#333333] transition-all duration-300"
-            >
-              REQUEST PROPOSAL <ArrowRight size={28} strokeWidth={2} />
-            </motion.a>
-          </div>
-        </div>
-      </ParallaxSection>
+      </section>
     </div>
   );
 }

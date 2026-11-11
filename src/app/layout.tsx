@@ -1,5 +1,5 @@
-﻿import type { Metadata } from "next";
-import { Montserrat, Ubuntu, JetBrains_Mono } from "next/font/google";
+import type { Metadata } from "next";
+import { Inter, Chivo_Mono, Montserrat } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -16,24 +16,22 @@ import {
   getSiteLinksSearchBoxSchema,
 } from "@/lib/seo";
 
+// Variable fonts — no weight array needed (prevents Turbopack font query errors)
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const chivoMono = Chivo_Mono({
+  subsets: ["latin"],
+  variable: "--font-chivo-mono",
+  display: "swap",
+});
+
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-montserrat",
-  display: "swap",
-});
-
-const ubuntu = Ubuntu({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
-  variable: "--font-ubuntu",
-  display: "swap",
-});
-
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-mono",
   display: "swap",
 });
 
@@ -125,7 +123,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const slsSchema = getSiteLinksSearchBoxSchema();
 
   return (
-    <html lang="en-IN" data-scroll-behavior="smooth" className={`${montserrat.variable} ${ubuntu.variable} ${mono.variable}`}>
+    <html lang="en-IN" data-scroll-behavior="smooth" className={`${inter.variable} ${chivoMono.variable} ${montserrat.variable}`}>
       <head>
         {/* DNS prefetch + preconnect for all external hosts — reduces LCP */}
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
@@ -136,7 +134,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://interfaceclasses.com" crossOrigin="" />
         <link rel="dns-prefetch" href="https://www.swapzy.store" />
         <link rel="dns-prefetch" href="https://png.pngtree.com" />
-        {/* Explicit viewport — belt-and-suspenders for Core Web Vitals CLS */}
+        {/* Explicit viewport */}
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </head>
       <body className="bg-white text-[var(--text)] antialiased">
@@ -153,5 +151,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-
-

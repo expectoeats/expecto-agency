@@ -2,158 +2,126 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
-const projects = [
+const realProjects = [
   {
-    logo: "https://ramainstitutetech.com/logo.jpeg",
+    id: "01",
     name: "Rama Coaching Center",
-    tags: ["Coaching ERP", "Marksheet Engine", "Mock Tests"],
-    desc: "Complete coaching management platform with automated marksheet & certificate generation, mock test portal, and full CMS. Deployed in 10 days.",
-    stat: "10 Days",
-    statLabel: "Turnaround Time",
-    bgImage: "/work/rama-banner.png",
-    href: "https://ramainstitutetech.com/",
-    category: "Education / Fatehpur UP",
+    date: "10 DAYS",
+    category: "Coaching ERP • Marksheet Engine • Mock Tests",
+    image: "/work/rama-coaching.webp",
+    link: "https://ramainstitutetech.com/",
+    desc: "Complete coaching management platform with automated marksheet & certificate generation, mock test portal, and full CMS.",
   },
   {
-    logo: "https://interfaceclasses.com/assets/logo-main.jpeg",
+    id: "02",
     name: "Interface Classes",
-    tags: ["Website Redesign", "SEO", "CMS"],
-    desc: "Coaching institute redesigned from the ground up. Now ranks #1 for relevant local searches in Kanpur.",
-    stat: "#1",
-    statLabel: "Local Search Rank",
-    bgImage: "/work/coaching/expecto-demo-coaching.webp",
-    href: "/niche/coaching-institute",
-    category: "Education / Kanpur",
+    date: "#1 RANK",
+    category: "Website Redesign • Local SEO • CMS",
+    image: "/work/interface-classes.webp",
+    link: "/niche/coaching-institute",
+    desc: "Kanpur coaching institute redesigned from the ground up. Now ranks #1 for relevant local searches on Google.",
   },
   {
-    logo: "https://www.swapzy.store/_next/image?url=%2Fswapzy-logo.png&w=64&q=75",
-    name: "Swapzy",
-    tags: ["Marketplace", "Web Application"],
-    desc: "Live student marketplace built for Parul University, Vadodara. Real product, real users.",
-    stat: "Live",
-    statLabel: "Platform Status",
-    bgImage: "/work/swapzy.webp",
-    href: "https://swapzy.store/",
-    category: "Commerce / Vadodara",
+    id: "03",
+    name: "Kala Samputah",
+    date: "LIVE STORE",
+    category: "Indian Art & Painting • Custom E-Commerce • CMS",
+    image: "/work/kala-samputah.webp",
+    link: "https://kalasamputah.com/",
+    desc: "Curated Indian art and painting selling platform with bespoke gallery layout, high-res canvas previews, and seamless buyer checkout.",
   },
 ];
 
 export default function SelectedWork() {
   return (
-    <section aria-label="Selected Work" className="border-b border-[var(--border)] bg-[var(--bg-subtle)]">
-      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-10 md:py-14">
+    <section className="py-20 md:py-32 px-6 md:px-12 bg-white border-t border-[#E5E7EB]" aria-label="Selected Work">
+      <div className="w-full max-w-[1400px] mx-auto">
+        {/* Section Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-12 md:pb-16 border-b border-[#E5E7EB]">
+          <div>
+            <span className="font-mono text-xs text-[#8A919B] block mb-3">
+              ( SELECTED WORK )
+            </span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-[#1E1E1E]">
+              Latest Projects.
+            </h2>
+          </div>
 
-        {/* Header row */}
-        <div className="flex items-center gap-5 mb-8">
-          <span className="label-tag">Selected Work</span>
-          <div className="h-px flex-1 bg-[var(--border)]" />
-          <span className="font-montserrat text-[0.6875rem] text-[var(--text-3)] uppercase tracking-[0.12em]">
-            3 projects · Verified
-          </span>
+          <div className="flex items-center gap-6">
+            <span className="font-mono text-xs text-[#8A919B]">
+              ( 50+ DELIVERED )
+            </span>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#1E1E1E] hover:opacity-60 transition-opacity py-2 px-4 rounded-full bg-[#F6F7F9] hover:bg-[#EEF0F6] border border-[#E5E7EB]"
+            >
+              <span>Build your project</span>
+              <ArrowUpRight size={13} />
+            </Link>
+          </div>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {projects.map((p) => (
-            <Link
+        {/* Project Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 pt-12">
+          {realProjects.map((p, index) => (
+            <motion.div
               key={p.name}
-              href={p.href}
-              target={p.href.startsWith("http") ? "_blank" : undefined}
-              rel={p.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="group relative bg-white border-2 border-[var(--text)] overflow-hidden block
-                         shadow-[4px_4px_0px_0px_#111111] hover:shadow-[6px_6px_0px_0px_#111111]
-                         hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-150"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
             >
-              {/* Background project screenshot — faint */}
-              <div className="absolute right-0 top-0 bottom-0 w-[45%] pointer-events-none">
-                <Image
-                  src={p.bgImage}
-                  alt=""
-                  fill
-                  className="object-cover object-left opacity-[0.08]"
-                  sizes="20vw"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent" />
-              </div>
+              <Link
+                href={p.link}
+                target={p.link.startsWith("http") ? "_blank" : undefined}
+                rel={p.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="group block flex flex-col"
+              >
+                {/* Visual Image Container — 9:16 portrait matches exact design assets */}
+                <div className="relative aspect-[9/16] w-full rounded-[20px] md:rounded-[24px] overflow-hidden bg-[#F6F7F9] border border-[#E5E7EB] mb-5">
+                  <Image
+                    src={p.image}
+                    alt={p.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
 
-              {/* Content */}
-              <div className="relative p-7 md:p-8">
-
-                {/* Top row: logo + stat */}
-                <div className="flex items-start justify-between gap-4 mb-5">
-                  <div className="flex items-center h-10">
-                    <div className="bg-white p-2 rounded-sm border border-[var(--border)]">
-                      <Image
-                        src={p.logo}
-                        alt={p.name}
-                        width={140}
-                        height={36}
-                        className="h-9 w-auto object-contain object-left"
-                        style={{ width: "auto" }}
-                        unoptimized
-                      />
-                    </div>
-                  </div>
-                  <div className="text-right shrink-0 flex flex-col items-end gap-1">
-                    {/* Google SEO icon — only for the #1 ranked project */}
-                    {p.stat === "#1" && (
-                      <div className="w-11 h-11 rounded-full overflow-hidden border border-[var(--border)] flex items-center justify-center bg-white mb-1">
-                        <Image
-                          src="https://png.pngtree.com/png-vector/20230817/ourlarge/pngtree-google-seo-icon-vector-png-image_9183334.png"
-                          alt="Google SEO ranking"
-                          width={44}
-                          height={44}
-                          className="w-full h-full object-contain"
-                          unoptimized
-                        />
-                      </div>
-                    )}
-                    <p className="font-montserrat font-bold text-[2rem] leading-none text-[var(--text)]">{p.stat}</p>
-                    <p className="font-montserrat text-[0.625rem] text-[var(--text-3)] uppercase tracking-[0.12em]">{p.statLabel}</p>
+                  {/* Floating Metric Badge */}
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-mono font-medium text-[#1E1E1E] border border-white/40 shadow-sm">
+                    {p.date}
                   </div>
                 </div>
 
-                {/* Divider */}
-                <div className="h-px bg-[var(--border)] mb-5" />
-
-                {/* Name + category */}
-                <div className="flex items-baseline justify-between gap-3 mb-2">
-                  <p className="font-montserrat font-semibold text-[1rem] text-[var(--text)]">{p.name}</p>
-                  <span className="font-montserrat text-[0.6875rem] text-[var(--text-3)] shrink-0">{p.category}</span>
+                {/* Details */}
+                <div className="flex items-baseline justify-between pt-1">
+                  <h3 className="text-xl md:text-2xl font-semibold text-[#1E1E1E] group-hover:opacity-60 transition-opacity flex items-center gap-2">
+                    {p.name}
+                    <ArrowUpRight
+                      size={18}
+                      className="opacity-0 -translate-x-1 translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-200 text-[#1E1E1E]"
+                    />
+                  </h3>
+                  <span className="font-mono text-xs text-[#8A919B]">
+                    {p.id}
+                  </span>
                 </div>
 
-                {/* Desc */}
-                <p className="font-montserrat text-[0.8125rem] text-[var(--text-2)] leading-[1.65] mb-5 max-w-[340px]">
-                  {p.desc}
+                <p className="font-mono text-xs text-[#5A6271] mt-1.5 line-clamp-1">
+                  {p.category}
                 </p>
 
-                {/* Tags + arrow */}
-                <div className="flex items-center justify-between gap-3">
-                  <div className="flex flex-wrap gap-1.5">
-                    {p.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="font-montserrat text-[0.625rem] text-[var(--text)] uppercase tracking-[0.08em] border border-[var(--text)] px-2 py-0.5"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                  <ArrowUpRight
-                    size={16}
-                    strokeWidth={1.75}
-                    className="shrink-0 text-[var(--text-3)] group-hover:text-[var(--text)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-150"
-                  />
-                </div>
-
-              </div>
-            </Link>
+                <p className="text-sm text-[#5A6271] mt-2 line-clamp-2 leading-relaxed">
+                  {p.desc}
+                </p>
+              </Link>
+            </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

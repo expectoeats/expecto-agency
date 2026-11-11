@@ -1,117 +1,113 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
-// Featured clients with real logos first, then others
-const clients = [
+const clientLogos = [
   {
-    name: "Rama Coaching Center",
-    meta: "Coaching ERP · Marksheet & Mock Tests · 10 Days",
-    logo: "https://ramainstitutetech.com/logo.jpeg",
-    isExternal: true,
+    name: "INTERFACE CLASSES",
+    type: "#1 on Google",
+    logo: "/clients/interface.jpeg",
   },
   {
-    name: "Interface Classes",
-    meta: "Website Redesign · SEO · #1 Google",
-    logo: "https://interfaceclasses.com/assets/logo-main.jpeg",
-    isExternal: true,
+    name: "RAMA COACHING",
+    type: "Coaching ERP",
+    logo: "/clients/rama.jpeg",
   },
   {
-    name: "Swapzy",
-    meta: "Student Marketplace · Live Platform",
-    logo: "https://www.swapzy.store/_next/image?url=%2Fswapzy-logo.png&w=64&q=75",
-    isExternal: true,
+    name: "KALA SAMPUTAH",
+    type: "Live Art Store",
+    isTextOnly: true,
   },
   {
-    name: "Expecto Eats",
-    meta: "Food Ordering Platform",
-    logo: "/logo.png",
-    isExternal: false,
+    name: "SWAPZY",
+    type: "Live Marketplace",
+    logo: "/clients/swapzy.png",
   },
   {
-    name: "Education CRM",
-    meta: "CRM · Web Application",
-    logo: "/logo.png",
-    isExternal: false,
+    name: "EXPECTO EATS",
+    type: "Food Ordering SaaS",
   },
   {
-    name: "Real Estate CRM",
-    meta: "CRM · Property Management",
-    logo: "/logo.png",
-    isExternal: false,
+    name: "PAUSE CAFE",
+    type: "Hospitality Web",
   },
   {
-    name: "NEET Coaching",
-    meta: "Coaching Website",
-    logo: "/logo.png",
-    isExternal: false,
+    name: "GLOWUP SALON",
+    type: "Booking Engine",
+  },
+  {
+    name: "FITZONE GYM",
+    type: "Fitness Platform",
   },
 ];
 
-const items = [...clients, ...clients, ...clients];
-
 export default function ClientsMarquee() {
-  return (
-    <div className="border-b border-[var(--border)] bg-[var(--bg-subtle)] overflow-hidden">
+  // 2 sets of 8 (16 items) doubled to 32 for a perfectly seamless 0% -> -50% loop
+  const base = [...clientLogos, ...clientLogos];
+  const repeated = [...base, ...base];
 
-      {/* Top label bar */}
-      <div className="border-b border-[var(--border)] px-8 md:px-12 py-3 flex items-center justify-between">
-        <span className="label-tag">Selected Work</span>
-        <span className="font-montserrat text-[0.6875rem] text-[var(--text-3)]">Real projects · Real businesses</span>
+  return (
+    <section className="py-20 md:py-28 px-6 md:px-12 bg-white border-t border-[#E5E7EB] overflow-hidden" aria-label="Clients">
+      <div className="w-full max-w-[1400px] mx-auto text-center mb-12">
+        <span className="font-mono text-xs text-[#8A919B] block mb-2">
+          ( TRUSTED BY 50+ BUSINESSES )
+        </span>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-[#1E1E1E]">
+          Trusted by growing businesses and founders across India.
+        </h2>
       </div>
 
-      {/* Marquee */}
-      <div className="relative py-5">
-        {/* Fade edges */}
-        <div className="absolute inset-y-0 left-0 w-16 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to right, #F7F7F5, transparent)" }} />
-        <div className="absolute inset-y-0 right-0 w-16 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to left, #F7F7F5, transparent)" }} />
+      {/* Infinite Marquee Track */}
+      <div className="relative w-full overflow-hidden group">
+        {/* Left / Right gradient fade */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
-        <div className="flex items-stretch w-max"
-          style={{ animation: "marquee 55s linear infinite" }}>
-          {items.map((item, i) => (
+        <motion.div
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 55,
+            ease: "linear",
+          }}
+          className="flex items-center gap-6 sm:gap-8 w-max py-4 group-hover:[animation-play-state:paused]"
+        >
+          {repeated.map((client, i) => (
             <div
-              key={`cl-${i}`}
-              className="flex items-center gap-3 shrink-0 mx-2 px-5 py-3 bg-white border border-[var(--border)] hover:border-[var(--text)] hover:shadow-[0_2px_12px_rgba(0,0,0,0.07)] transition-all duration-150 cursor-default"
+              key={`${client.name}-${i}`}
+              className="flex items-center gap-4 py-2.5 px-5 sm:py-3 sm:px-6 rounded-full bg-[#F8F9FA] border border-[#E5E7EB] hover:border-[#1E1E1E] hover:bg-white transition-all duration-200 cursor-default shrink-0 shadow-xs"
             >
-              {/* Logo */}
-              <div className="w-8 h-8 rounded-sm overflow-hidden flex items-center justify-center shrink-0 bg-white border border-[var(--border)] p-1">
-                {item.isExternal ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={item.logo}
-                    alt={item.name}
-                    width={32}
-                    height={32}
-                    className="w-full h-full object-contain"
-                    loading="lazy"
-                  />
-                ) : (
-                  <Image
-                    src={item.logo}
-                    alt={item.name}
-                    width={32}
-                    height={32}
-                    className="w-full h-full object-contain opacity-30"
-                  />
-                )}
-              </div>
+              <span
+                className={
+                  client.isTextOnly
+                    ? "font-sans text-xs sm:text-sm font-semibold tracking-[0.22em] text-[#1E1E1E] uppercase"
+                    : "font-mono text-xs sm:text-sm font-bold tracking-wider text-[#1E1E1E]"
+                }
+              >
+                {client.name}
+              </span>
 
-              {/* Text */}
-              <div>
-                <p className="font-montserrat font-semibold text-[0.8125rem] text-[var(--text)] whitespace-nowrap leading-tight">
-                  {item.name}
-                </p>
-                <p className="font-montserrat text-[0.625rem] text-[var(--text-3)] whitespace-nowrap mt-0.5">
-                  {item.meta}
-                </p>
-              </div>
+              {client.logo && (
+                <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden bg-white border border-[#E5E7EB] shrink-0 shadow-xs flex items-center justify-center p-1">
+                  <Image
+                    src={client.logo}
+                    alt={`${client.name} logo`}
+                    width={36}
+                    height={36}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              )}
+
+              <span className="font-mono text-[10px] text-[#8A919B] uppercase border-l border-[#E5E7EB] pl-3">
+                {client.type}
+              </span>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
-
-    </div>
+    </section>
   );
 }

@@ -76,7 +76,7 @@ export default function Home() {
         />
       ))}
 
-      <main className="bg-[var(--bg-base)]">
+      <main className="bg-white">
         <Hero />
         <HomeSections />
       </main>
