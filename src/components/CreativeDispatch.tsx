@@ -36,7 +36,7 @@ export default function CreativeDispatch() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-12 md:pb-16 border-b border-[#E5E7EB]">
           <div>
-            <span className="font-mono text-xs text-[#8A919B] block mb-3">
+            <span className="font-mono text-xs text-[#5A6271] block mb-3">
               ( AGENCY INSIGHTS & CASE STUDIES )
             </span>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-[#1E1E1E]">
@@ -77,7 +77,7 @@ export default function CreativeDispatch() {
                 </div>
 
                 {/* Metadata */}
-                <div className="flex items-center justify-between text-xs font-mono text-[#8A919B] mb-2.5">
+                <div className="flex items-center justify-between text-xs font-mono text-[#5A6271] mb-2.5">
                   <span>{art.date}</span>
                   <span className="uppercase">{art.category}</span>
                 </div>

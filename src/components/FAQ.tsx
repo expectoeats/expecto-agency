@@ -44,7 +44,7 @@ export default function FAQ() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-12 md:pb-16 border-b border-[#E5E7EB]">
           <div>
-            <span className="font-mono text-xs text-[#8A919B] block mb-3">
+            <span className="font-mono text-xs text-[#5A6271] block mb-3">
               ( FREQUENTLY ASKED QUESTIONS )
             </span>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-[#1E1E1E]">
@@ -52,7 +52,7 @@ export default function FAQ() {
             </h2>
           </div>
 
-          <span className="font-mono text-xs text-[#8A919B]">
+          <span className="font-mono text-xs text-[#5A6271]">
             ( 06 COMMON QUESTIONS )
           </span>
         </div>

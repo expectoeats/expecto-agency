@@ -77,7 +77,7 @@ export default function Navbar() {
               <span className="font-bold tracking-tight text-[17px] text-[#1E1E1E] group-hover:opacity-80 transition-opacity">
                 Expecto®
               </span>
-              <span className="text-[11px] font-mono text-[#8A919B]">
+              <span className="text-[11px] font-mono text-[#5A6271]">
                 ( AGENCY )
               </span>
             </div>
@@ -151,7 +151,7 @@ export default function Navbar() {
                         onClick={() => setOpen(false)}
                         className="group flex items-baseline gap-4 md:gap-8 py-2 md:py-3 border-b border-[#F0F2F5] transition-all"
                       >
-                        <span className="font-mono text-xs md:text-sm text-[#8A919B] tabular-nums min-w-[50px]">
+                        <span className="font-mono text-xs md:text-sm text-[#5A6271] tabular-nums min-w-[50px]">
                           {link.index}
                         </span>
                         <span
@@ -178,7 +178,7 @@ export default function Navbar() {
               className="w-full max-w-[1400px] mx-auto pt-8 border-t border-[#E5E7EB] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
             >
               <div>
-                <span className="text-xs font-mono text-[#8A919B] block mb-1">
+                <span className="text-xs font-mono text-[#5A6271] block mb-1">
                   ( DIRECT INQUIRY )
                 </span>
                 <a
@@ -187,14 +187,14 @@ export default function Navbar() {
                 >
                   hello@expecto.online
                 </a>
-                <span className="text-xs font-mono text-[#8A919B] block mt-1">
+                <span className="text-xs font-mono text-[#5A6271] block mt-1">
                   +91 87072 24376
                 </span>
               </div>
 
               {/* Social Badges */}
               <div className="flex items-center gap-3">
-                <span className="text-xs font-mono text-[#8A919B] mr-2">
+                <span className="text-xs font-mono text-[#5A6271] mr-2">
                   ( CONNECT )
                 </span>
                 {[

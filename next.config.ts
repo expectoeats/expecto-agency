@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "framerusercontent.com", pathname: "/**" },
     ],
     formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 604800,
+    minimumCacheTTL: 31536000,
     deviceSizes: [640, 750, 828, 1080, 1200],
     imageSizes: [16, 32, 64, 128, 256],
   },
@@ -47,7 +47,11 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/(.*)\\.(png|jpg|jpeg|gif|svg|ico|webp|avif)",
-        headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+      },
+      {
+        source: "/(.*)\\.(mp4|webm|ogg)",
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
       {
         source: "/sitemap.xml",

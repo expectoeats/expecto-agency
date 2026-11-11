@@ -125,15 +125,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-IN" data-scroll-behavior="smooth" className={`${inter.variable} ${chivoMono.variable} ${montserrat.variable}`}>
       <head>
-        {/* DNS prefetch + preconnect for all external hosts — reduces LCP */}
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
-        <link rel="dns-prefetch" href="https://s.wordpress.com" />
-        <link rel="preconnect" href="https://s.wordpress.com" crossOrigin="" />
-        <link rel="dns-prefetch" href="https://interfaceclasses.com" />
-        <link rel="preconnect" href="https://interfaceclasses.com" crossOrigin="" />
-        <link rel="dns-prefetch" href="https://www.swapzy.store" />
-        <link rel="dns-prefetch" href="https://png.pngtree.com" />
         {/* Explicit viewport */}
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </head>

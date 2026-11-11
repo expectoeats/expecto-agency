@@ -58,7 +58,7 @@ export default function ProcessPageClient() {
       {/* ── HERO ── */}
       <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 pb-16 md:pb-24 border-b border-[#E5E7EB]">
         <div className="max-w-4xl">
-          <span className="font-mono text-xs text-[#8A919B] block mb-4">
+          <span className="font-mono text-xs text-[#5A6271] block mb-4">
             ( 01 / DEVELOPMENT PROCESS )
           </span>
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#1E1E1E] leading-[1.05] mb-8">
@@ -101,7 +101,7 @@ export default function ProcessPageClient() {
                 {/* Text Side */}
                 <div className={`lg:col-span-7 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="font-mono text-xs text-[#8A919B]">
+                    <span className="font-mono text-xs text-[#5A6271]">
                       {phase.num}
                     </span>
                     <span className="font-mono text-xs text-[#1E1E1E] px-3 py-1 rounded-full bg-[#F6F7F9] border border-[#E5E7EB]">
@@ -118,7 +118,7 @@ export default function ProcessPageClient() {
                   </p>
 
                   <div className="p-6 rounded-[24px] bg-[#F8F9FA] border border-[#E5E7EB]">
-                    <span className="font-mono text-xs text-[#8A919B] uppercase block mb-4">
+                    <span className="font-mono text-xs text-[#5A6271] uppercase block mb-4">
                       Phase Deliverables
                     </span>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

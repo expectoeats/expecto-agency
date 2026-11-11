@@ -131,7 +131,7 @@ export default function ServicesPageClient() {
       {/* ── 01 / HERO HEADER ── */}
       <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 pb-16 md:pb-24 border-b border-[#E5E7EB]">
         <div className="max-w-4xl">
-          <span className="font-mono text-xs text-[#8A919B] block mb-4">
+          <span className="font-mono text-xs text-[#5A6271] block mb-4">
             ( 01 / AGENCY CAPABILITIES )
           </span>
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#1E1E1E] leading-[1.05] mb-8">
@@ -177,14 +177,14 @@ export default function ServicesPageClient() {
       <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-32 border-b border-[#E5E7EB]">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-12 border-b border-[#E5E7EB]">
           <div>
-            <span className="font-mono text-xs text-[#8A919B] block mb-3">
+            <span className="font-mono text-xs text-[#5A6271] block mb-3">
               ( 02 / CORE OFFERINGS )
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1E1E1E]">
               What We Build.
             </h2>
           </div>
-          <span className="font-mono text-xs text-[#8A919B]">
+          <span className="font-mono text-xs text-[#5A6271]">
             ( 08 VERIFIED SPECIALIZATIONS )
           </span>
         </div>
@@ -250,7 +250,7 @@ export default function ServicesPageClient() {
       {/* ── 03 / TRANSPARENT PRICING PLANS ── */}
       <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-32 border-b border-[#E5E7EB]">
         <div className="max-w-3xl mb-12">
-          <span className="font-mono text-xs text-[#8A919B] block mb-3">
+          <span className="font-mono text-xs text-[#5A6271] block mb-3">
             ( 03 / TRANSPARENT PRICING )
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1E1E1E] mb-4">
@@ -268,7 +268,7 @@ export default function ServicesPageClient() {
               className="p-6 md:p-8 rounded-[24px] bg-[#F8F9FA] border border-[#E5E7EB] flex flex-col justify-between hover:border-[#1E1E1E] transition-colors"
             >
               <div>
-                <span className="font-mono text-xs text-[#8A919B] uppercase block mb-2">
+                <span className="font-mono text-xs text-[#5A6271] uppercase block mb-2">
                   {plan.time}
                 </span>
                 <h3 className="text-xl font-bold tracking-tight text-[#1E1E1E] mb-2">
@@ -283,7 +283,7 @@ export default function ServicesPageClient() {
                 <ul className="space-y-2 border-t border-[#E5E7EB] pt-6 mb-8">
                   {plan.features.map((feat) => (
                     <li key={feat} className="flex items-center gap-2 text-xs font-mono text-[#1E1E1E]">
-                      <span className="text-[#8A919B]">✓</span>
+                      <span className="text-[#5A6271]">✓</span>
                       <span>{feat}</span>
                     </li>
                   ))}

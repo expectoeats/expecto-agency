@@ -57,7 +57,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Metadata & Back to Top */}
-        <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-mono text-[#8A919B]">
+        <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-mono text-[#5A6271]">
           <div className="flex items-center gap-2">
             <span>( ©2026 Expecto Digital Agency )</span>
             <span>•</span>

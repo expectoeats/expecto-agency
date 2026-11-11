@@ -35,7 +35,7 @@ export default function AboutPageClient() {
       {/* ── 01 / HERO SECTION ── */}
       <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 pb-16 md:pb-24 border-b border-[#E5E7EB]">
         <div className="max-w-4xl">
-          <span className="font-mono text-xs text-[#8A919B] block mb-4">
+          <span className="font-mono text-xs text-[#5A6271] block mb-4">
             ( 01 / ABOUT EXPECTO )
           </span>
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#1E1E1E] leading-[1.05] mb-8">
@@ -81,7 +81,7 @@ export default function AboutPageClient() {
       <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-32 border-b border-[#E5E7EB]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-6">
-            <span className="font-mono text-xs text-[#8A919B] block mb-4">
+            <span className="font-mono text-xs text-[#5A6271] block mb-4">
               ( 02 / WHY WE EXIST )
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1E1E1E] leading-[1.15] mb-6">
@@ -125,7 +125,7 @@ export default function AboutPageClient() {
       {/* ── 03 / OUR CORE PILLARS ── */}
       <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-32 border-b border-[#E5E7EB]">
         <div className="max-w-3xl mb-14">
-          <span className="font-mono text-xs text-[#8A919B] block mb-3">
+          <span className="font-mono text-xs text-[#5A6271] block mb-3">
             ( 03 / HOW WE WORK )
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1E1E1E]">
@@ -140,7 +140,7 @@ export default function AboutPageClient() {
               className="p-8 rounded-[28px] bg-[#F8F9FA] border border-[#E5E7EB] flex flex-col justify-between hover:border-[#1E1E1E] transition-colors"
             >
               <div>
-                <span className="font-mono text-xs text-[#8A919B] block mb-4">
+                <span className="font-mono text-xs text-[#5A6271] block mb-4">
                   {p.num}
                 </span>
                 <h3 className="text-2xl font-bold tracking-tight text-[#1E1E1E] mb-3">

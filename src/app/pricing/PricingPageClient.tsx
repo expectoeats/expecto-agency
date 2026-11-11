@@ -108,7 +108,7 @@ export default function PricingPageClient() {
       {/* ── 01 / HERO HEADER ── */}
       <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 pb-16 md:pb-24 border-b border-[#E5E7EB]">
         <div className="max-w-4xl">
-          <span className="font-mono text-xs text-[#8A919B] block mb-4">
+          <span className="font-mono text-xs text-[#5A6271] block mb-4">
             ( 01 / TRANSPARENT PRICING )
           </span>
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#1E1E1E] leading-[1.05] mb-8">
@@ -155,7 +155,7 @@ export default function PricingPageClient() {
               )}
 
               <div>
-                <span className="font-mono text-xs text-[#8A919B] block mb-2">
+                <span className="font-mono text-xs text-[#5A6271] block mb-2">
                   {tier.tagline}
                 </span>
                 <h3 className="text-2xl font-bold tracking-tight text-[#1E1E1E] mb-2">
@@ -198,7 +198,7 @@ export default function PricingPageClient() {
       {/* ── 03 / MODULAR ADD-ONS ── */}
       <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-32 border-b border-[#E5E7EB]">
         <div className="max-w-3xl mb-12">
-          <span className="font-mono text-xs text-[#8A919B] block mb-3">
+          <span className="font-mono text-xs text-[#5A6271] block mb-3">
             ( 02 / MODULAR ADD-ONS )
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1E1E1E] mb-4">
@@ -229,7 +229,7 @@ export default function PricingPageClient() {
       {/* ── 04 / FREQUENTLY ASKED QUESTIONS ── */}
       <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-32 border-b border-[#E5E7EB]">
         <div className="max-w-3xl mb-12">
-          <span className="font-mono text-xs text-[#8A919B] block mb-3">
+          <span className="font-mono text-xs text-[#5A6271] block mb-3">
             ( 03 / COMMON INQUIRIES )
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1E1E1E]">
@@ -244,7 +244,7 @@ export default function PricingPageClient() {
               className="p-6 sm:p-8 rounded-[24px] bg-[#F8F9FA] border border-[#E5E7EB]"
             >
               <div className="flex items-center gap-2 mb-3">
-                <HelpCircle size={16} className="text-[#8A919B]" />
+                <HelpCircle size={16} className="text-[#5A6271]" />
                 <h3 className="text-lg font-bold tracking-tight text-[#1E1E1E]">
                   {f.q}
                 </h3>

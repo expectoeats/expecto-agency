@@ -70,7 +70,7 @@ export default function Hero() {
   return (
     <section className="relative pt-24 md:pt-28 pb-16 md:pb-24 bg-white overflow-hidden" aria-label="Hero">
       {/* Top Meta Bar */}
-      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between text-xs font-mono text-[#8A919B] pb-6">
+      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between text-xs font-mono text-[#5A6271] pb-6">
         {/* Left: Time */}
         <div className="flex items-center gap-1.5 tabular-nums">
           <span>(</span>
@@ -107,7 +107,7 @@ export default function Hero() {
 
       {/* Giant "Expecto" Title with Automatic Stagger Wave & Typographically Scaled "O" Logo */}
       <div className="w-full text-center px-4 pt-2 pb-6 md:pb-8 select-none flex items-center justify-center">
-        <div className="inline-flex items-baseline justify-center cursor-default select-none">
+        <h1 className="inline-flex items-baseline justify-center cursor-default select-none">
           {/* Automatic Calm & Rhythmic Letter Wave */}
           {letters.map((char, i) => (
             <motion.span
@@ -149,7 +149,7 @@ export default function Hero() {
               />
             </motion.div>
           </span>
-        </div>
+        </h1>
       </div>
 
       {/* Horizontal Arch Card Slider (Bungee Marquee) */}
@@ -171,7 +171,8 @@ export default function Hero() {
           {carouselItems.map((card, idx) => (
             <div
               key={idx}
-              className={`relative flex-none w-[175px] sm:w-[195px] md:w-[215px] lg:w-[230px] h-[440px] sm:h-[480px] md:h-[520px] overflow-hidden bg-[#F0F2F5] shadow-sm hover:scale-[1.02] transition-transform duration-300 ${card.radius}`}
+              aria-hidden={idx >= heroCards.length ? true : undefined}
+              className={`relative flex-none w-[130px] sm:w-[195px] md:w-[215px] lg:w-[230px] h-[300px] sm:h-[480px] md:h-[520px] overflow-hidden bg-[#F0F2F5] shadow-sm hover:scale-[1.02] transition-transform duration-300 ${card.radius}`}
             >
               {card.type === "video" ? (
                 <video
@@ -179,6 +180,7 @@ export default function Hero() {
                   loop
                   muted
                   playsInline
+                  preload="none"
                   poster={card.poster}
                   className="w-full h-full object-cover object-center pointer-events-none"
                 >
@@ -191,6 +193,7 @@ export default function Hero() {
                   fill
                   sizes="(max-width: 768px) 200px, 240px"
                   className="object-cover object-center pointer-events-none"
+                  priority={idx === 0}
                 />
               )}
             </div>

@@ -22,7 +22,7 @@ export default function FinalCTA() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left Column: Direct Agency Inquiry */}
           <div className="lg:col-span-7">
-            <span className="font-mono text-xs text-[#8A919B] block mb-4">
+            <span className="font-mono text-xs text-[#5A6271] block mb-4">
               ( START A PROJECT )
             </span>
 
@@ -50,7 +50,7 @@ export default function FinalCTA() {
               </Link>
             </div>
 
-            <p className="font-mono text-xs text-[#8A919B] mt-6">
+            <p className="font-mono text-xs text-[#5A6271] mt-6">
               Phone: +91 87072 24376 • Guaranteed turnaround in writing with 20% cashback policy.
             </p>
           </div>
@@ -58,7 +58,7 @@ export default function FinalCTA() {
           {/* Right Column: Newsletter Box */}
           <div className="lg:col-span-5 flex flex-col justify-end">
             <div className="p-8 md:p-10 rounded-[24px] bg-[#F8F9FA] border border-[#E5E7EB]">
-              <span className="font-mono text-xs text-[#8A919B] block mb-2">
+              <span className="font-mono text-xs text-[#5A6271] block mb-2">
                 ( AGENCY UPDATES )
               </span>
 
@@ -83,7 +83,7 @@ export default function FinalCTA() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your business email"
-                    className="flex-1 px-4 py-3.5 rounded-full bg-white border border-[#E5E7EB] focus:border-[#1E1E1E] focus:outline-none text-sm text-[#1E1E1E] placeholder:text-[#8A919B]"
+                    className="flex-1 px-4 py-3.5 rounded-full bg-white border border-[#E5E7EB] focus:border-[#1E1E1E] focus:outline-none text-sm text-[#1E1E1E] placeholder:text-[#5A6271]"
                   />
                   <button
                     type="submit"

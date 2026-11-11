@@ -40,7 +40,7 @@ export default function ContactPageClient() {
       {/* ── 01 / HERO HEADER ── */}
       <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 pb-16 md:pb-24 border-b border-[#E5E7EB]">
         <div className="max-w-4xl">
-          <span className="font-mono text-xs text-[#8A919B] block mb-4">
+          <span className="font-mono text-xs text-[#5A6271] block mb-4">
             ( 01 / INITIATE ENGAGEMENT )
           </span>
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#1E1E1E] leading-[1.05] mb-8">
@@ -58,7 +58,7 @@ export default function ContactPageClient() {
           
           {/* Form Side */}
           <div className="lg:col-span-7 p-8 sm:p-10 md:p-12 rounded-[32px] bg-[#F8F9FA] border border-[#E5E7EB]">
-            <span className="font-mono text-xs text-[#8A919B] block mb-2">
+            <span className="font-mono text-xs text-[#5A6271] block mb-2">
               ( PROJECT INQUIRY FORM )
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1E1E1E] mb-8">
@@ -156,7 +156,7 @@ export default function ContactPageClient() {
 
           {/* Direct Channels Side */}
           <div className="lg:col-span-5 space-y-6">
-            <span className="font-mono text-xs text-[#8A919B] block mb-2">
+            <span className="font-mono text-xs text-[#5A6271] block mb-2">
               ( DIRECT CONTACT DETAILS )
             </span>
 
@@ -222,7 +222,7 @@ export default function ContactPageClient() {
                 Expecto Digital Solutions<br />
                 Ballia, Uttar Pradesh, India — 277001
               </p>
-              <span className="font-mono text-[11px] text-[#8A919B]">
+              <span className="font-mono text-[11px] text-[#5A6271]">
                 ( Serving clients across India & globally )
               </span>
             </div>

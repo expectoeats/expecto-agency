@@ -50,7 +50,7 @@ export default function ClientsMarquee() {
   return (
     <section className="py-20 md:py-28 px-6 md:px-12 bg-white border-t border-[#E5E7EB] overflow-hidden" aria-label="Clients">
       <div className="w-full max-w-[1400px] mx-auto text-center mb-12">
-        <span className="font-mono text-xs text-[#8A919B] block mb-2">
+        <span className="font-mono text-xs text-[#5A6271] block mb-2">
           ( TRUSTED BY 50+ BUSINESSES )
         </span>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-[#1E1E1E]">
@@ -101,7 +101,7 @@ export default function ClientsMarquee() {
                 </div>
               )}
 
-              <span className="font-mono text-[10px] text-[#8A919B] uppercase border-l border-[#E5E7EB] pl-3">
+              <span className="font-mono text-[10px] text-[#5A6271] uppercase border-l border-[#E5E7EB] pl-3">
                 {client.type}
               </span>
             </div>

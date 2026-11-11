@@ -56,7 +56,7 @@ export default function Testimonials() {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-12 md:pb-16 border-b border-[#E5E7EB]">
           <div>
-            <span className="font-mono text-xs text-[#8A919B] block mb-3">
+            <span className="font-mono text-xs text-[#5A6271] block mb-3">
               ( CLIENT ENDORSEMENTS )
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1E1E1E]">

@@ -94,10 +94,10 @@ const ROW_2 = realServices.slice(4, 8); // Mobile App, SEO, Graphic, Video
 const BLOCK_1 = [...ROW_1, ...ROW_1, ...ROW_1, ...ROW_1];
 const BLOCK_2 = [...ROW_2, ...ROW_2, ...ROW_2, ...ROW_2];
 
-function ServiceCard({ service }: { service: typeof realServices[0] }) {
+function ServiceCard({ service, tabIndex }: { service: typeof realServices[0]; tabIndex?: number }) {
   return (
-    <div className="w-[240px] sm:w-[260px] md:w-[280px] flex-none">
-      <Link href={service.link} className="group/card block">
+    <div className="w-[170px] sm:w-[260px] md:w-[280px] flex-none">
+      <Link href={service.link} className="group/card block" tabIndex={tabIndex}>
         {/* Visual Bungee Arch Card */}
         <div
           className={`relative aspect-square w-full overflow-hidden bg-white border border-[#E5E7EB] shadow-sm hover:shadow-[0_24px_48px_-15px_rgba(0,0,0,0.12)] transition-all duration-500 ease-out ${service.radius}`}
@@ -149,7 +149,7 @@ export default function Services() {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-10 md:pb-14 border-b border-[#E5E7EB]">
           <div>
-            <span className="font-mono text-xs text-[#8A919B] block mb-3">
+            <span className="font-mono text-xs text-[#5A6271] block mb-3">
               ( AGENCY CAPABILITIES )
             </span>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-[#1E1E1E]">
@@ -157,7 +157,7 @@ export default function Services() {
             </h2>
           </div>
           <div className="flex items-center gap-6">
-            <span className="font-mono text-xs text-[#8A919B] hidden sm:inline">
+            <span className="font-mono text-xs text-[#5A6271] hidden sm:inline">
               ( 08 CORE SERVICES )
             </span>
             <Link
@@ -189,7 +189,7 @@ export default function Services() {
             {/* Block B (seamless loop twin) */}
             <div className="flex items-start gap-5 pr-5 shrink-0" aria-hidden="true">
               {BLOCK_1.map((service, idx) => (
-                <ServiceCard key={`r1-b-${service.title}-${idx}`} service={service} />
+                <ServiceCard key={`r1-b-${service.title}-${idx}`} service={service} tabIndex={-1} />
               ))}
             </div>
           </div>
@@ -210,7 +210,7 @@ export default function Services() {
             {/* Block B (seamless loop twin) */}
             <div className="flex items-start gap-5 pr-5 shrink-0" aria-hidden="true">
               {BLOCK_2.map((service, idx) => (
-                <ServiceCard key={`r2-b-${service.title}-${idx}`} service={service} />
+                <ServiceCard key={`r2-b-${service.title}-${idx}`} service={service} tabIndex={-1} />
               ))}
             </div>
           </div>
@@ -221,7 +221,7 @@ export default function Services() {
       {/* Agency Mission & Verified Stats Strip */}
       <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 pt-20 md:pt-28">
         <div className="max-w-3xl mb-16">
-          <span className="font-mono text-xs text-[#8A919B] block mb-3">
+          <span className="font-mono text-xs text-[#5A6271] block mb-3">
             ( DIGITAL AGENCY MISSION )
           </span>
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1E1E1E] leading-[1.15]">

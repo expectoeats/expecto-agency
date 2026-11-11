@@ -42,7 +42,7 @@ export default function SelectedWork() {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-12 md:pb-16 border-b border-[#E5E7EB]">
           <div>
-            <span className="font-mono text-xs text-[#8A919B] block mb-3">
+            <span className="font-mono text-xs text-[#5A6271] block mb-3">
               ( SELECTED WORK )
             </span>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-[#1E1E1E]">
@@ -51,7 +51,7 @@ export default function SelectedWork() {
           </div>
 
           <div className="flex items-center gap-6">
-            <span className="font-mono text-xs text-[#8A919B]">
+            <span className="font-mono text-xs text-[#5A6271]">
               ( 50+ DELIVERED )
             </span>
             <Link
@@ -81,7 +81,7 @@ export default function SelectedWork() {
                 className="group block flex flex-col"
               >
                 {/* Visual Image Container — 9:16 portrait matches exact design assets */}
-                <div className="relative aspect-[9/16] w-full rounded-[20px] md:rounded-[24px] overflow-hidden bg-[#F6F7F9] border border-[#E5E7EB] mb-5">
+                <div className="relative aspect-[9/16] w-full max-w-[58vw] mx-auto sm:max-w-none rounded-[16px] md:rounded-[24px] overflow-hidden bg-[#F6F7F9] border border-[#E5E7EB] mb-5">
                   <Image
                     src={p.image}
                     alt={p.name}
@@ -106,7 +106,7 @@ export default function SelectedWork() {
                       className="opacity-0 -translate-x-1 translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-200 text-[#1E1E1E]"
                     />
                   </h3>
-                  <span className="font-mono text-xs text-[#8A919B]">
+                  <span className="font-mono text-xs text-[#5A6271]">
                     {p.id}
                   </span>
                 </div>
