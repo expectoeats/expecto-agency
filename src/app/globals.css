@@ -143,6 +143,12 @@
   to   { transform: translateX(0); }
 }
 
+@keyframes letter-bounce {
+  0%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-6px); }
+  40% { transform: translateY(0); }
+}
+
 /* Dedicated Endless Marquee for Dual-Row Services */
 @keyframes service-marquee-left {
   0%   { transform: translateX(0); }

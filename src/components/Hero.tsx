@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 const heroCards = [
   {
@@ -20,7 +19,7 @@ const heroCards = [
   {
     type: "video",
     src: "/hero/card-3.mp4",
-    poster: "/hero/analytics.webp",
+    poster: "/hero/poster.webp",
     alt: "Motion Showreel",
     radius: "rounded-tl-[80px] rounded-br-[80px]",
   },
@@ -110,35 +109,18 @@ export default function Hero() {
         <h1 className="inline-flex items-baseline justify-center cursor-default select-none">
           {/* Automatic Calm & Rhythmic Letter Wave */}
           {letters.map((char, i) => (
-            <motion.span
+            <span
               key={char + i}
-              animate={{
-                y: [0, -6, 0, 0],
-              }}
-              transition={{
-                duration: 2.8,
-                repeat: Infinity,
-                repeatDelay: 1.2,
-                delay: i * 0.12,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="text-[16vw] sm:text-[17vw] md:text-[18vw] leading-[0.86] font-bold tracking-tight text-[#1E1E1E] inline-block font-sans"
+              style={{ animationDelay: `${i * 0.12}s` }}
+              className="text-[16vw] sm:text-[17vw] md:text-[18vw] leading-[0.86] font-bold tracking-tight text-[#1E1E1E] inline-block font-sans animate-[letter-bounce_2.8s_ease-in-out_infinite]"
             >
               {char}
-            </motion.span>
+            </span>
           ))}
 
           {/* Letter "o" as Rotating Expecto Logo, Sized & Baseline-Aligned with Lowercase "c" & "e" */}
           <span className="inline-block relative w-[0.53em] h-[0.53em] ml-[0.02em] align-baseline text-[16vw] sm:text-[17vw] md:text-[18vw] translate-y-[0.03em]">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{
-                repeat: Infinity,
-                duration: 24,
-                ease: "linear",
-              }}
-              className="relative w-full h-full rounded-full overflow-hidden bg-[#1E1E1E] shadow-xs"
-            >
+            <div className="relative w-full h-full rounded-full overflow-hidden bg-[#1E1E1E] shadow-xs animate-[spin_24s_linear_infinite]">
               <Image
                 src="/logo.png"
                 alt="Expecto O Logo"
@@ -147,27 +129,18 @@ export default function Hero() {
                 className="object-cover"
                 priority
               />
-            </motion.div>
+            </div>
           </span>
         </h1>
       </div>
 
-      {/* Horizontal Arch Card Slider (Bungee Marquee) */}
+      {/* Horizontal Arch Card Slider (CSS Marquee for instant LCP paint) */}
       <div className="relative w-full overflow-hidden mt-2">
         {/* Soft edge gradient fades */}
         <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
-        <motion.div
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 36,
-            ease: "linear",
-          }}
-          className="flex items-center gap-4 sm:gap-5 md:gap-6 w-max py-2 px-4 cursor-grab active:cursor-grabbing"
-        >
+        <div className="flex items-center gap-4 sm:gap-5 md:gap-6 w-max py-2 px-4 animate-[marquee_36s_linear_infinite] hover:[animation-play-state:paused] will-change-transform">
           {carouselItems.map((card, idx) => (
             <div
               key={idx}
@@ -191,14 +164,14 @@ export default function Hero() {
                   src={card.src}
                   alt={card.alt}
                   fill
-                  sizes="(max-width: 768px) 200px, 240px"
+                  sizes="(max-width: 640px) 130px, (max-width: 768px) 195px, 240px"
                   className="object-cover object-center pointer-events-none"
                   priority={idx === 0}
                 />
               )}
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

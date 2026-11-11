@@ -106,7 +106,7 @@ function ServiceCard({ service, tabIndex }: { service: typeof realServices[0]; t
             src={service.image}
             alt={service.title}
             fill
-            sizes="280px"
+            sizes="(max-width: 640px) 170px, (max-width: 768px) 260px, 280px"
             className="object-cover object-center group-hover/card:scale-105 transition-transform duration-700 ease-out"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none" />
