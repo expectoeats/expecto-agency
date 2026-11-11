@@ -1,7 +1,5 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Image from "next/image";
+import LiveClock from "@/components/LiveClock";
 
 const heroCards = [
   {
@@ -44,34 +42,6 @@ const heroCards = [
 ];
 
 const letters = ["E", "x", "p", "e", "c", "t"];
-
-function LiveClock() {
-  const [time, setTime] = useState<string>("00:00");
-
-  useEffect(() => {
-    const update = () => {
-      setTime(
-        new Date().toLocaleTimeString("en-US", {
-          hour12: false,
-          hour: "2-digit",
-          minute: "2-digit",
-          timeZone: "Asia/Kolkata",
-        })
-      );
-    };
-    update();
-    const id = setInterval(update, 1000);
-    return () => clearInterval(id);
-  }, []);
-
-  return (
-    <div className="flex items-center gap-1.5 tabular-nums">
-      <span>(</span>
-      <span className="text-[#1E1E1E] font-medium">{time}</span>
-      <span>IST )</span>
-    </div>
-  );
-}
 
 export default function Hero() {
   const carouselItems = [...heroCards, ...heroCards];
@@ -146,7 +116,10 @@ export default function Hero() {
         <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
-        <div className="flex items-center gap-4 sm:gap-5 md:gap-6 w-max py-2 px-4 animate-[marquee_36s_linear_infinite] hover:[animation-play-state:paused] will-change-transform">
+        <div
+          className="flex items-center gap-4 sm:gap-5 md:gap-6 w-max py-2 px-4 animate-[marquee_36s_linear_infinite] hover:[animation-play-state:paused] will-change-transform"
+          style={{ animationDelay: "1s", animationFillMode: "backwards" }}
+        >
           {carouselItems.map((card, idx) => (
             <div
               key={idx}
