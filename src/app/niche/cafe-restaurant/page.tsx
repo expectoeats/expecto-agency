@@ -1,12 +1,12 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import NichePageTemplate from "@/components/seo/NichePageTemplate";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
-  title: "Cafe & Restaurant Website Design India | Starting ₹1,999 | Expecto",
-  description: "Professional cafe and restaurant website design in India starting ₹1,999. Digital menu, WhatsApp ordering, table booking, SEO-ready. 7-day delivery. Expecto Digital Agency, Ballia.",
+  title: "Cafe & Restaurant Website Design India | Starting Expecto",
+  description: "Professional cafe and restaurant website design in India. Digital menu, WhatsApp ordering, table booking, SEO-ready. 7-day delivery. Expecto Digital Agency, Ballia.",
   alternates: { canonical: "https://expecto.online/niche/cafe-restaurant" },
-  openGraph: { title: "Cafe & Restaurant Website Design India | Expecto", description: "Cafe and restaurant websites starting ₹1,999 with digital menu, WhatsApp ordering and 7-day delivery.", url: "https://expecto.online/niche/cafe-restaurant", type: "website" },
+  openGraph: { title: "Cafe & Restaurant Website Design India | Expecto", description: "Cafe and restaurant websites with digital menu, WhatsApp ordering and 7-day delivery.", url: "https://expecto.online/niche/cafe-restaurant", type: "website" },
 };
 
 const demos = [
@@ -24,9 +24,9 @@ const services = [
 ];
 
 const pricing = [
-  "Starter: Rs. 1,999",
-  "Growth: Rs. 3,999",
-  "Conversion Pro: Rs. 7,999",
+  "Starter: Contact Us",
+  "Growth: Contact Us",
+  "Conversion Pro: Contact Us",
 ];
 
 const faqs = [

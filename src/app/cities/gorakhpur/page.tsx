@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Script from "next/script";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import WebDevCityPage from "@/components/seo/WebDevCityPage";
@@ -8,9 +8,9 @@ import { getCityData } from "@/lib/citiesData";
 const city = getCityData("gorakhpur")!;
 
 export const metadata: Metadata = {
-  title: "Website Design in Gorakhpur | Coaching, Hospital & CRM | Expecto Digital Agency | ₹1,999",
+  title: "Website Design in Gorakhpur | Coaching, Hospital & CRM | Expecto Digital Agency",
   description:
-    "Best website design agency in Gorakhpur, Uttar Pradesh. Custom websites, CRM software, coaching websites, hospital websites, ecommerce stores starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
+    "Best website design agency in Gorakhpur, Uttar Pradesh. Custom websites, CRM software, coaching websites, hospital websites, ecommerce stores. 7-day delivery. Call +91 87072 24376.",
   keywords: city.targetKeywords,
   alternates: {
     canonical: `${siteUrl}/cities/gorakhpur`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Website Design in Gorakhpur | Coaching, Hospital & CRM | Expecto",
-    description: "Custom websites, CRM, coaching & hospital websites starting ₹1,999 in Gorakhpur. 7-day delivery.",
+    description: "Custom websites, CRM, coaching & hospital websites in Gorakhpur. 7-day delivery.",
     url: `${siteUrl}/cities/gorakhpur`,
     type: "website",
     locale: "en_IN",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Website Design in Gorakhpur | Expecto Digital Agency",
-    description: "Custom websites for Gorakhpur coaching, hospitals & businesses. ₹1,999. 7-day delivery.",
+    description: "Custom websites for Gorakhpur coaching, hospitals & businesses. 7-day delivery.",
     images: [`${siteUrl}/opengraph-image`],
   },
   other: {

@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
 import { ArrowRight, CheckCircle, MapPin, Star, Trophy } from "lucide-react";
@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "Website Development in Ballia | Best Web Designer Ballia UP | Expecto Digital Agency",
   description:
-    "Top-rated website development agency in Ballia, Uttar Pradesh. Custom websites, CRM systems, e-commerce stores & admin panels starting ₹1,999. 7-day delivery. Proven #1 Google rankings. Call +91 87072 24376.",
+    "Top-rated website development agency in Ballia, Uttar Pradesh. Custom websites, CRM systems, e-commerce stores & admin panels. 7-day delivery. Proven #1 Google rankings. Call +91 87072 24376.",
   keywords: [
     "website development in ballia",
     "best web designer in ballia",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Website Development in Ballia | Best Web Designer Ballia UP | Expecto",
     description:
-      "Ballia's most trusted website development agency. High-speed websites, CRM & e-commerce starting ₹1,999. Proven #1 Google rankings for clients.",
+      "Ballia's most trusted website development agency. High-speed websites, CRM & e-commerce. Proven #1 Google rankings for clients.",
     url: `${siteUrl}/cities/ballia`,
     type: "website",
     locale: "en_IN",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Website Development in Ballia | Expecto Digital Agency",
-    description: "Ballia's best web design agency. Websites from ₹1,999. 7-day delivery. #1 Google rankings.",
+    description: "Ballia's best web design agency. Websites from 7-day delivery. #1 Google rankings.",
     images: [`${siteUrl}/opengraph-image`],
   },
   other: {
@@ -89,7 +89,7 @@ const stats = [
   { value: "50+", label: "Projects Delivered" },
   { value: "#1", label: "Google Rankings for Clients" },
   { value: "7 Days", label: "Guaranteed Delivery" },
-  { value: "₹1,999", label: "Starting Price" },
+  { value: "Contact Us", label: "Starting Price" },
 ];
 
 const serviceAreas = [
@@ -100,11 +100,11 @@ const serviceAreas = [
 const faqs = [
   {
     q: "Which is the best website development company in Ballia?",
-    a: "Expecto Digital Agency is Ballia's top-rated web development company, with 50+ delivered projects and verified #1 Google rankings for clients like Interface Classes (Kanpur). We build high-speed Next.js websites, CRMs and e-commerce stores starting ₹1,999 with a 7-day delivery guarantee.",
+    a: "Expecto Digital Agency is Ballia's top-rated web development company, with 50+ delivered projects and verified #1 Google rankings for clients like Interface Classes (Kanpur). We build high-speed Next.js websites, CRMs and e-commerce stores starting Contact Us with a 7-day delivery guarantee.",
   },
   {
     q: "How much does website development cost in Ballia?",
-    a: "Our websites start at ₹1,999 for a professional business website. Portfolio websites from ₹2,499, e-commerce stores from ₹7,999, and custom CRM systems from ₹9,999. All include design, development, deployment and on-page SEO.",
+    a: "Our websites start at Contact Us for a professional business website. Portfolio websites from Contact Us e-commerce stores from Contact Us and custom CRM systems from Contact Us. All include design, development, deployment and on-page SEO.",
   },
   {
     q: "Do you offer website development services near me in Ballia?",
@@ -193,7 +193,7 @@ export default function BalliaPage() {
               Expecto Digital Agency is Ballia's most trusted web design company. We build
               high-speed Next.js websites, custom CRMs, e-commerce stores and admin panels
               for businesses across Ballia, Rasra, Bairia, Bansdih and Ghazipur — starting
-              at just ₹1,999 with a 7-day delivery guarantee.
+              at just Contact Us with a 7-day delivery guarantee.
             </p>
 
             {/* CTAs */}
@@ -410,7 +410,7 @@ export default function BalliaPage() {
                     development work that Ballia businesses can now access locally.
                   </p>
                   <p>
-                    Whether you need a ₹1,999 business website delivered in 7 days or a
+                    Whether you need a Contact Us business website delivered in 7 days or a
                     full-stack CRM built from scratch, Expecto is the web design agency in
                     Ballia that delivers on its promises — in writing, with a cashback guarantee.
                   </p>

@@ -1,17 +1,17 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Script from "next/script";
 import CityPageTemplate from "@/components/seo/CityPageTemplate";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import { getCitySchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Website Design in Gurgaon | CRM, SaaS & Custom Website | Expecto Digital Agency | ₹1,999",
-  description: "Best website design agency in Gurgaon, Delhi NCR. Custom websites, CRM software, SaaS development, startup websites, ecommerce stores starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
+  title: "Website Design in Gurgaon | CRM, SaaS & Custom Website | Expecto Digital Agency",
+  description: "Best website design agency in Gurgaon, Delhi NCR. Custom websites, CRM software, SaaS development, startup websites, ecommerce stores. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/cities/gurgaon" },
   keywords: ["website design gurgaon", "web development gurgaon", "digital agency gurgaon", "crm development gurgaon", "saas development gurgaon", "custom website gurgaon", "startup website gurgaon", "ecommerce website gurgaon", "website design gurugram", "affordable website gurgaon delhi ncr"],
   openGraph: {
     title: "Website Design in Gurgaon | CRM, SaaS & Custom Website | Expecto",
-    description: "Custom websites, CRM, SaaS starting ₹1,999 in Gurgaon. 7-day delivery guaranteed.",
+    description: "Custom websites, CRM, SaaS in Gurgaon. 7-day delivery guaranteed.",
     url: "https://expecto.online/cities/gurgaon",
     type: "website",
   },

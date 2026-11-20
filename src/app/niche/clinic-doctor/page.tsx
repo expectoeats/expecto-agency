@@ -1,12 +1,12 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import NichePageTemplate from "@/components/seo/NichePageTemplate";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
-  title: "Clinic & Doctor Website Design India | Starting ₹1,999 | Expecto",
-  description: "Professional clinic and doctor website design in India starting ₹1,999. Appointment booking, doctor profiles, SEO-ready. 7-day delivery. Expecto Digital Agency.",
+  title: "Clinic & Doctor Website Design India | Starting Expecto",
+  description: "Professional clinic and doctor website design in India. Appointment booking, doctor profiles, SEO-ready. 7-day delivery. Expecto Digital Agency.",
   alternates: { canonical: "https://expecto.online/niche/clinic-doctor" },
-  openGraph: { title: "Clinic & Doctor Website Design India | Expecto", description: "Clinic and doctor websites starting ₹1,999 with appointment booking and 7-day delivery.", url: "https://expecto.online/niche/clinic-doctor", type: "website" },
+  openGraph: { title: "Clinic & Doctor Website Design India | Expecto", description: "Clinic and doctor websites with appointment booking and 7-day delivery.", url: "https://expecto.online/niche/clinic-doctor", type: "website" },
 };
 
 const demos = [
@@ -24,9 +24,9 @@ const services = [
 ];
 
 const pricing = [
-  "Starter: Rs. 1,999",
-  "Growth: Rs. 3,999",
-  "Conversion Pro: Rs. 7,999",
+  "Starter: Contact Us",
+  "Growth: Contact Us",
+  "Conversion Pro: Contact Us",
 ];
 
 const faqs = [

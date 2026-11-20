@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
@@ -7,9 +7,9 @@ import { getWebDesignBusinessSchema, getFAQSchema, siteUrl, sitePhone } from "@/
 
 // ─── Metadata ────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "Website Development in Ballia UP | Starting ₹1,999 | Expecto Digital Agency",
+  title: "Website Development in Ballia UP | Expecto Digital Agency",
   description:
-    "Professional website development in Ballia, Uttar Pradesh. High-speed Next.js websites, e-commerce, CRM & custom web apps starting ₹1,999 with 7-day delivery. Call +91 87072 24376.",
+    "Professional website development in Ballia, Uttar Pradesh. High-speed Next.js websites, e-commerce, CRM & custom web apps with 7-day delivery. Call +91 87072 24376.",
   keywords: [
     "website development in ballia",
     "website developer ballia uttar pradesh",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Website Development in Ballia UP | Starting ₹1,999 | Expecto",
+    title: "Website Development in Ballia UP | Expecto",
     description:
-      "High-speed website development in Ballia starting ₹1,999. Next.js, e-commerce, CRM & custom web apps. 7-day delivery guaranteed.",
+      "High-speed website development in Ballia. Next.js, e-commerce, CRM & custom web apps. 7-day delivery guaranteed.",
     url: `${siteUrl}/website-development-ballia`,
     type: "website",
     locale: "en_IN",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Website Development Ballia | Expecto Digital Agency",
-    description: "High-speed websites in Ballia from ₹1,999. 7-day delivery. Call +91 87072 24376.",
+    description: "High-speed websites in Ballia. 7-day delivery. Call +91 87072 24376.",
     images: [`${siteUrl}/opengraph-image`],
   },
   other: {
@@ -57,20 +57,20 @@ export const metadata: Metadata = {
 const packages = [
   {
     name: "Starter",
-    price: "₹1,999",
+    price: "Contact Us",
     delivery: "7 days",
     features: ["Up to 5 pages", "Mobile-responsive", "On-page SEO", "Contact form", "WhatsApp button", "Deployment included"],
   },
   {
     name: "Growth",
-    price: "₹3,999",
+    price: "Contact Us",
     delivery: "7 days",
     features: ["Up to 10 pages", "Custom UI design", "Blog / news section", "Google Analytics", "Schema markup", "1 month support"],
     highlight: true,
   },
   {
     name: "Custom",
-    price: "From ₹7,999",
+    price: "Contact Us",
     delivery: "14–21 days",
     features: ["Unlimited pages", "Custom admin panel", "CRM / ERP integration", "E-commerce store", "API integrations", "Priority support"],
   },
@@ -79,7 +79,7 @@ const packages = [
 const faqs = [
   {
     q: "How much does website development cost in Ballia?",
-    a: "Our website development packages start at ₹1,999 for a professional business website. Growth packages are ₹3,999, and custom builds with CRM or e-commerce start from ₹7,999. All packages include design, development, deployment and on-page SEO.",
+    a: "We offer custom pricing based on your project requirements. Contact us for a free quote. All packages include design, development, deployment and on-page SEO.",
   },
   {
     q: "How long does website development take in Ballia?",
@@ -127,7 +127,7 @@ export default function WebsiteDevelopmentBalliaPage() {
               Website Development in Ballia, Uttar Pradesh
             </h1>
             <p className="font-montserrat text-white/65 text-[1rem] md:text-[1.125rem] leading-[1.8] max-w-2xl mb-8">
-              We build professional, high-speed websites for Ballia businesses — starting at ₹1,999
+              We build professional, high-speed websites for Ballia businesses — with fast 7-day delivery
               with a written 7-day delivery guarantee. Next.js, SEO-ready, mobile-first.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -266,7 +266,7 @@ export default function WebsiteDevelopmentBalliaPage() {
         <section className="border-t border-[var(--border)] bg-[#0D0D0D]">
           <div className="max-w-[1360px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-14 md:py-20 text-center">
             <h2 className="font-montserrat font-semibold text-[clamp(1.5rem,3vw,2.5rem)] leading-[1.15] text-white mb-4">
-              Get your website built in Ballia — starting ₹1,999.
+              Get your website built in Ballia — 
             </h2>
             <p className="font-montserrat text-white/55 text-[0.9375rem] max-w-lg mx-auto mb-8">
               7-day delivery. Written guarantee. 100% ownership. Talk to us today.

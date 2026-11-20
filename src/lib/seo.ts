@@ -25,13 +25,6 @@ export const fullKeywordList = [
   "react development india", "custom website development india",
   "professional website design india", "website design company india",
 
-  // ── Price signals ──
-  "website design starting 1999", "website in 1999 rupees",
-  "affordable website india", "website under 5000 india",
-  "low cost website design india", "budget website design india",
-  "cheap website india", "website 3999", "website 7999",
-  "website banwao 1999 mein", "website kitne mein banti hai",
-
   // ── Speed signals ──
   "7 day website delivery india", "website in 7 days india",
   "fast website development india", "express website development india",
@@ -340,7 +333,7 @@ export const fullKeywordList = [
   "sabse sasti website india",
   "7 din mein website",
   "website 1999 mein",
-  "business ke liye website",
+
   "website banana hai",
   "website kaise banaye",
   "website banwane ke liye agency",
@@ -427,7 +420,7 @@ export function getOrganizationSchema() {
     },
     image: `${siteUrl}/logo.png`,
     description:
-      "Expecto is a full-service digital agency based in Ballia, Uttar Pradesh. We build websites, mobile apps, CRM, SaaS products, and video content for Indian businesses across Uttar Pradesh, Delhi, and Madhya Pradesh. Starting Rs. 1,999 with 7-day delivery.",
+      "Expecto is a full-service digital agency based in Ballia, Uttar Pradesh. We build websites, mobile apps, CRM, SaaS products, and video content for Indian businesses across Uttar Pradesh, Delhi, and Madhya Pradesh. 7-day delivery guarantee.",
     telephone: sitePhone,
     email: siteEmail,
     address: {
@@ -517,7 +510,7 @@ export function getWebSiteSchema() {
     url: siteUrl,
     name: "Expecto",
     alternateName: ["Expecto Digital Agency", "Expecto Agency", "expecto.online"],
-    description: "Expecto is India's digital agency building websites, CRM, apps and SaaS for small businesses across UP, Delhi and MP. Starting ₹1,999 with 7-day delivery.",
+    description: "Expecto is India's digital agency building websites, CRM, apps and SaaS for small businesses across UP, Delhi and MP. 7-day delivery guarantee.",
     publisher: { "@id": `${siteUrl}/#organization` },
     potentialAction: {
       "@type": "SearchAction",
@@ -567,8 +560,8 @@ export function getLocalBusinessSchema() {
       "@type": "OfferCatalog",
       name: "Digital Services",
       itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Website Design & Development", description: "Professional website design starting Rs. 1,999 with 7-day delivery." }, price: "1999", priceCurrency: "INR" },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom CRM Development", description: "Custom CRM software for Indian businesses starting Rs. 9,999." } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Website Design & Development", description: "Professional website design and development with 7-day delivery." } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom CRM Development", description: "Custom CRM software for Indian businesses." } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobile App Development", description: "React Native iOS and Android app development." } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "SaaS & Custom Software", description: "Custom ERP, CRM, and SaaS product development." } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Ecommerce Website", description: "Full-featured online store with payment gateway." } },
@@ -710,9 +703,7 @@ export function getWebDesignBusinessSchema() {
         {
           "@type": "Offer",
           name: "Business Website Development",
-          description: "High-speed business websites built with Next.js, starting ₹1,999 with 7-day delivery.",
-          price: "1999",
-          priceCurrency: "INR",
+          description: "High-speed business websites built with Next.js, with 7-day delivery.",
           itemOffered: {
             "@type": "Service",
             name: "Website Development in Ballia",

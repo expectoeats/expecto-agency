@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -126,10 +126,10 @@ export default function ContactPageClient() {
                     {...register("budget")}
                     className="w-full px-4 py-3 rounded-[14px] bg-white border border-[#E5E7EB] text-sm font-mono text-[#1E1E1E] focus:outline-hidden focus:border-[#1E1E1E] transition-colors cursor-pointer"
                   >
-                    <option value="₹1,999 - ₹5,000 (Sprint Landing Page / Starter)">₹1,999 - ₹5,000 (Sprint Landing Page / Starter)</option>
-                    <option value="₹5,000 - ₹15,000 (Business Website / Commerce)">₹5,000 - ₹15,000 (Business Website / Commerce)</option>
-                    <option value="₹15,000 - ₹35,000 (Custom Web App / CRM)">₹15,000 - ₹35,000 (Custom Web App / CRM)</option>
-                    <option value="₹35,000+ (Full Custom Software & Enterprise)">₹35,000+ (Full Custom Software & Enterprise)</option>
+                    <option value="Contact Us - Contact Us (Sprint Landing Page / Starter)">Contact Us - Contact Us (Sprint Landing Page / Starter)</option>
+                    <option value="Contact Us - Contact Us (Business Website / Commerce)">Contact Us - Contact Us (Business Website / Commerce)</option>
+                    <option value="Contact Us - Contact Us (Custom Web App / CRM)">Contact Us - Contact Us (Custom Web App / CRM)</option>
+                    <option value="Contact Us (Full Custom Software & Enterprise)">Contact Us (Full Custom Software & Enterprise)</option>
                   </select>
                 </div>
 

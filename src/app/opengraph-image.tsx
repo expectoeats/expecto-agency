@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Expecto Digital Agency — Website Design India Starting ₹1,999";
+export const alt = "Expecto Digital Agency — Website Design & Development India";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -116,7 +116,7 @@ export default async function Image() {
             SaaS. Growth.
           </div>
           <div style={{ fontSize: 20, color: "#94a3b8", marginTop: 8, maxWidth: 600 }}>
-            Starting ₹1,999 · 7-Day Delivery · 50+ Projects · 100% Satisfaction
+            7-Day Delivery · 50+ Projects · 100% Satisfaction
           </div>
         </div>
 
@@ -124,7 +124,6 @@ export default async function Image() {
         <div style={{ display: "flex", gap: 16 }}>
           {[
             "→ 7-Day Delivery",
-            "₹4,999 Starting",
             "✦ 50+ Projects",
             "✦ 100% Satisfaction",
           ].map((tag) => (

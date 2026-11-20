@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Script from "next/script";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import WebDevCityPage from "@/components/seo/WebDevCityPage";
@@ -8,9 +8,9 @@ import { getCityData } from "@/lib/citiesData";
 const city = getCityData("varanasi")!;
 
 export const metadata: Metadata = {
-  title: "Website Design in Varanasi | Hotels, Coaching & CRM | Expecto Digital Agency | ₹1,999",
+  title: "Website Design in Varanasi | Hotels, Coaching & CRM | Expecto Digital Agency",
   description:
-    "Best website design agency in Varanasi, Uttar Pradesh. Custom websites, CRM software, hotel websites, travel websites, coaching websites starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
+    "Best website design agency in Varanasi, Uttar Pradesh. Custom websites, CRM software, hotel websites, travel websites, coaching websites. 7-day delivery. Call +91 87072 24376.",
   keywords: city.targetKeywords,
   alternates: {
     canonical: `${siteUrl}/cities/varanasi`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Website Design in Varanasi | Hotels, Coaching & CRM | Expecto",
-    description: "Custom websites, CRM, hotel & travel websites starting ₹1,999 in Varanasi. 7-day delivery.",
+    description: "Custom websites, CRM, hotel & travel websites in Varanasi. 7-day delivery.",
     url: `${siteUrl}/cities/varanasi`,
     type: "website",
     locale: "en_IN",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Website Design in Varanasi | Expecto Digital Agency",
-    description: "Custom websites for Varanasi hotels, coaching & businesses. ₹1,999. 7-day delivery.",
+    description: "Custom websites for Varanasi hotels, coaching & businesses. 7-day delivery.",
     images: [`${siteUrl}/opengraph-image`],
   },
   other: {

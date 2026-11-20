@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import { Suspense } from "react";
 import Script from "next/script";
 import ServicesPageClient from "./ServicesPageClient";
@@ -17,24 +17,24 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Web Development Services India | Website, App, CRM, SaaS | Expecto",
-    description: "Website design from ₹1,999, app development, CRM, SaaS. 7-day delivery. UP, Delhi, MP.",
+    description: "Website design, app development, CRM, SaaS. 7-day delivery. UP, Delhi, MP.",
     url: "https://expecto.online/services",
     type: "website",
   },
 };
 
 const serviceSchemas = [
-  { name: "Website Design & Development India", desc: "Professional website design starting Rs. 1,999 with 7-day delivery for Indian businesses.", url: "/services" },
-  { name: "Custom CRM Software Development India", desc: "Custom CRM for coaching, real estate, hospital, salon, gym starting Rs. 9,999.", url: "/niche/crm-software" },
+  { name: "Website Design & Development India", desc: "Professional website design starting Contact Us with 7-day delivery for Indian businesses.", url: "/services" },
+  { name: "Custom CRM Software Development India", desc: "Custom CRM for coaching, real estate, hospital, salon, gym starting Contact Us.", url: "/niche/crm-software" },
   { name: "Mobile App Development India", desc: "React Native iOS and Android app development for Indian businesses.", url: "/services" },
   { name: "SaaS Product Development India", desc: "Custom SaaS, ERP, and business software development.", url: "/services" },
-  { name: "Ecommerce Website Development India", desc: "Full-featured online store with payment gateway starting Rs. 3,999.", url: "/niche/ecommerce" },
-  { name: "Landing Page Design India", desc: "High-converting landing pages for Google Ads and Meta Ads starting Rs. 1,999.", url: "/niche/landing-page" },
+  { name: "Ecommerce Website Development India", desc: "Full-featured online store with payment gateway starting Contact Us.", url: "/niche/ecommerce" },
+  { name: "Landing Page Design India", desc: "High-converting landing pages for Google Ads and Meta Ads starting Contact Us.", url: "/niche/landing-page" },
 ];
 
 const faqs = [
   { q: "What services does Expecto Digital Agency offer?", a: "Expecto offers website design, custom CRM development, mobile app development, SaaS products, ecommerce stores, landing pages, and video production for Indian businesses." },
-  { q: "How much does website development cost at Expecto?", a: "Website development starts at Rs. 1,999 for a basic business website. Custom websites start at Rs. 3,999. CRM development starts at Rs. 9,999. All prices include design, development, and deployment." },
+  { q: "How much does website development cost at Expecto?", a: "Website development starts at Contact Us for a basic business website. Custom websites start at Contact Us. CRM development starts at Contact Us. All prices include design, development, and deployment." },
   { q: "Do you serve businesses in Uttar Pradesh, Delhi, and Madhya Pradesh?", a: "Yes. We serve clients across all of India with a focus on Uttar Pradesh (Lucknow, Kanpur, Agra, Varanasi, Noida), Delhi NCR, and Madhya Pradesh (Indore, Bhopal, Jabalpur, Gwalior)." },
 ];
 

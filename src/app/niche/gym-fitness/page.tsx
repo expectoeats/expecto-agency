@@ -1,12 +1,12 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import NichePageTemplate from "@/components/seo/NichePageTemplate";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
-  title: "Gym & Fitness Website Design India | Starting ₹1,999 | Expecto",
-  description: "Professional gym and fitness website design in India starting ₹1,999. Online membership, class schedules, trainer profiles, SEO-ready. 7-day delivery. Expecto Digital Agency.",
+  title: "Gym & Fitness Website Design India | Starting Expecto",
+  description: "Professional gym and fitness website design in India. Online membership, class schedules, trainer profiles, SEO-ready. 7-day delivery. Expecto Digital Agency.",
   alternates: { canonical: "https://expecto.online/niche/gym-fitness" },
-  openGraph: { title: "Gym & Fitness Website Design India | Expecto", description: "Gym and fitness websites starting ₹1,999 with online membership and 7-day delivery.", url: "https://expecto.online/niche/gym-fitness", type: "website" },
+  openGraph: { title: "Gym & Fitness Website Design India | Expecto", description: "Gym and fitness websites with online membership and 7-day delivery.", url: "https://expecto.online/niche/gym-fitness", type: "website" },
 };
 
 const demos = [
@@ -24,9 +24,9 @@ const services = [
 ];
 
 const pricing = [
-  "Starter: Rs. 1,999",
-  "Growth: Rs. 3,999",
-  "Conversion Pro: Rs. 7,999",
+  "Starter: Contact Us",
+  "Growth: Contact Us",
+  "Conversion Pro: Contact Us",
 ];
 
 const faqs = [

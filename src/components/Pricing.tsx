@@ -18,20 +18,20 @@ interface PricingCard {
 const starterCards: PricingCard[] = [
   {
     name: "Landing Page",
-    price: "\u20B94,999",
+    price: "Contact Us",
     delivery: "3 days",
     features: ["1-page custom design", "Mobile responsive", "Contact form + WhatsApp", "Google Maps embed", "SEO-ready meta tags"],
   },
   {
     name: "Business Website",
-    price: "\u20B97,999",
+    price: "Contact Us",
     delivery: "7 days",
     popular: true,
     features: ["Up to 5 pages", "Custom UI design", "SEO + sitemap", "WhatsApp integration", "1 month free support"],
   },
   {
     name: "E-Commerce Store",
-    price: "\u20B913,999",
+    price: "Contact Us",
     delivery: "12 days",
     features: ["Product catalogue", "Cart & checkout", "Payment gateway", "Order management", "Mobile-first design"],
   },
@@ -40,20 +40,20 @@ const starterCards: PricingCard[] = [
 const growthCards: PricingCard[] = [
   {
     name: "Web Application",
-    price: "\u20B914,999",
+    price: "Contact Us",
     delivery: "10 days",
     features: ["Full MERN stack", "User auth + roles", "Admin dashboard", "API integrations", "Deployment included"],
   },
   {
     name: "Mobile App",
-    price: "\u20B914,999",
+    price: "Contact Us",
     delivery: "15 days",
     popular: true,
     features: ["React Native (iOS + Android)", "Push notifications", "User auth", "App Store upload", "6 weeks support"],
   },
   {
     name: "Marketing Starter Pack",
-    price: "\u20B97,999",
+    price: "Contact Us",
     delivery: "5 days",
     features: ["Logo + brand kit", "8 social media creatives", "Content calendar (1 month)", "Instagram/Facebook page setup", "Social profile optimization"],
   },
@@ -62,20 +62,20 @@ const growthCards: PricingCard[] = [
 const enterpriseCards: PricingCard[] = [
   {
     name: "CRM / ERP System",
-    price: "\u20B914,999",
+    price: "Contact Us",
     delivery: "12 days",
     features: ["Custom modules", "Role-based access", "Workflow automation", "Reporting dashboard", "3rd-party integrations"],
   },
   {
     name: "SaaS MVP",
-    price: "\u20B924,999",
+    price: "Contact Us",
     delivery: "21 days",
     popular: true,
     features: ["Multi-tenant architecture", "Subscription billing", "Admin analytics", "Scalable backend", "Launch support"],
   },
   {
     name: "Full Digital Setup",
-    price: "\u20B921,999/mo",
+    price: "Contact Us",
     delivery: "Monthly retainer",
     features: ["Website + maintenance", "Social media (8 posts)", "Local SEO", "Monthly report", "WhatsApp priority support"],
   },
@@ -91,7 +91,7 @@ export default function Pricing() {
   const [activeTab, setActiveTab] = useState("Starter");
 
   const handleGetStarted = (card: PricingCard) => {
-    const message = `Hi Expecto Team,\n\nI'm interested in the "${card.name}" plan from your ${activeTab} services.\n\nPrice: ${card.price}\nDelivery: ${card.delivery || "Contact for timeline"}\n\nI'd like to discuss this further.`;
+    const message = `Hi Expecto Team,\n\nI'm interested in the "${card.name}" service.\nDelivery: ${card.delivery || "Contact for timeline"}\n\nI'd like to get a custom quote for this.`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/918707224376?text=${encodedMessage}`;
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
@@ -229,7 +229,7 @@ export default function Pricing() {
 
         <div className="text-center mt-12">
           <p className="font-montserrat text-[var(--text-3)] text-[13px]">
-            * Starting prices. Exact quote within 24 hours — free, no obligation.
+            * Custom quotes provided within 24 hours — free, no obligation. Contact us on WhatsApp.
           </p>
         </div>
       </div>

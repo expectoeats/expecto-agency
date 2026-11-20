@@ -1,12 +1,12 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import NichePageTemplate from "@/components/seo/NichePageTemplate";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
-  title: "Ecommerce Website Design India | Starting ₹3,999 | Expecto",
-  description: "Professional ecommerce website design in India starting ₹3,999. Online store, payment gateway, inventory management, SEO-ready. 7-day delivery. Expecto Digital Agency.",
+  title: "Ecommerce Website Design India | Starting Contact Us | Expecto",
+  description: "Professional ecommerce website design in India starting Contact Us. Online store, payment gateway, inventory management, SEO-ready. 7-day delivery. Expecto Digital Agency.",
   alternates: { canonical: "https://expecto.online/niche/ecommerce" },
-  openGraph: { title: "Ecommerce Website Design India | Expecto", description: "Ecommerce websites starting ₹3,999 with payment gateway and 7-day delivery.", url: "https://expecto.online/niche/ecommerce", type: "website" },
+  openGraph: { title: "Ecommerce Website Design India | Expecto", description: "Ecommerce websites starting Contact Us with payment gateway and 7-day delivery.", url: "https://expecto.online/niche/ecommerce", type: "website" },
 };
 
 const demos = [
@@ -24,9 +24,9 @@ const services = [
 ];
 
 const pricing = [
-  "Starter: Rs. 1,999",
-  "Growth: Rs. 3,999",
-  "Conversion Pro: Rs. 7,999",
+  "Starter: Contact Us",
+  "Growth: Contact Us",
+  "Conversion Pro: Contact Us",
 ];
 
 const faqs = [

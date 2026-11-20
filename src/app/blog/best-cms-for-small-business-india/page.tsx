@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
@@ -35,7 +35,7 @@ const faqs = [
 
 const comparison = [
   { feature: "PageSpeed Score",      nextjs: "95–100/100", wordpress: "40–70/100", webflow: "70–85/100" },
-  { feature: "Monthly Cost",         nextjs: "₹0 (Vercel free)", wordpress: "₹500–2,000/mo", webflow: "₹1,500–4,000/mo" },
+  { feature: "Monthly Cost",         nextjs: "Contact Us (Vercel free)", wordpress: "Contact Usmo", webflow: "Contact Usmo" },
   { feature: "SEO Capability",       nextjs: "Excellent",  wordpress: "Good (with plugins)", webflow: "Good" },
   { feature: "Admin/Content Update", nextjs: "Custom panel",wordpress: "Easy (built-in)", webflow: "Easy (built-in)" },
   { feature: "Design Flexibility",   nextjs: "100% custom", wordpress: "Template-based", webflow: "Visual, limited" },
@@ -134,7 +134,7 @@ export default function Page() {
               When WordPress is the right choice
             </h2>
             <p>
-              If you need a high-volume blog, are already familiar with WordPress, or need a very specific plugin ecosystem, WordPress can work. Just budget for: a fast hosting plan (₹1,000–2,000/month minimum for decent speed), regular plugin updates, and a security plugin. The &ldquo;free&rdquo; cost of WordPress isn&apos;t actually free.
+              If you need a high-volume blog, are already familiar with WordPress, or need a very specific plugin ecosystem, WordPress can work. Just budget for: a fast hosting plan (Contact Usmonth minimum for decent speed), regular plugin updates, and a security plugin. The &ldquo;free&rdquo; cost of WordPress isn&apos;t actually free.
             </p>
 
             <h2 className="font-montserrat font-semibold text-[1.25rem] text-[var(--text)] mt-8 mb-2">
@@ -161,7 +161,7 @@ export default function Page() {
 
           <div className="mt-14 border border-[var(--border)] p-8 bg-[var(--bg-subtle)]">
             <p className="font-montserrat font-semibold text-[1rem] text-[var(--text)] mb-2">Want a Next.js website for your business?</p>
-            <p className="font-montserrat text-[0.875rem] text-[var(--text-3)] mb-5">Starting ₹1,999. 7-day delivery. Custom admin panel included in most packages.</p>
+            <p className="font-montserrat text-[0.875rem] text-[var(--text-3)] mb-5">Starting Contact Us. 7-day delivery. Custom admin panel included in most packages.</p>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact" className="inline-flex items-center gap-2 font-montserrat font-medium text-[0.875rem] px-5 py-2.5 bg-[#111] text-white hover:bg-[#333] transition-colors">
                 Get a Free Quote

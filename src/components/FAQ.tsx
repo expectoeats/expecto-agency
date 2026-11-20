@@ -27,7 +27,7 @@ const realFaqs = [
   },
   {
     q: "Is the pricing transparent or are there hidden charges?",
-    a: "Completely transparent. Websites start at Rs. 4,999. Your proposal includes a line-by-line breakdown of design, development, deployment, and revisions. No hidden surprises — ever.",
+    a: "Completely transparent. Your proposal includes a line-by-line breakdown of design, development, deployment, and revisions. No hidden surprises — ever.",
   },
 ];
 

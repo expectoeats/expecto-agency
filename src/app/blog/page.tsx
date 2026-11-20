@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
@@ -21,7 +21,7 @@ const posts = [
   {
     slug: "website-development-cost-in-ballia",
     title: "Website Development Cost in Ballia, UP (2025) — Complete Pricing Guide",
-    excerpt: "Exact pricing for every type of website in Ballia — from a ₹1,999 business site to a ₹50,000 custom CRM. No fluff, just numbers.",
+    excerpt: "Exact pricing for every type of website in Ballia — from a Contact Us business site to a Contact Us custom CRM. No fluff, just numbers.",
     date: "2025-07-01",
     readTime: "6 min read",
     tag: "Pricing",

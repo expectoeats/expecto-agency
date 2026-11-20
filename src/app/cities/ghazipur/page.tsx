@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Script from "next/script";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import WebDevCityPage from "@/components/seo/WebDevCityPage";
@@ -8,9 +8,9 @@ import { getCityData } from "@/lib/citiesData";
 const city = getCityData("ghazipur")!;
 
 export const metadata: Metadata = {
-  title: "Website Design in Ghazipur UP | Coaching, Business & CRM | Expecto | ₹1,999",
+  title: "Website Design in Ghazipur UP | Coaching, Business & CRM | Expecto",
   description:
-    "Best website design agency in Ghazipur, Uttar Pradesh. Custom websites for coaching institutes, businesses, clinics & e-commerce starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
+    "Best website design agency in Ghazipur, Uttar Pradesh. Custom websites for coaching institutes, businesses, clinics & e-commerce. 7-day delivery. Call +91 87072 24376.",
   keywords: city.targetKeywords,
   alternates: {
     canonical: `${siteUrl}/cities/ghazipur`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Website Design in Ghazipur UP | Coaching & Business Websites | Expecto",
-    description: "Custom websites for Ghazipur coaching, businesses & clinics starting ₹1,999. 7-day delivery.",
+    description: "Custom websites for Ghazipur coaching, businesses & clinics. 7-day delivery.",
     url: `${siteUrl}/cities/ghazipur`,
     type: "website",
     locale: "en_IN",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Website Design in Ghazipur UP | Expecto Digital Agency",
-    description: "Coaching, business & clinic websites in Ghazipur from ₹1,999. 7-day delivery.",
+    description: "Coaching, business & clinic websites in Ghazipur from 7-day delivery.",
     images: [`${siteUrl}/opengraph-image`],
   },
   other: {

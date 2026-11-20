@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
@@ -9,7 +9,7 @@ import { getWebDesignBusinessSchema, getFAQSchema, siteUrl, sitePhone } from "@/
 export const metadata: Metadata = {
   title: "Portfolio Website Developer in Ballia UP | Expecto Digital Agency",
   description:
-    "Looking for a portfolio website developer in Ballia, Uttar Pradesh? Expecto builds stunning, SEO-optimised portfolio websites for freelancers, photographers, designers & professionals. Starting ₹2,499. Call +91 87072 24376.",
+    "Looking for a portfolio website developer in Ballia, Uttar Pradesh? Expecto builds stunning, SEO-optimised portfolio websites for freelancers, photographers, designers & professionals. Starting Contact Us. Call +91 87072 24376.",
   keywords: [
     "portfolio website developer ballia",
     "portfolio website design ballia",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Portfolio Website Developer in Ballia UP | Expecto Digital Agency",
     description:
-      "Stunning, SEO-optimised portfolio websites for Ballia professionals, freelancers & creatives. Starting ₹2,499 with 7-day delivery.",
+      "Stunning, SEO-optimised portfolio websites for Ballia professionals, freelancers & creatives. Starting Contact Us with 7-day delivery.",
     url: `${siteUrl}/portfolio-website-developer-ballia`,
     type: "website",
     locale: "en_IN",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Portfolio Website Developer Ballia | Expecto",
-    description: "Portfolio websites for Ballia professionals starting ₹2,499. SEO-ready, fast, beautiful.",
+    description: "Portfolio websites for Ballia professionals starting Contact Us. SEO-ready, fast, beautiful.",
     images: [`${siteUrl}/opengraph-image`],
   },
   other: {
@@ -82,7 +82,7 @@ const faqs = [
   },
   {
     q: "How much does a portfolio website cost in Ballia?",
-    a: "Our portfolio websites start at ₹2,499. This includes custom design, development, on-page SEO, WhatsApp integration and deployment. We also handle your domain and hosting setup.",
+    a: "Our portfolio websites start at Contact Us. This includes custom design, development, on-page SEO, WhatsApp integration and deployment. We also handle your domain and hosting setup.",
   },
   {
     q: "Will my portfolio website rank on Google in Ballia?",
@@ -132,7 +132,7 @@ export default function PortfolioWebsiteDeveloperBalliaPage() {
             <p className="font-montserrat text-white/65 text-[1rem] md:text-[1.125rem] leading-[1.8] max-w-2xl mb-8">
               Your portfolio is your first impression. We build custom, SEO-optimised portfolio
               websites for freelancers, photographers, designers and professionals in Ballia
-              and across Uttar Pradesh — starting at ₹2,499 with 7-day delivery.
+              and across Uttar Pradesh — starting at Contact Us with 7-day delivery.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/contact"
@@ -205,7 +205,7 @@ export default function PortfolioWebsiteDeveloperBalliaPage() {
                     their local searches — it&apos;s what we do.
                   </p>
                   <p>
-                    Starting at ₹2,499 with a 7-day turnaround, there&apos;s no reason to
+                    Starting at Contact Us with a 7-day turnaround, there&apos;s no reason to
                     stay invisible online. Call or WhatsApp us today.
                   </p>
                 </div>
@@ -269,7 +269,7 @@ export default function PortfolioWebsiteDeveloperBalliaPage() {
               Ready for a portfolio website in Ballia?
             </h2>
             <p className="font-montserrat text-white/55 text-[0.9375rem] max-w-lg mx-auto mb-8">
-              Starting ₹2,499. Delivered in 7 days. SEO-optimised for Ballia.
+              Starting Contact Us. Delivered in 7 days. SEO-optimised for Ballia.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link href="/contact"

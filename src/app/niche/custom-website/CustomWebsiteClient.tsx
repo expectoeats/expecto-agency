@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -30,19 +30,19 @@ const demos = [
 const pricing = [
   {
     tier: "Starter",
-    price: "₹3,999",
+    price: "Contact Us",
     desc: "For small businesses that need a clean, fast website with basic information and enquiry flow.",
     features: ["5 custom pages", "Mobile responsive", "WhatsApp CTA", "On-page SEO setup", "Contact form", "30-day support"],
   },
   {
     tier: "Business",
-    price: "₹7,999",
+    price: "Contact Us",
     desc: "For growing businesses that need a complete website with multiple sections and conversion focus.",
     features: ["Up to 10 custom pages", "Custom UI design system", "Blog / news section", "Google Analytics", "Schema markup", "60-day support"],
   },
   {
     tier: "Premium",
-    price: "₹14,999",
+    price: "Contact Us",
     desc: "For businesses that need a full custom build with admin panel, multiple modules and advanced features.",
     features: ["Unlimited pages", "Custom admin panel", "CMS integration", "Advanced SEO", "Performance audit", "90-day support"],
     highlight: true,
@@ -79,7 +79,7 @@ export default function CustomWebsiteClient({ faqs }: { faqs: FAQ[] }) {
             </Link>
           </div>
           <div className="flex flex-wrap gap-x-5 gap-y-1">
-            {["Starting ₹3,999", "7-Day Delivery", "Full Ownership", "No Templates"].map((tag) => (
+            {["Starting Contact Us", "7-Day Delivery", "Full Ownership", "No Templates"].map((tag) => (
               <span key={tag} className="font-montserrat text-[0.75rem] text-[var(--text-3)] text-white/40 flex items-center gap-1.5">
                 <span className="w-1 h-1 rounded-full bg-[var(--text-3)] lg:bg-white/40" />{tag}
               </span>

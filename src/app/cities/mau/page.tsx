@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Script from "next/script";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import WebDevCityPage from "@/components/seo/WebDevCityPage";
@@ -8,9 +8,9 @@ import { getCityData } from "@/lib/citiesData";
 const city = getCityData("mau")!;
 
 export const metadata: Metadata = {
-  title: "Website Design in Mau UP | Textile, Coaching & Business Websites | Expecto | ₹1,999",
+  title: "Website Design in Mau UP | Textile, Coaching & Business Websites | Expecto",
   description:
-    "Best website design agency in Mau, Uttar Pradesh. Custom websites for textile businesses, coaching institutes, traders & e-commerce starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
+    "Best website design agency in Mau, Uttar Pradesh. Custom websites for textile businesses, coaching institutes, traders & e-commerce. 7-day delivery. Call +91 87072 24376.",
   keywords: city.targetKeywords,
   alternates: {
     canonical: `${siteUrl}/cities/mau`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Website Design in Mau UP | Textile & Coaching Websites | Expecto",
-    description: "Custom websites for Mau textile businesses, coaching institutes & traders starting ₹1,999. 7-day delivery.",
+    description: "Custom websites for Mau textile businesses, coaching institutes & tradeContact Us-day delivery.",
     url: `${siteUrl}/cities/mau`,
     type: "website",
     locale: "en_IN",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Website Design in Mau UP | Expecto Digital Agency",
-    description: "Textile, coaching & business websites in Mau from ₹1,999. 7-day delivery.",
+    description: "Textile, coaching & business websites in Mau from 7-day delivery.",
     images: [`${siteUrl}/opengraph-image`],
   },
   other: {

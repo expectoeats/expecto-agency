@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import { getAllCitySlugs, getCityData } from "@/lib/citiesData";
@@ -117,7 +117,7 @@ function getCityWebDesignSchema(city: NonNullable<ReturnType<typeof getCityData>
         {
           "@type": "Offer",
           name: `Website Development in ${city.cityName}`,
-          description: `Professional website development in ${city.cityName}, ${city.state} starting ₹1,999 with 7-day delivery.`,
+          description: `Professional website development in ${city.cityName}, ${city.state} with 7-day delivery.`,
           price: "1999",
           priceCurrency: "INR",
           itemOffered: {

@@ -1,17 +1,17 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Script from "next/script";
 import CityPageTemplate from "@/components/seo/CityPageTemplate";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import { getCitySchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Website Design in Faridabad | CRM & Custom Website | Expecto Digital Agency | ₹1,999",
-  description: "Best website design agency in Faridabad, Delhi NCR. Custom websites, CRM software, ecommerce stores, business websites starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
+  title: "Website Design in Faridabad | CRM & Custom Website | Expecto Digital Agency",
+  description: "Best website design agency in Faridabad, Delhi NCR. Custom websites, CRM software, ecommerce stores, business websites. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/cities/faridabad" },
   keywords: ["website design faridabad", "web development faridabad", "digital agency faridabad", "crm development faridabad", "ecommerce website faridabad", "affordable website faridabad delhi ncr"],
   openGraph: {
     title: "Website Design in Faridabad | CRM & Custom Website | Expecto",
-    description: "Custom websites, CRM, ecommerce starting ₹1,999 in Faridabad. 7-day delivery.",
+    description: "Custom websites, CRM, ecommerce in Faridabad. 7-day delivery.",
     url: "https://expecto.online/cities/faridabad",
     type: "website",
   },

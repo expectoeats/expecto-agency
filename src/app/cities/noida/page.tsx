@@ -1,17 +1,17 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Script from "next/script";
 import CityPageTemplate from "@/components/seo/CityPageTemplate";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import { getCitySchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Website Design in Noida | CRM, SaaS & Custom Website | Expecto Digital Agency | ₹1,999",
-  description: "Best website design agency in Noida, Uttar Pradesh. Custom websites, CRM software, SaaS development, startup websites, ecommerce stores starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
+  title: "Website Design in Noida | CRM, SaaS & Custom Website | Expecto Digital Agency",
+  description: "Best website design agency in Noida, Uttar Pradesh. Custom websites, CRM software, SaaS development, startup websites, ecommerce stores. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/cities/noida" },
   keywords: ["website design noida", "web development noida", "digital agency noida", "crm development noida", "saas development noida", "startup website noida", "ecommerce website noida", "custom website noida uttar pradesh"],
   openGraph: {
     title: "Website Design in Noida | CRM, SaaS & Custom Website | Expecto",
-    description: "Custom websites, CRM, SaaS starting ₹1,999 in Noida. 7-day delivery guaranteed.",
+    description: "Custom websites, CRM, SaaS in Noida. 7-day delivery guaranteed.",
     url: "https://expecto.online/cities/noida",
     type: "website",
   },

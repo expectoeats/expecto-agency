@@ -1,12 +1,12 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import NichePageTemplate from "@/components/seo/NichePageTemplate";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
-  title: "Salon & Spa Website Design India | Starting ₹1,999 | Expecto",
-  description: "Professional salon and spa website design in India starting ₹1,999. Online appointment booking, service menu, SEO-ready. 7-day delivery. Expecto Digital Agency.",
+  title: "Salon & Spa Website Design India | Starting Expecto",
+  description: "Professional salon and spa website design in India. Online appointment booking, service menu, SEO-ready. 7-day delivery. Expecto Digital Agency.",
   alternates: { canonical: "https://expecto.online/niche/salon-spa" },
-  openGraph: { title: "Salon & Spa Website Design India | Expecto", description: "Salon and spa websites starting ₹1,999 with online booking and 7-day delivery.", url: "https://expecto.online/niche/salon-spa", type: "website" },
+  openGraph: { title: "Salon & Spa Website Design India | Expecto", description: "Salon and spa websites with online booking and 7-day delivery.", url: "https://expecto.online/niche/salon-spa", type: "website" },
 };
 
 const demos = [
@@ -24,9 +24,9 @@ const services = [
 ];
 
 const pricing = [
-  "Starter: Rs. 1,999",
-  "Growth: Rs. 3,999",
-  "Conversion Pro: Rs. 7,999",
+  "Starter: Contact Us",
+  "Growth: Contact Us",
+  "Conversion Pro: Contact Us",
 ];
 
 const faqs = [

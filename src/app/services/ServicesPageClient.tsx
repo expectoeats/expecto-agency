@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -90,28 +90,28 @@ const allServices = [
 const pricingPlans = [
   {
     name: "Landing Page",
-    price: "₹1,999",
+    price: "Contact Us",
     time: "3 Days Sprint",
     use: "Single-page landing page engineered for Google Ads, Meta Ads, or quick product launches.",
     features: ["Custom UI Design", "100% Mobile Responsive", "Lead Capture Form", "WhatsApp Chat Button", "On-Page SEO Ready"],
   },
   {
     name: "Business Website",
-    price: "₹3,999",
+    price: "Contact Us",
     time: "5 Days Sprint",
     use: "Multi-page website for growing businesses, clinics, coaching centers, and service firms.",
     features: ["Up to 5 Pages", "Next.js Speed & Performance", "Google Search Console", "Social Media Integrations", "1 Month Support"],
   },
   {
     name: "Growth & E-Commerce",
-    price: "₹6,999",
+    price: "Contact Us",
     time: "7 Days Sprint",
     use: "Advanced website or online store with payment gateway and automated order alerts.",
     features: ["Product Catalog & Cart", "Razorpay Payment Gateway", "Automated WhatsApp Alerts", "Dynamic Admin Dashboard", "Full Code Ownership"],
   },
   {
     name: "Custom Software & ERP",
-    price: "₹9,999+",
+    price: "Contact Us",
     time: "Custom Scope",
     use: "Custom web applications, CRM software, role management portals, and SaaS dashboards.",
     features: ["Bespoke Architecture", "Role-Based Access (RBAC)", "Custom API Integrations", "PostgreSQL / MongoDB", "Written SLA Guarantee"],

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
@@ -159,7 +159,7 @@ export default function Page() {
               Want the same result for your coaching institute?
             </p>
             <p className="font-montserrat text-[0.875rem] text-[var(--text-3)] mb-5">
-              We build SEO-first coaching websites starting ₹3,999 with 7-day delivery.
+              We build SEO-first coaching websites starting Contact Us with 7-day delivery.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact" className="inline-flex items-center gap-2 font-montserrat font-medium text-[0.875rem] px-5 py-2.5 bg-[#111] text-white hover:bg-[#333] transition-colors">

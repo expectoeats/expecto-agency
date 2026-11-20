@@ -8,7 +8,7 @@ import type { CityData } from "@/lib/citiesData";
 const packages = [
   {
     name: "Starter",
-    price: "₹1,999",
+    price: "Contact Us",
     delivery: "7 days",
     highlight: false,
     features: [
@@ -22,7 +22,7 @@ const packages = [
   },
   {
     name: "Growth",
-    price: "₹3,999",
+    price: "Contact Us",
     delivery: "7 days",
     highlight: true,
     features: [
@@ -36,7 +36,7 @@ const packages = [
   },
   {
     name: "Custom",
-    price: "From ₹7,999",
+    price: "Contact Us",
     delivery: "14–21 days",
     highlight: false,
     features: [
@@ -124,7 +124,7 @@ export default function WebDevCityPage({ city }: Props) {
               { v: "50+",     l: "Projects Delivered" },
               { v: "#1",      l: "Google Rankings" },
               { v: "7 Days",  l: "Delivery Guarantee" },
-              { v: "₹1,999",  l: "Starting Price" },
+              { v: "Free",    l: "Quote in 24 Hours" },
             ].map((s) => (
               <div key={s.l} className="bg-[#0D0D0D] px-6 py-5">
                 <p className="font-montserrat font-bold text-[1.5rem] md:text-[2rem] text-white leading-none mb-1">{s.v}</p>

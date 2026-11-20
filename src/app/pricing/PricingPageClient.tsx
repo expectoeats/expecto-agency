@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { ArrowUpRight, Check, HelpCircle } from "lucide-react";
@@ -6,7 +6,7 @@ import { ArrowUpRight, Check, HelpCircle } from "lucide-react";
 const pricingTiers = [
   {
     name: "Landing Page Sprint",
-    price: "₹1,999",
+    price: "Contact Us",
     tagline: "3-Day High-Conversion Sprint",
     desc: "Single-page landing page engineered for Google Ads, Meta Ads, and direct campaign inquiry conversion.",
     features: [
@@ -23,7 +23,7 @@ const pricingTiers = [
   },
   {
     name: "Business Website",
-    price: "₹3,999",
+    price: "Contact Us",
     tagline: "5-Day Full Company Website",
     desc: "Multi-page bespoke website for growing clinics, academies, legal firms, restaurants, and local businesses.",
     features: [
@@ -40,7 +40,7 @@ const pricingTiers = [
   },
   {
     name: "E-Commerce Store",
-    price: "₹6,999",
+    price: "Contact Us",
     tagline: "7-Day E-Commerce Launch",
     desc: "Fast digital store with product catalog, cart, Razorpay payment gateway, and automated order alerts.",
     features: [
@@ -57,7 +57,7 @@ const pricingTiers = [
   },
   {
     name: "Custom Software & ERP",
-    price: "₹9,999+",
+    price: "Contact Us",
     tagline: "Milestone-Based Custom Sprint",
     desc: "Bespoke web applications, CRM software, role management portals, and automated business workflows.",
     features: [
@@ -75,12 +75,12 @@ const pricingTiers = [
 ];
 
 const addOns = [
-  { name: "Payment Gateway Integration (Razorpay/Stripe)", price: "₹1,499" },
-  { name: "WhatsApp Cloud API Automation", price: "₹1,999" },
-  { name: "Local Google Business (GMB) Rank Optimization", price: "₹1,499" },
-  { name: "Custom Brand Identity & Vector Logo Kit", price: "₹1,999" },
-  { name: "Monthly High-Speed Maintenance & Backups", price: "₹999/mo" },
-  { name: "Bespoke Multi-Role Admin Dashboard", price: "₹4,999" },
+  { name: "Payment Gateway Integration (Razorpay/Stripe)", price: "Contact Us" },
+  { name: "WhatsApp Cloud API Automation", price: "Contact Us" },
+  { name: "Local Google Business (GMB) Rank Optimization", price: "Contact Us" },
+  { name: "Custom Brand Identity & Vector Logo Kit", price: "Contact Us" },
+  { name: "Monthly High-Speed Maintenance & Backups", price: "Contact Usmo" },
+  { name: "Bespoke Multi-Role Admin Dashboard", price: "Contact Us" },
 ];
 
 const faqs = [

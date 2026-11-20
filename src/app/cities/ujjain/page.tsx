@@ -1,17 +1,17 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Script from "next/script";
 import CityPageTemplate from "@/components/seo/CityPageTemplate";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import { getCitySchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Website Design in Ujjain | CRM & Custom Website | Expecto Digital Agency | ₹1,999",
-  description: "Best website design agency in Ujjain, Madhya Pradesh. Custom websites, CRM software, hotel websites, travel websites, temple trust websites starting ₹1,999. 7-day delivery. Call +91 87072 24376.",
+  title: "Website Design in Ujjain | CRM & Custom Website | Expecto Digital Agency",
+  description: "Best website design agency in Ujjain, Madhya Pradesh. Custom websites, CRM software, hotel websites, travel websites, temple trust websites. 7-day delivery. Call +91 87072 24376.",
   alternates: { canonical: "https://expecto.online/cities/ujjain" },
   keywords: ["website design ujjain", "web development ujjain", "digital agency ujjain", "hotel website ujjain", "travel website ujjain", "temple website ujjain", "affordable website ujjain madhya pradesh"],
   openGraph: {
     title: "Website Design in Ujjain | CRM & Custom Website | Expecto",
-    description: "Custom websites, hotel & travel websites starting ₹1,999 in Ujjain. 7-day delivery.",
+    description: "Custom websites, hotel & travel websites in Ujjain. 7-day delivery.",
     url: "https://expecto.online/cities/ujjain",
     type: "website",
   },

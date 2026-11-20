@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import NichePageTemplate from "@/components/seo/NichePageTemplate";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 
@@ -83,7 +83,7 @@ const screenshots = [
 const pricing = [
   {
     tier: "Starter",
-    price: "₹1,999",
+    price: "Contact Us",
     desc: "For coaching institutes that need a clean, fast website with basic course information and enquiry flow.",
     features: [
       "Custom homepage design",
@@ -96,7 +96,7 @@ const pricing = [
   },
   {
     tier: "Growth",
-    price: "₹3,999",
+    price: "Contact Us",
     desc: "For growing institutes that need a complete website with results, admissions and multiple pages.",
     features: [
       "Everything in Starter",
@@ -109,7 +109,7 @@ const pricing = [
   },
   {
     tier: "Complete",
-    price: "₹7,999",
+    price: "Contact Us",
     desc: "For institutes that need a full digital system — website, admin panel and student management.",
     features: [
       "Everything in Growth",

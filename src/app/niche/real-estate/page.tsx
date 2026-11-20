@@ -1,12 +1,12 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import NichePageTemplate from "@/components/seo/NichePageTemplate";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
-  title: "Real Estate Website Design India | Starting ₹1,999 | Expecto",
-  description: "Professional real estate website design in India starting ₹1,999. Property listings, lead generation, SEO-ready. 7-day delivery. Expecto Digital Agency.",
+  title: "Real Estate Website Design India | Starting Expecto",
+  description: "Professional real estate website design in India. Property listings, lead generation, SEO-ready. 7-day delivery. Expecto Digital Agency.",
   alternates: { canonical: "https://expecto.online/niche/real-estate" },
-  openGraph: { title: "Real Estate Website Design India | Expecto", description: "Real estate websites starting ₹1,999 with property listings and 7-day delivery.", url: "https://expecto.online/niche/real-estate", type: "website" },
+  openGraph: { title: "Real Estate Website Design India | Expecto", description: "Real estate websites with property listings and 7-day delivery.", url: "https://expecto.online/niche/real-estate", type: "website" },
 };
 
 const demos = [
@@ -24,9 +24,9 @@ const services = [
 ];
 
 const pricing = [
-  "Starter: Rs. 1,999",
-  "Growth: Rs. 3,999",
-  "Conversion Pro: Rs. 7,999",
+  "Starter: Contact Us",
+  "Growth: Contact Us",
+  "Conversion Pro: Contact Us",
 ];
 
 const faqs = [
